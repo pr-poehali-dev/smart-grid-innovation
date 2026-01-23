@@ -923,13 +923,26 @@ const Index = () => {
               <div>
                 <h3 className="text-sm font-bold uppercase tracking-wider mb-6">О ПРОЕКТЕ</h3>
                 <ul className="space-y-3">
-                  {["Об Инге Савиной", "Философия", "Отзывы", "Блог"].map((item) => (
-                    <li key={item}>
-                      <a href="#" className="text-white/70 hover:text-white transition-colors text-sm leading-relaxed">
-                        {item}
-                      </a>
-                    </li>
-                  ))}
+                  <li>
+                    <a href="#about" className="text-white/70 hover:text-white transition-colors text-sm leading-relaxed">
+                      Об Инге Савиной
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#route" className="text-white/70 hover:text-white transition-colors text-sm leading-relaxed">
+                      Философия
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-white/70 hover:text-white transition-colors text-sm leading-relaxed">
+                      Отзывы
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://t.me/sav_ingart" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors text-sm leading-relaxed">
+                      Блог
+                    </a>
+                  </li>
                 </ul>
               </div>
 
