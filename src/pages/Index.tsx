@@ -389,6 +389,196 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Reviews Section */}
+      <section className="relative z-10 py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance">Отзывы участников</h2>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto text-pretty">
+              Что говорят те, кто уже путешествовал с нами по Ликийскому побережью.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Review 1 */}
+            <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
+              <div className="flex items-center gap-4 mb-6">
+                <img 
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" 
+                  alt="Анна"
+                  className="w-16 h-16 rounded-full object-cover"
+                />
+                <div>
+                  <h4 className="font-semibold text-lg">Анна</h4>
+                  <p className="text-white/60 text-sm">Москва, июль 2024</p>
+                </div>
+              </div>
+              <p className="text-white/80 leading-relaxed">
+                "Это было невероятно! Сочетание моря, гор и творчества — именно то, что я искала. Инга — потрясающий гид и художник, научила меня видеть красоту в деталях. Группа была маленькая и очень тёплая, нашли новых друзей."
+              </p>
+            </div>
+
+            {/* Review 2 */}
+            <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
+              <div className="flex items-center gap-4 mb-6">
+                <img 
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" 
+                  alt="Дмитрий"
+                  className="w-16 h-16 rounded-full object-cover"
+                />
+                <div>
+                  <h4 className="font-semibold text-lg">Дмитрий</h4>
+                  <p className="text-white/60 text-sm">Санкт-Петербург, август 2024</p>
+                </div>
+              </div>
+              <p className="text-white/80 leading-relaxed">
+                "Я не художник, но мастер-классы оказались очень увлекательными! Paradise Beach и Secret Beach — это что-то. Треккинг был в самый раз, не слишком сложный. Яхта комфортная, команда внимательная. Рекомендую всем, кто хочет отдохнуть душой."
+              </p>
+            </div>
+
+            {/* Review 3 */}
+            <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
+              <div className="flex items-center gap-4 mb-6">
+                <img 
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" 
+                  alt="Елена"
+                  className="w-16 h-16 rounded-full object-cover"
+                />
+                <div>
+                  <h4 className="font-semibold text-lg">Елена</h4>
+                  <p className="text-white/60 text-sm">Екатеринбург, сентябрь 2024</p>
+                </div>
+              </div>
+              <p className="text-white/80 leading-relaxed">
+                "Лучшее путешествие в моей жизни! Долина Бабочек, живопись вином на закате, уютные вечера на яхте... Каждый день был наполнен новыми впечатлениями. Инга создала атмосферу, в которой хочется творить и жить полной жизнью. Спасибо!"
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Packing Tips Section */}
+      <section className="relative z-10 py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-12">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance">Что взять с собой</h2>
+              <p className="text-xl text-white/80 max-w-3xl mx-auto text-pretty">
+                Для вашего комфорта и безопасности рекомендуем подготовить следующие вещи.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Column 1 */}
+              <div className="space-y-8">
+                {/* Одежда и обувь */}
+                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
+                  <h3 className="text-2xl font-semibold mb-4 flex items-center gap-3">
+                    <span className="text-3xl">👕</span>
+                    Одежда и обувь
+                  </h3>
+                  <ul className="space-y-2 text-white/80">
+                    <li>• Лёгкая одежда (шорты, футболки, сарафаны)</li>
+                    <li>• Удобные кроссовки или треккинговые сандалии (обязательно для тропы)</li>
+                    <li>• Лёгкие сланцы для яхты и пляжа</li>
+                    <li>• Ветровка или кофта на вечер</li>
+                    <li>• Купальники/плавки (2 комплекта)</li>
+                    <li>• Панамка, кепка или бандана</li>
+                    <li>• Носки (трекинговые + обычные)</li>
+                    <li>• Плащ-дождевик</li>
+                  </ul>
+                </div>
+
+                {/* Оборудование и аксессуары */}
+                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
+                  <h3 className="text-2xl font-semibold mb-4 flex items-center gap-3">
+                    <span className="text-3xl">🎒</span>
+                    Оборудование и аксессуары
+                  </h3>
+                  <ul className="space-y-2 text-white/80">
+                    <li>• Рюкзак для треккинга (10–15 л)</li>
+                    <li>• Бутылка для воды многоразовая</li>
+                    <li>• Солнцезащитные очки и крем (SPF от 30)</li>
+                    <li>• Полотенце для пляжа + для душа</li>
+                    <li>• Мини-аптечка (пластыри, лекарства, средство от укачивания)</li>
+                    <li>• Средство от комаров и клещей</li>
+                    <li>• Зарядные устройства, Power Bank</li>
+                    <li>• Водонепроницаемый чехол для техники</li>
+                  </ul>
+                </div>
+
+                {/* Для плавания */}
+                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
+                  <h3 className="text-2xl font-semibold mb-4 flex items-center gap-3">
+                    <span className="text-3xl">🤿</span>
+                    Для плавания
+                  </h3>
+                  <ul className="space-y-2 text-white/80">
+                    <li>• Ласты, маска и трубка для снорклинга (по желанию)</li>
+                    <li>• Часть снаряжения можно взять на яхте</li>
+                    <li>• Пляжная сумка</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Column 2 */}
+              <div className="space-y-8">
+                {/* Для творчества */}
+                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
+                  <h3 className="text-2xl font-semibold mb-4 flex items-center gap-3">
+                    <span className="text-3xl">🎨</span>
+                    Для творчества (по желанию)
+                  </h3>
+                  <ul className="space-y-2 text-white/80">
+                    <li>• Любимые альбомы, скетчбуки, акварель, маркеры</li>
+                    <li>• Всё необходимое для мастер-классов выдаём на месте!</li>
+                  </ul>
+                </div>
+
+                {/* Документы и финансы */}
+                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
+                  <h3 className="text-2xl font-semibold mb-4 flex items-center gap-3">
+                    <span className="text-3xl">📄</span>
+                    Документы и финансы
+                  </h3>
+                  <ul className="space-y-2 text-white/80">
+                    <li>• Паспорт (+ копия на телефоне)</li>
+                    <li>• Медицинская страховка</li>
+                    <li>• Наличные в евро/долларах, банковская карта</li>
+                    <li>• Возможность обмена есть на месте</li>
+                  </ul>
+                </div>
+
+                {/* Другие полезности */}
+                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
+                  <h3 className="text-2xl font-semibold mb-4 flex items-center gap-3">
+                    <span className="text-3xl">💡</span>
+                    Другие полезности
+                  </h3>
+                  <ul className="space-y-2 text-white/80">
+                    <li>• Фотоаппарат/GoPro</li>
+                    <li>• Ушные беруши, маска для сна</li>
+                    <li>• Личная косметика (шампунь, мыло, зубная паста)</li>
+                    <li>• Любимая книга, наушники, плейлист</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Important Note */}
+            <div className="mt-12 rounded-2xl bg-white/10 ring-1 ring-white/20 backdrop-blur p-8">
+              <h3 className="text-xl font-semibold mb-4 flex items-center gap-3">
+                <span className="text-2xl">⚠️</span>
+                Важно
+              </h3>
+              <p className="text-white/80 leading-relaxed">
+                Большие чемоданы лучше не брать — удобнее компактный рюкзак или небольшой мягкий саквояж, чтобы разместить вещи в каюте. Всё необходимое для творчества мы предоставим, но если у вас есть любимые инструменты — захватите с собой!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section id="faq" className="relative z-10 py-24 px-6 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
