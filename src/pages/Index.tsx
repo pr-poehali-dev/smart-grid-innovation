@@ -1,4 +1,4 @@
-import { Compass, Lock, Sparkles, ShieldCheck, Wallet, Leaf, Plus, Minus, Mail } from "lucide-react"
+import { Compass, Lock, Sparkles, Mountain, Wallet, Leaf, Plus, Minus, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 
@@ -96,7 +96,7 @@ const Index = () => {
 
           {/* Subheading */}
           <p className="text-xl md:text-2xl text-white/90 max-w-4xl mb-12 leading-relaxed text-pretty">
-            Яхт-туры, где море встречается с искусством и историей. Откройте для себя уникальные места средиземноморья под руководством художника Инги Савина.
+            Яхт-туры, где море встречается с искусством и историей. Совмещаем плавание по средиземноморью с треккингом по легендарной Ликийской тропе под руководством художника Инги Савина.
           </p>
 
           {/* CTA Buttons */}
@@ -134,13 +134,13 @@ const Index = () => {
               <p className="text-white/80 leading-relaxed">Учимся видеть красоту моря глазами художника.</p>
             </div>
 
-            {/* World-Class Safety */}
+            {/* Lycian Way Trekking */}
             <div className="rounded-2xl bg-black/20 ring-1 ring-white/15 backdrop-blur p-8 text-center">
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-black/30 ring-1 ring-white/20 mb-6">
-                <ShieldCheck className="w-6 h-6" />
+                <Mountain className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-semibold mb-4">Исторические достопримечательности</h3>
-              <p className="text-white/80 leading-relaxed">Посещение древних городов и культурных памятников.</p>
+              <h3 className="text-xl font-semibold mb-4">Ликийская тропа</h3>
+              <p className="text-white/80 leading-relaxed">Треккинг по самым живописным участкам древнего маршрута.</p>
             </div>
 
             {/* All-Inclusive Package */}
@@ -172,7 +172,7 @@ const Index = () => {
             <div className="text-center mb-16">
               <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance">Маршрут вашего путешествия</h2>
               <p className="text-xl text-white/80 max-w-3xl mx-auto text-pretty">
-                От морских бухт до древних городов — вот что вас ждет.
+                От морских бухт до горных троп — комбинированное путешествие по воде и суше.
               </p>
             </div>
 
@@ -200,13 +200,13 @@ const Index = () => {
                 </div>
               </div>
 
-              {/* Phase 3: Caving */}
+              {/* Phase 3: Lycian Way */}
               <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8 h-80 flex flex-col">
                 <div className="flex-1">
                   <div className="text-3xl font-bold text-white/60 mb-4">03.</div>
-                  <h3 className="text-xl font-semibold mb-4">Исторические места</h3>
+                  <h3 className="text-xl font-semibold mb-4">Ликийская тропа</h3>
                   <p className="text-white/80 leading-relaxed text-sm">
-                    Экскурсии в древние города, архитектурные шедевры и музеи.
+                    Треккинг по самым красивым участкам древнего маршрута с видами на море.
                   </p>
                 </div>
               </div>
