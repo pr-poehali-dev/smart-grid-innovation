@@ -61,15 +61,11 @@ const Index = () => {
 
           {/* Navigation Links */}
           <div className="hidden md:flex items-center gap-1">
-            {["Туры", "О проекте", "Галерея", "Вопросы", "Контакты"].map((item) => (
-              <a
-                key={item}
-                href="#"
-                className="px-4 py-2 bg-black/40 ring-1 ring-white/20 backdrop-blur rounded-full hover:bg-black/50 transition-colors"
-              >
-                {item}
-              </a>
-            ))}
+            <a href="#route" className="px-4 py-2 bg-black/40 ring-1 ring-white/20 backdrop-blur rounded-full hover:bg-black/50 transition-colors">Туры</a>
+            <a href="#about" className="px-4 py-2 bg-black/40 ring-1 ring-white/20 backdrop-blur rounded-full hover:bg-black/50 transition-colors">О проекте</a>
+            <a href="#gallery" className="px-4 py-2 bg-black/40 ring-1 ring-white/20 backdrop-blur rounded-full hover:bg-black/50 transition-colors">Галерея</a>
+            <a href="#faq" className="px-4 py-2 bg-black/40 ring-1 ring-white/20 backdrop-blur rounded-full hover:bg-black/50 transition-colors">Вопросы</a>
+            <a href="#contact" className="px-4 py-2 bg-black/40 ring-1 ring-white/20 backdrop-blur rounded-full hover:bg-black/50 transition-colors">Контакты</a>
           </div>
 
           {/* Action Buttons */}
@@ -122,8 +118,8 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Features Section */}
-      <section className="relative z-10 py-24 px-6">
+      {/* About Section */}
+      <section id="about" className="relative z-10 py-24 px-6 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
             {/* Expert-Led Tours */}
@@ -319,8 +315,65 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Gallery Section */}
+      <section id="gallery" className="relative z-10 py-24 px-6 scroll-mt-24">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance">Галерея моментов</h2>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto text-pretty">
+              Взгляд на путешествие глазами художника — море, древние города и творческий процесс.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
+              <img 
+                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/files/fdd8a51f-a1e6-4318-ace0-eea7a2717a58.jpg" 
+                alt="Яхта в Средиземном море"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
+              <img 
+                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/files/57d80e82-e6bc-435a-b29a-b11958ec584e.jpg" 
+                alt="Ликийские гробницы"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
+              <img 
+                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/files/1b25b3f4-a1a5-4c03-8341-7c02cda8c9c1.jpg" 
+                alt="Творческий процесс на яхте"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
+              <img 
+                src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&h=600&fit=crop" 
+                alt="Бухта на закате"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
+              <img 
+                src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop" 
+                alt="Треккинг по Ликийской тропе"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
+              <img 
+                src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=800&h=600&fit=crop" 
+                alt="Древние руины Патары"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
-      <section className="relative z-10 py-24 px-6">
+      <section id="faq" className="relative z-10 py-24 px-6 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
           <div className="rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -366,7 +419,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="relative z-10 py-24 px-6">
+      <section id="contact" className="relative z-10 py-24 px-6 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
           <div className="rounded-3xl bg-black/20 ring-1 ring-white/15 backdrop-blur p-12">
             {/* Section Header */}
