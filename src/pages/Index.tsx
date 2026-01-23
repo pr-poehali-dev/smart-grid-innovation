@@ -470,16 +470,17 @@ const Index = () => {
               <div className="flex items-center gap-4 mb-6">
                 <img 
                   src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" 
-                  alt="Анна"
+                  alt="Евгения Миронова"
                   className="w-16 h-16 rounded-full object-cover"
                 />
                 <div>
-                  <h4 className="font-semibold text-lg">Анна</h4>
-                  <p className="text-white/60 text-sm">Москва, июль 2024</p>
+                  <h4 className="font-semibold text-lg">Евгения Миронова</h4>
+                  <p className="text-white/60 text-sm">Дизайнер, Тула</p>
+                  <p className="text-white/50 text-xs">Сентябрь 2024</p>
                 </div>
               </div>
               <p className="text-white/80 leading-relaxed">
-                "Это было невероятно! Сочетание моря, гор и творчества — именно то, что я искала. Инга — потрясающий гид и художник, научила меня видеть красоту в деталях. Группа была маленькая и очень тёплая, нашли новых друзей."
+                "Девичник на яхте — это было волшебно! Инга организовала всё идеально: красивые места, вкусная еда, творческая атмосфера. Мы отдохнули душой, зарядились энергией моря и привезли домой не только фото, но и картины, нарисованные своими руками. Спасибо за незабываемые эмоции!"
               </p>
             </div>
 
@@ -487,17 +488,18 @@ const Index = () => {
             <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
               <div className="flex items-center gap-4 mb-6">
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" 
-                  alt="Дмитрий"
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" 
+                  alt="Альбина Смирнова"
                   className="w-16 h-16 rounded-full object-cover"
                 />
                 <div>
-                  <h4 className="font-semibold text-lg">Дмитрий</h4>
-                  <p className="text-white/60 text-sm">Санкт-Петербург, август 2024</p>
+                  <h4 className="font-semibold text-lg">Альбина Смирнова</h4>
+                  <p className="text-white/60 text-sm">Бухгалтер, Тула</p>
+                  <p className="text-white/50 text-xs">Сентябрь 2024</p>
                 </div>
               </div>
               <p className="text-white/80 leading-relaxed">
-                "Я не художник, но мастер-классы оказались очень увлекательными! Paradise Beach и Secret Beach — это что-то. Треккинг был в самый раз, не слишком сложный. Яхта комфортная, команда внимательная. Рекомендую всем, кто хочет отдохнуть душой."
+                "Я впервые была на яхте, и это оказалось проще и приятнее, чем я думала! Инга — прекрасный организатор и душа компании. Каждый день был насыщенным: купались в бухтах, гуляли по горам, рисовали, смеялись до слёз. Вернулись домой отдохнувшими и вдохновлёнными. Очень рекомендую!"
               </p>
             </div>
 
@@ -505,17 +507,18 @@ const Index = () => {
             <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
               <div className="flex items-center gap-4 mb-6">
                 <img 
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" 
-                  alt="Елена"
+                  src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&h=100&fit=crop&crop=face" 
+                  alt="Евгения Миллер"
                   className="w-16 h-16 rounded-full object-cover"
                 />
                 <div>
-                  <h4 className="font-semibold text-lg">Елена</h4>
-                  <p className="text-white/60 text-sm">Екатеринбург, сентябрь 2024</p>
+                  <h4 className="font-semibold text-lg">Евгения Миллер</h4>
+                  <p className="text-white/60 text-sm">Предприниматель, Тула</p>
+                  <p className="text-white/50 text-xs">Сентябрь 2024</p>
                 </div>
               </div>
               <p className="text-white/80 leading-relaxed">
-                "Лучшее путешествие в моей жизни! Долина Бабочек, живопись вином на закате, уютные вечера на яхте... Каждый день был наполнен новыми впечатлениями. Инга создала атмосферу, в которой хочется творить и жить полной жизнью. Спасибо!"
+                "Это был лучший девичник! Мы хотели чего-то необычного, и Инга превзошла все ожидания. Яхта, море, творчество, вкусная еда и тёплая компания — всё было на высшем уровне. Особенно запомнился мастер-класс по живописи вином — никогда не думала, что смогу так рисовать! Спасибо за эти волшебные дни!"
               </p>
             </div>
           </div>
