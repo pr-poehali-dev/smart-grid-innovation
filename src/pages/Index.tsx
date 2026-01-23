@@ -177,49 +177,131 @@ const Index = () => {
               </p>
             </div>
 
-            {/* Journey Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-              {/* Phase 1: Briefing & Prep */}
-              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8 h-80 flex flex-col">
-                <div className="flex-1">
-                  <div className="text-3xl font-bold text-white/60 mb-4">01.</div>
-                  <h3 className="text-xl font-semibold mb-4">Встреча на яхте</h3>
-                  <p className="text-white/80 leading-relaxed text-sm">
-                    Знакомство с группой, размещение на яхте и первая арт-сессия на закате.
-                  </p>
+            {/* Detailed Journey Timeline */}
+            <div className="space-y-6 mb-12">
+              {/* Day 1 */}
+              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
+                <div className="flex items-start gap-6">
+                  <div className="text-4xl font-bold text-white/40 min-w-[80px]">День 1</div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-semibold mb-4">Каш — встреча на яхте</h3>
+                    <p className="text-white/80 leading-relaxed mb-4">
+                      Встречаемся в порту Каша в 14:00. Знакомство с экипажем и группой, размещение в каютах. Выход в море на закате — первая арт-сессия на палубе с бокалом вина. Ужин на борту в уединенной бухте.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Размещение</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Арт-сессия</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Закатное плавание</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Phase 2: The Trek */}
-              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8 h-80 flex flex-col">
-                <div className="flex-1">
-                  <div className="text-3xl font-bold text-white/60 mb-4">02.</div>
-                  <h3 className="text-xl font-semibold mb-4">Морское путешествие</h3>
-                  <p className="text-white/80 leading-relaxed text-sm">
-                    Плавание по живописным бухтам с остановками в уединенных местах.
-                  </p>
+              {/* Day 2 */}
+              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
+                <div className="flex items-start gap-6">
+                  <div className="text-4xl font-bold text-white/40 min-w-[80px]">День 2</div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-semibold mb-4">Кекова — затонувший город</h3>
+                    <p className="text-white/80 leading-relaxed mb-4">
+                      Плавание к островам Кекова. Наблюдаем руины древнего ликийского города под водой через прозрачное дно моря. Купание в Аквариумной бухте. Обед на яхте. Вечером — зарисовки морских пейзажей с Ингой.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Кекова</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Снорклинг</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Рисование</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Phase 3: Lycian Way */}
-              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8 h-80 flex flex-col">
-                <div className="flex-1">
-                  <div className="text-3xl font-bold text-white/60 mb-4">03.</div>
-                  <h3 className="text-xl font-semibold mb-4">Ликийская тропа</h3>
-                  <p className="text-white/80 leading-relaxed text-sm">
-                    Треккинг по самым красивым участкам древнего маршрута с видами на море.
-                  </p>
+              {/* Day 3 */}
+              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
+                <div className="flex items-start gap-6">
+                  <div className="text-4xl font-bold text-white/40 min-w-[80px]">День 3</div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-semibold mb-4">Симена и Учагыз — древние гробницы</h3>
+                    <p className="text-white/80 leading-relaxed mb-4">
+                      Высадка в деревне Калекёй (древняя Симена). Подъем к византийской крепости, ликийские каменные гробницы в море. Обед в семейном ресторане на берегу. Переход в бухту Учагыз — плавание на закате.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Калекёй</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Крепость</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Ликийские гробницы</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Phase 4: Base Camp */}
-              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8 h-80 flex flex-col">
-                <div className="flex-1">
-                  <div className="text-3xl font-bold text-white/60 mb-4">04.</div>
-                  <h3 className="text-xl font-semibold mb-4">Искусство в пути</h3>
-                  <p className="text-white/80 leading-relaxed text-sm">
-                    Творческие практики, рисование, фотография и созерцание момента.
-                  </p>
+              {/* Day 4 */}
+              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
+                <div className="flex items-start gap-6">
+                  <div className="text-4xl font-bold text-white/40 min-w-[80px]">День 4</div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-semibold mb-4">Ликийская тропа — треккинг</h3>
+                    <p className="text-white/80 leading-relaxed mb-4">
+                      Ранний подъем. Высадка в бухте Андриаке. Треккинг по Ликийской тропе (8 км, средняя сложность) через сосновые леса с панорамными видами на море. Пикник на вершине мыса. Возвращение на яхту — отдых и купание.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">8 км треккинг</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Панорамы</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Пикник на вершине</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Day 5 */}
+              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
+                <div className="flex items-start gap-6">
+                  <div className="text-4xl font-bold text-white/40 min-w-[80px]">День 5</div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-semibold mb-4">Патара — древний город и пляж</h3>
+                    <p className="text-white/80 leading-relaxed mb-4">
+                      Посещение руин древней Патары — амфитеатр, улицы с колоннами, арка Веспасиана. Свободное время на 18-километровом диком пляже Патара. Творческая сессия — фотография и рисование архитектуры. Ужин на яхте под звездами.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Античная Патара</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Дикий пляж</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Фотосессия</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Day 6 */}
+              <div className="rounded-2xl bg-white/5 ring-1 ring-1 ring-white/10 backdrop-blur p-8">
+                <div className="flex items-start gap-6">
+                  <div className="text-4xl font-bold text-white/40 min-w-[80px]">День 6</div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-semibold mb-4">Калкан и бухта Капуташ</h3>
+                    <p className="text-white/80 leading-relaxed mb-4">
+                      Плавание к знаменитому пляжу Капуташ в каньоне. Купание в бирюзовых водах. Причаливаем в Калкане — прогулка по белоснежным улочкам греческого квартала, посещение галерей. Прощальный ужин в аутентичном ресторане на крыше.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Капуташ</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Калкан</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Галереи искусства</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Day 7 */}
+              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
+                <div className="flex items-start gap-6">
+                  <div className="text-4xl font-bold text-white/40 min-w-[80px]">День 7</div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-semibold mb-4">Возвращение в Каш — завершение</h3>
+                    <p className="text-white/80 leading-relaxed mb-4">
+                      Неспешное утро на яхте, завтрак на палубе. Возвращение в порт Каша к 11:00. Финальная встреча с Ингой — обмен впечатлениями и контактами. До встречи в следующем путешествии!
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Завершение тура</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Обмен работами</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Каш 11:00</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
