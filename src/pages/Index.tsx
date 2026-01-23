@@ -579,6 +579,118 @@ const Index = () => {
         </div>
       </section>
 
+      {/* What's Included Section */}
+      <section className="relative z-10 py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-12">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance">Что включено в стоимость</h2>
+              <p className="text-xl text-white/80 max-w-3xl mx-auto text-pretty">
+                Всё для вашего комфортного и незабываемого путешествия уже учтено.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Included Items */}
+              <div className="space-y-6">
+                <h3 className="text-2xl font-semibold mb-6 flex items-center gap-3">
+                  <span className="text-3xl">✅</span>
+                  Включено
+                </h3>
+
+                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
+                  <h4 className="font-semibold text-lg mb-3">Проживание</h4>
+                  <p className="text-white/80">7 ночей на яхте в комфортных каютах + 1 ночь в отеле с бассейном в Фетхие</p>
+                </div>
+
+                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
+                  <h4 className="font-semibold text-lg mb-3">Питание</h4>
+                  <p className="text-white/80">Полный пансион на яхте: завтраки, обеды, ужины. Свежие продукты, турецкая кухня, вегетарианские опции</p>
+                </div>
+
+                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
+                  <h4 className="font-semibold text-lg mb-3">Трансферы</h4>
+                  <p className="text-white/80">Групповой трансфер из/в аэропорт Даламан, все переезды по программе</p>
+                </div>
+
+                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
+                  <h4 className="font-semibold text-lg mb-3">Яхта и команда</h4>
+                  <p className="text-white/80">Комфортабельная яхта с опытным капитаном и командой, все удобства на борту</p>
+                </div>
+
+                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
+                  <h4 className="font-semibold text-lg mb-3">Творческие мастер-классы</h4>
+                  <p className="text-white/80">2 мастер-класса с Ингой: "Живопись вином" и "Mix-media", все материалы предоставляются</p>
+                </div>
+
+                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
+                  <h4 className="font-semibold text-lg mb-3">Экскурсии и активности</h4>
+                  <p className="text-white/80">Треккинг по Ликийской тропе, посещение Долины Бабочек, прогулка к арке тропы, снорклинг</p>
+                </div>
+
+                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
+                  <h4 className="font-semibold text-lg mb-3">Хаммам</h4>
+                  <p className="text-white/80">Турецкая баня в первый день для расслабления после перелёта</p>
+                </div>
+
+                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
+                  <h4 className="font-semibold text-lg mb-3">Сопровождение</h4>
+                  <p className="text-white/80">Инга Савина — ваш гид, художник и вдохновитель на протяжении всего путешествия</p>
+                </div>
+              </div>
+
+              {/* Not Included Items */}
+              <div className="space-y-6">
+                <h3 className="text-2xl font-semibold mb-6 flex items-center gap-3">
+                  <span className="text-3xl">ℹ️</span>
+                  Оплачивается дополнительно
+                </h3>
+
+                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
+                  <h4 className="font-semibold text-lg mb-3">Авиабилеты</h4>
+                  <p className="text-white/80">Перелёт до/из аэропорта Даламан</p>
+                </div>
+
+                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
+                  <h4 className="font-semibold text-lg mb-3">Медицинская страховка</h4>
+                  <p className="text-white/80">Рекомендуем оформить страховку для путешествий</p>
+                </div>
+
+                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
+                  <h4 className="font-semibold text-lg mb-3">Личные расходы</h4>
+                  <p className="text-white/80">Сувениры, дополнительные напитки, личные покупки</p>
+                </div>
+
+                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
+                  <h4 className="font-semibold text-lg mb-3">Прощальный ужин в ресторане</h4>
+                  <p className="text-white/80">Ужин в последний вечер в Фетхие (по меню, ~20-30€)</p>
+                </div>
+
+                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
+                  <h4 className="font-semibold text-lg mb-3">Входные билеты</h4>
+                  <p className="text-white/80">Входы в заповедные зоны и национальные парки (если потребуется, минимальные суммы)</p>
+                </div>
+
+                {/* Price Info Box */}
+                <div className="rounded-2xl bg-gradient-to-br from-white/10 to-white/5 ring-2 ring-white/20 backdrop-blur p-8 mt-8">
+                  <div className="text-center">
+                    <p className="text-white/70 text-sm uppercase tracking-wider mb-2">Стоимость тура</p>
+                    <p className="text-5xl font-bold mb-4">По запросу</p>
+                    <p className="text-white/80 text-sm mb-6">Цена зависит от сезона и даты тура</p>
+                    <Button 
+                      size="lg"
+                      className="bg-white text-black hover:bg-white/90 rounded-full px-8 w-full"
+                    >
+                      Узнать стоимость
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section id="faq" className="relative z-10 py-24 px-6 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
