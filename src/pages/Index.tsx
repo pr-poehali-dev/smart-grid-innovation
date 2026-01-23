@@ -83,11 +83,11 @@ const Index = () => {
         <div className="relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-120px)] px-6 text-center">
           {/* Badge */}
           <div className="mb-6 px-4 py-2 bg-black/40 ring-1 ring-white/20 backdrop-blur rounded-full">
-            <span className="text-sm font-medium">Авторские яхт-туры</span>
+            <span className="text-sm font-medium">Авторские туры с художником</span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-6xl md:text-8xl font-light tracking-tight mb-6 text-balance">Море, горы и творчество.</h1>
+          <h1 className="text-6xl md:text-8xl font-light tracking-tight mb-6 text-balance">Красота в моменте</h1>
 
           {/* Subheading */}
           <p className="text-xl md:text-2xl text-white/90 max-w-4xl mb-12 leading-relaxed text-pretty">
@@ -324,8 +324,9 @@ const Index = () => {
               <Button
                 size="lg"
                 className="bg-white text-black hover:bg-white/90 rounded-full px-12 py-4 text-lg font-semibold"
+                asChild
               >
-                Узнать даты туров
+                <a href="#contact">Забронировать тур</a>
               </Button>
             </div>
           </div>
@@ -385,6 +386,70 @@ const Index = () => {
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Expectations Survey Section */}
+      <section className="relative z-10 py-24 px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="rounded-3xl bg-gradient-to-br from-white/10 to-white/5 ring-1 ring-white/10 backdrop-blur p-12">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-balance">Расскажите о своих ожиданиях</h2>
+              <p className="text-xl text-white/80 max-w-2xl mx-auto text-pretty">
+                Чтобы сделать ваше путешествие идеальным, мы хотим узнать, что для вас важно.
+              </p>
+            </div>
+
+            <form className="space-y-8">
+              <div>
+                <label className="block text-lg font-semibold mb-4">Что вы ждёте от этого путешествия?</label>
+                <div className="space-y-3">
+                  {[
+                    'Творческое вдохновение и мастер-классы',
+                    'Знакомство с новыми людьми',
+                    'Активный отдых и треккинг',
+                    'Релакс и перезагрузка',
+                    'Красивые фото и впечатления'
+                  ].map((option) => (
+                    <label key={option} className="flex items-center gap-3 p-4 rounded-xl bg-white/5 hover:bg-white/10 cursor-pointer transition-colors">
+                      <input type="checkbox" className="w-5 h-5 rounded" />
+                      <span className="text-white/90">{option}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="experience" className="block text-lg font-semibold mb-4">Есть ли у вас опыт яхтинга или треккинга?</label>
+                <textarea
+                  id="experience"
+                  rows={3}
+                  className="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/20 border-0 text-white placeholder:text-white/50 focus:ring-2 focus:ring-white/30 focus:outline-none"
+                  placeholder="Расскажите немного о себе..."
+                />
+              </div>
+
+              <div>
+                <label htmlFor="questions" className="block text-lg font-semibold mb-4">Есть ли вопросы или пожелания?</label>
+                <textarea
+                  id="questions"
+                  rows={3}
+                  className="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/20 border-0 text-white placeholder:text-white/50 focus:ring-2 focus:ring-white/30 focus:outline-none"
+                  placeholder="Мы учтём все ваши пожелания..."
+                />
+              </div>
+
+              <div className="text-center pt-4">
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="bg-white text-black hover:bg-white/90 rounded-full px-12 py-4 text-lg font-semibold"
+                >
+                  Отправить и забронировать
+                </Button>
+              </div>
+            </form>
           </div>
         </div>
       </section>
@@ -680,8 +745,9 @@ const Index = () => {
                     <Button 
                       size="lg"
                       className="bg-white text-black hover:bg-white/90 rounded-full px-8 w-full"
+                      asChild
                     >
-                      Узнать стоимость
+                      <a href="#contact">Забронировать тур</a>
                     </Button>
                   </div>
                 </div>
