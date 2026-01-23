@@ -346,43 +346,43 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
               <img 
+                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/737ad2e8-0ac4-42b7-badf-4de8c8447a39.jpg" 
+                alt="Ликийское побережье"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
+              <img 
+                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/4e545080-d6a0-4c74-bcd3-53ba30551644.jpg" 
+                alt="Мастер-класс на пленэре"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
+              <img 
+                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/ab73aaf4-3000-42a6-a95d-50e4a57cf257.jpg" 
+                alt="Древние руины"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
+              <img 
+                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/30fee0a7-88df-4986-9724-a54c60ba1fd3.jpg" 
+                alt="Творческий процесс"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
+              <img 
+                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/fe6714be-61fe-4663-81ec-d0a0f2f71b51.jpg" 
+                alt="Материалы для творчества"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
+              <img 
                 src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/files/fdd8a51f-a1e6-4318-ace0-eea7a2717a58.jpg" 
-                alt="Яхта в Средиземном море"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
-              <img 
-                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/files/57d80e82-e6bc-435a-b11958ec584e.jpg" 
-                alt="Ликийские гробницы"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
-              <img 
-                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/files/1b25b3f4-a1a5-4c03-8341-7c02cda8c9c1.jpg" 
-                alt="Творческий процесс на яхте"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
-              <img 
-                src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&h=600&fit=crop" 
-                alt="Бухта на закате"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
-              <img 
-                src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop" 
-                alt="Треккинг по Ликийской тропе"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
-              <img 
-                src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=800&h=600&fit=crop" 
-                alt="Древние руины Патары"
+                alt="Яхта в бухте"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
@@ -467,58 +467,37 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Review 1 */}
             <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
-              <div className="flex items-center gap-4 mb-6">
-                <img 
-                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" 
-                  alt="Евгения Миронова"
-                  className="w-16 h-16 rounded-full object-cover"
-                />
-                <div>
-                  <h4 className="font-semibold text-lg">Евгения Миронова</h4>
-                  <p className="text-white/60 text-sm">Дизайнер, Тула</p>
-                  <p className="text-white/50 text-xs">Сентябрь 2024</p>
-                </div>
+              <div className="mb-6">
+                <h4 className="font-semibold text-lg">Евгения Миронова</h4>
+                <p className="text-white/60 text-sm">Дизайнер, Тула</p>
+                <p className="text-white/50 text-xs">Сентябрь 2024</p>
               </div>
               <p className="text-white/80 leading-relaxed">
-                "Девичник на яхте — это было волшебно! Инга организовала всё идеально: красивые места, вкусная еда, творческая атмосфера. Мы отдохнули душой, зарядились энергией моря и привезли домой не только фото, но и картины, нарисованные своими руками. Спасибо за незабываемые эмоции!"
+                "Отмечала день рождения на яхте с подругами. Всё было организовано хорошо: красивые места, вкусная еда, интересные мастер-классы. Получилось отдохнуть и попробовать что-то новое. Привезли домой свои картины — хорошая память."
               </p>
             </div>
 
             {/* Review 2 */}
             <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
-              <div className="flex items-center gap-4 mb-6">
-                <img 
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" 
-                  alt="Альбина Смирнова"
-                  className="w-16 h-16 rounded-full object-cover"
-                />
-                <div>
-                  <h4 className="font-semibold text-lg">Альбина Смирнова</h4>
-                  <p className="text-white/60 text-sm">Бухгалтер, Тула</p>
-                  <p className="text-white/50 text-xs">Сентябрь 2024</p>
-                </div>
+              <div className="mb-6">
+                <h4 className="font-semibold text-lg">Альбина Смирнова</h4>
+                <p className="text-white/60 text-sm">Бухгалтер, Тула</p>
+                <p className="text-white/50 text-xs">Сентябрь 2024</p>
               </div>
               <p className="text-white/80 leading-relaxed">
-                "Я впервые была на яхте, и это оказалось проще и приятнее, чем я думала! Инга — прекрасный организатор и душа компании. Каждый день был насыщенным: купались в бухтах, гуляли по горам, рисовали, смеялись до слёз. Вернулись домой отдохнувшими и вдохновлёнными. Очень рекомендую!"
+                "Первый опыт на яхте оказался приятнее, чем ожидала. Каждый день что-то новое: купались, гуляли по горам, рисовали. Компания подобралась хорошая. Вернулись отдохнувшими."
               </p>
             </div>
 
             {/* Review 3 */}
             <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
-              <div className="flex items-center gap-4 mb-6">
-                <img 
-                  src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&h=100&fit=crop&crop=face" 
-                  alt="Евгения Миллер"
-                  className="w-16 h-16 rounded-full object-cover"
-                />
-                <div>
-                  <h4 className="font-semibold text-lg">Евгения Миллер</h4>
-                  <p className="text-white/60 text-sm">Предприниматель, Тула</p>
-                  <p className="text-white/50 text-xs">Сентябрь 2024</p>
-                </div>
+              <div className="mb-6">
+                <h4 className="font-semibold text-lg">Евгения Миллер</h4>
+                <p className="text-white/60 text-sm">Предприниматель, Тула</p>
+                <p className="text-white/50 text-xs">Сентябрь 2024</p>
               </div>
               <p className="text-white/80 leading-relaxed">
-                "Это был лучший девичник! Мы хотели чего-то необычного, и Инга превзошла все ожидания. Яхта, море, творчество, вкусная еда и тёплая компания — всё было на высшем уровне. Особенно запомнился мастер-класс Mix-media — никогда не думала, что смогу создать такую красоту своими руками! Спасибо за эти волшебные дни!"
+                "Хотели необычный формат девичника — получилось. Яхта, красивые места, мастер-классы. Мне понравился Mix-media — не думала, что смогу так рисовать. Хороший отдых."
               </p>
             </div>
           </div>
