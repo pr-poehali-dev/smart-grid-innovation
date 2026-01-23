@@ -108,8 +108,9 @@ const Index = () => {
               size="lg"
               variant="outline"
               className="bg-black/40 ring-1 ring-white/20 backdrop-blur border-0 text-white hover:bg-black/50 rounded-full px-8 py-4 text-lg"
+              asChild
             >
-              Смотреть маршрут
+              <a href="#route">Смотреть маршрут</a>
             </Button>
           </div>
 
@@ -165,7 +166,7 @@ const Index = () => {
       </section>
 
       {/* Journey Section */}
-      <section className="relative z-10 py-24 px-6">
+      <section id="route" className="relative z-10 py-24 px-6 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
           <div className="rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-12">
             {/* Section Header */}
