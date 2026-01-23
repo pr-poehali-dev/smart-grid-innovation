@@ -853,7 +853,9 @@ const Index = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold mb-2">Email</h4>
-                    <p className="text-white/70">info@ingasavina-tours.com</p>
+                    <a href="mailto:savinainga@gmail.com" className="text-white/70 hover:text-white transition-colors">
+                      savinainga@gmail.com
+                    </a>
                   </div>
                 </div>
 
