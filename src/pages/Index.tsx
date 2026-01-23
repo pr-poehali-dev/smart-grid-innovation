@@ -18,27 +18,26 @@ const Index = () => {
     {
       question: "Кто такая Инга Савина?",
       answer:
-        "Инга Савина — художник и автор уникальной методики по развитию художественного видения. Она помогает людям увидеть красоту в простых вещах и моментах, сочетая путешествия с творческими практиками.",
+        "Инга — художник и автор этих туров. Она совмещает любовь к морю, искусству и путешествиям, создавая уникальные маршруты с арт-сессиями.",
     },
     {
-      question: "Что входит в стоимость тура?",
+      question: "Какой формат тура?",
       answer:
-        "В стоимость яхт-тура включены: проживание на яхте, питание, авторские арт-сессии с Ингой Савиной, экскурсии в исторические места, материалы для творчества. Перелёт оплачивается отдельно.",
+        "Это комбинированное путешествие: проживание на яхте, треккинг по Ликийской тропе, творческие мастер-классы и посещение исторических мест.",
     },
     {
-      question: "Нужно ли уметь рисовать?",
+      question: "Нужна ли специальная подготовка?",
       answer:
-        "Совершенно не обязательно! Тур рассчитан на любой уровень подготовки. Инга научит вас видеть красоту, замечать детали и запечатлевать моменты любым удобным для вас способом — рисунок, фотография или просто наблюдение.",
+        "Нет, подходит для всех уровней физической подготовки. Треккинг неспешный, с фотостопами. Опыт яхтинга не требуется — с вами капитан и команда.",
     },
     {
-      question: "Как забронировать место?",
-      answer:
-        "Группы ограничены 8-10 участниками для камерной атмосферы. Чтобы забронировать место, свяжитесь с нами через форму на сайте. Предоплата 30% закрепляет ваше место, полная оплата — за 60 дней до старта тура.",
+      question: "Сколько человек в группе?",
+      answer: "Максимум 10 человек — это позволяет создать комфортную и тёплую атмосферу в группе.",
     },
   ]
 
   return (
-    <div className="min-h-screen bg-[#0B0F12] text-white">
+    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white">
       {/* Hero Section */}
       <div className="relative min-h-screen">
         {/* Background Image with Overlay */}
@@ -88,11 +87,11 @@ const Index = () => {
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-6xl md:text-8xl font-light tracking-tight mb-6 text-balance">Увидеть красоту в моменте.</h1>
+          <h1 className="text-6xl md:text-8xl font-light tracking-tight mb-6 text-balance">Море, горы и творчество.</h1>
 
           {/* Subheading */}
           <p className="text-xl md:text-2xl text-white/90 max-w-4xl mb-12 leading-relaxed text-pretty">
-            Яхт-туры, где море встречается с искусством и историей. Совмещаем плавание по средиземноморью с треккингом по легендарной Ликийской тропе под руководством художника Инги Савина.
+            Яркий и вдохновляющий маршрут для тех, кто мечтает соединить море, горы, творчество и новые знакомства. Яхтинг по самому живописному побережью Ликии, прогулки по Ликийской тропе, секретные пляжи и пленэры с мастер-классами.
           </p>
 
           {/* CTA Buttons */}
@@ -113,7 +112,7 @@ const Index = () => {
           {/* Footer Note */}
           <div className="flex items-center gap-2 px-4 py-2 bg-black/40 ring-1 ring-white/20 backdrop-blur rounded-full">
             <Sparkles className="w-4 h-4" />
-            <span className="text-sm font-medium">Искусство и море в одном путешествии</span>
+            <span className="text-sm font-medium">Идеальный баланс приключений, расслабления и арт-вдохновения</span>
           </div>
         </div>
       </div>
@@ -127,8 +126,8 @@ const Index = () => {
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-black/30 ring-1 ring-white/20 mb-6">
                 <Sparkles className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-semibold mb-4">Художественное видение</h3>
-              <p className="text-white/80 leading-relaxed">Учимся видеть красоту моря глазами художника.</p>
+              <h3 className="text-xl font-semibold mb-4">Мастер-классы</h3>
+              <p className="text-white/80 leading-relaxed">Живопись вином и Mix-media на пленэрах с Ингой.</p>
             </div>
 
             {/* Lycian Way Trekking */}
@@ -136,8 +135,8 @@ const Index = () => {
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-black/30 ring-1 ring-white/20 mb-6">
                 <Mountain className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-semibold mb-4">Ликийская тропа</h3>
-              <p className="text-white/80 leading-relaxed">Треккинг по самым живописным участкам древнего маршрута.</p>
+              <h3 className="text-xl font-semibold mb-4">Секретные пляжи</h3>
+              <p className="text-white/80 leading-relaxed">Paradise Beach, Secret Beach и уединённые бухты Ликии.</p>
             </div>
 
             {/* All-Inclusive Package */}
@@ -145,8 +144,8 @@ const Index = () => {
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-black/30 ring-1 ring-white/20 mb-6">
                 <Wallet className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-semibold mb-4">Комфорт на яхте</h3>
-              <p className="text-white/80 leading-relaxed">Проживание, питание и все удобства на борту.</p>
+              <h3 className="text-xl font-semibold mb-4">Маленькая группа</h3>
+              <p className="text-white/80 leading-relaxed">До 10 человек — комфорт, поддержка и тёплая компания.</p>
             </div>
 
             {/* Eco-Friendly Caving */}
@@ -154,8 +153,8 @@ const Index = () => {
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-black/30 ring-1 ring-white/20 mb-6">
                 <Leaf className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-semibold mb-4">Творческий процесс</h3>
-              <p className="text-white/80 leading-relaxed">Арт-сессии на берегу и вдохновение морем.</p>
+              <h3 className="text-xl font-semibold mb-4">Без подготовки</h3>
+              <p className="text-white/80 leading-relaxed">Не нужна физподготовка или опыт яхтинга.</p>
             </div>
           </div>
         </div>
@@ -169,7 +168,7 @@ const Index = () => {
             <div className="text-center mb-16">
               <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance">Маршрут вашего путешествия</h2>
               <p className="text-xl text-white/80 max-w-3xl mx-auto text-pretty">
-                От морских бухт до горных троп — комбинированное путешествие по воде и суше.
+                8 дней незабываемых впечатлений: яхтинг, треккинг, творчество и тёплая компания до 10 человек.
               </p>
             </div>
 
@@ -180,14 +179,14 @@ const Index = () => {
                 <div className="flex items-start gap-6">
                   <div className="text-4xl font-bold text-white/40 min-w-[80px]">День 1</div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-semibold mb-4">Каш — встреча на яхте</h3>
+                    <h3 className="text-2xl font-semibold mb-4">Встреча — Фетхие</h3>
                     <p className="text-white/80 leading-relaxed mb-4">
-                      Встречаемся в порту Каша в 14:00. Знакомство с экипажем и группой, размещение в каютах. Выход в море на закате — первая арт-сессия на палубе с бокалом вина. Ужин на борту в уединенной бухте.
+                      Встреча в аэропорту Даламан, групповой трансфер в Фетхие. Расслабление в турецком хаммаме. Заселение на яхту, прогулка по старому городу. Ужин-знакомство с группой — делимся ожиданиями от путешествия.
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Размещение</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Арт-сессия</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Закатное плавание</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Даламан</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Хаммам</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Заселение на яхту</span>
                     </div>
                   </div>
                 </div>
@@ -198,14 +197,14 @@ const Index = () => {
                 <div className="flex items-start gap-6">
                   <div className="text-4xl font-bold text-white/40 min-w-[80px]">День 2</div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-semibold mb-4">Кекова — затонувший город</h3>
+                    <h3 className="text-2xl font-semibold mb-4">Олюдениз — арка Ликийской тропы</h3>
                     <p className="text-white/80 leading-relaxed mb-4">
-                      Плавание к островам Кекова. Наблюдаем руины древнего ликийского города под водой через прозрачное дно моря. Купание в Аквариумной бухте. Обед на яхте. Вечером — зарисовки морских пейзажей с Ингой.
+                      Яхтинг вдоль побережья в сторону Олюдениз. Прогулка к знаменитой арке — символическому началу Ликийской тропы. Свободное время на легендарном пляже Олюдениз, купание и релакс. Вечерняя якорная стоянка, обсуждение планов.
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Кекова</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Снорклинг</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Рисование</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Олюдениз</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Арка тропы</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Пляж</span>
                     </div>
                   </div>
                 </div>
@@ -216,14 +215,14 @@ const Index = () => {
                 <div className="flex items-start gap-6">
                   <div className="text-4xl font-bold text-white/40 min-w-[80px]">День 3</div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-semibold mb-4">Симена и Учагыз — древние гробницы</h3>
+                    <h3 className="text-2xl font-semibold mb-4">Острова залива Фетхие</h3>
                     <p className="text-white/80 leading-relaxed mb-4">
-                      Высадка в деревне Калекёй (древняя Симена). Подъем к византийской крепости, ликийские каменные гробницы в море. Обед в семейном ресторане на берегу. Переход в бухту Учагыз — плавание на закате.
+                      Морская прогулка по живописным бухтам и островам залива. Купание, снорклинг, солнечные ванны и полная перезагрузка. Обед и ужин на яхте, уютные посиделки с видом на закат над водой.
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Калекёй</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Крепость</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Ликийские гробницы</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Острова</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Снорклинг</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Закат</span>
                     </div>
                   </div>
                 </div>
@@ -234,14 +233,14 @@ const Index = () => {
                 <div className="flex items-start gap-6">
                   <div className="text-4xl font-bold text-white/40 min-w-[80px]">День 4</div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-semibold mb-4">Ликийская тропа — треккинг</h3>
+                    <h3 className="text-2xl font-semibold mb-4">Долина Бабочек — арт-пленэр</h3>
                     <p className="text-white/80 leading-relaxed mb-4">
-                      Ранний подъем. Высадка в бухте Андриаке. Треккинг по Ликийской тропе (8 км, средняя сложность) через сосновые леса с панорамными видами на море. Пикник на вершине мыса. Возвращение на яхту — отдых и купание.
+                      Якорная стоянка в заповедной Долине Бабочек. Прогулка к водопаду, изучение местной природы. Мастер-класс "Живопись вином" — пробуем новые техники на пленэре. День для фото, отдыха и неспешных бесед.
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">8 км треккинг</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Панорамы</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Пикник на вершине</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Долина Бабочек</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Водопад</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Живопись вином</span>
                     </div>
                   </div>
                 </div>
@@ -252,32 +251,32 @@ const Index = () => {
                 <div className="flex items-start gap-6">
                   <div className="text-4xl font-bold text-white/40 min-w-[80px]">День 5</div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-semibold mb-4">Патара — древний город и пляж</h3>
+                    <h3 className="text-2xl font-semibold mb-4">Кабак — треккинг — Paradise & Secret Beach</h3>
                     <p className="text-white/80 leading-relaxed mb-4">
-                      Посещение руин древней Патары — амфитеатр, улицы с колоннами, арка Веспасиана. Свободное время на 18-километровом диком пляже Патара. Творческая сессия — фотография и рисование архитектуры. Ужин на яхте под звездами.
+                      Утренний переход в Кабак, начало пешего похода по Ликийской тропе. Треккинг с видами на лазурную Турцию: от Кабака до Paradise Beach (~3 км), неспешный маршрут с фотостопами, 3+ часа удовольствия. Купание, пикник на Paradise Beach. Для желающих — проход до Secret Beach (ещё 20–30 минут), уединённый и невероятно красивый пляж. Возвращение по тропе или лодочный трансфер. Ужин и обмен впечатлениями на яхте.
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Античная Патара</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Дикий пляж</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Фотосессия</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Треккинг 3 км</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Paradise Beach</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Secret Beach</span>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Day 6 */}
-              <div className="rounded-2xl bg-white/5 ring-1 ring-1 ring-white/10 backdrop-blur p-8">
+              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
                 <div className="flex items-start gap-6">
                   <div className="text-4xl font-bold text-white/40 min-w-[80px]">День 6</div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-semibold mb-4">Калкан и бухта Капуташ</h3>
+                    <h3 className="text-2xl font-semibold mb-4">Прозрачные бухты — Mix-media Арт-день</h3>
                     <p className="text-white/80 leading-relaxed mb-4">
-                      Плавание к знаменитому пляжу Капуташ в каньоне. Купание в бирюзовых водах. Причаливаем в Калкане — прогулка по белоснежным улочкам греческого квартала, посещение галерей. Прощальный ужин в аутентичном ресторане на крыше.
+                      Уединённый яхтинг вдоль скалистого побережья, остановки для купания и релакса в прозрачных бухтах. Творческий мастер-класс "Mix-media: Карта в искусстве" на берегу — создаём уникальные арт-объекты. Фотосессия и совместное творчество. Вечер на палубе под звёздами.
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Капуташ</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Калкан</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Галереи искусства</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Уединённые бухты</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Mix-media</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Звёздная ночь</span>
                     </div>
                   </div>
                 </div>
@@ -288,14 +287,32 @@ const Index = () => {
                 <div className="flex items-start gap-6">
                   <div className="text-4xl font-bold text-white/40 min-w-[80px]">День 7</div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-semibold mb-4">Возвращение в Каш — завершение</h3>
+                    <h3 className="text-2xl font-semibold mb-4">Возвращение в Фетхие — отель и прощальный ужин</h3>
                     <p className="text-white/80 leading-relaxed mb-4">
-                      Неспешное утро на яхте, завтрак на палубе. Возвращение в порт Каша к 11:00. Финальная встреча с Ингой — обмен впечатлениями и контактами. До встречи в следующем путешествии!
+                      Ленивое утро, последний совместный завтрак на яхте. Неспешное возвращение в Фетхие. Заселение в отель с бассейном — комфорт, возможность расслабиться и привести себя в порядок. Прогулка по городу, шопинг, прощальный ужин в ресторане с видом на море.
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Завершение тура</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Обмен работами</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Каш 11:00</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Отель с бассейном</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Прогулка по городу</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Прощальный ужин</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Day 8 */}
+              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
+                <div className="flex items-start gap-6">
+                  <div className="text-4xl font-bold text-white/40 min-w-[80px]">День 8</div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-semibold mb-4">Финал путешествия</h3>
+                    <p className="text-white/80 leading-relaxed mb-4">
+                      Завтрак в отеле, свободное утро для отдыха или последних покупок. Трансфер в аэропорт Даламан. Вылет домой с чемоданом впечатлений, новыми друзьями и творческими работами. До встречи в следующем путешествии!
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Завтрак</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Трансфер</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Даламан</span>
                     </div>
                   </div>
                 </div>
@@ -335,7 +352,7 @@ const Index = () => {
             </div>
             <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
               <img 
-                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/files/57d80e82-e6bc-435a-b29a-b11958ec584e.jpg" 
+                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/files/57d80e82-e6bc-435a-b11958ec584e.jpg" 
                 alt="Ликийские гробницы"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
               />
@@ -396,9 +413,9 @@ const Index = () => {
                   >
                     <button
                       onClick={() => toggleFaq(index)}
-                      className="w-full p-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors"
+                      className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-white/5 transition-colors"
                     >
-                      <h3 className="text-lg font-semibold pr-4">{faq.question}</h3>
+                      <span className="text-lg font-semibold pr-4">{faq.question}</span>
                       {openFaq === index ? (
                         <Minus className="w-5 h-5 flex-shrink-0" />
                       ) : (
@@ -406,8 +423,8 @@ const Index = () => {
                       )}
                     </button>
                     {openFaq === index && (
-                      <div className="px-6 pb-6">
-                        <p className="text-white/80 leading-relaxed">{faq.answer}</p>
+                      <div className="px-6 pb-5">
+                        <p className="text-white/70 leading-relaxed">{faq.answer}</p>
                       </div>
                     )}
                   </div>
@@ -421,10 +438,12 @@ const Index = () => {
       {/* Contact Section */}
       <section id="contact" className="relative z-10 py-24 px-6 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
-          <div className="rounded-3xl bg-black/20 ring-1 ring-white/15 backdrop-blur p-12">
-            {/* Section Header */}
-            <div className="text-center mb-16">
+          <div className="rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-12">
+            <div className="text-center mb-12">
               <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance">Свяжитесь с нами</h2>
+              <p className="text-xl text-white/80 leading-relaxed text-pretty">
+                По вопросам яхт-туров, дат и бронирования — свяжитесь с нами. Мы отвечаем в течение 24 часов.
+              </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -465,23 +484,41 @@ const Index = () => {
                       placeholder="Расскажите о своих пожеланиях и интересе к туру..."
                     />
                   </div>
-                  <Button className="w-full bg-black text-white hover:bg-gray-800 rounded-lg py-3 font-normal text-base">
-                    Отправить сообщение
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="w-full bg-black text-white hover:bg-black/90 rounded-lg h-[50px] font-semibold"
+                  >
+                    <Mail className="w-5 h-5 mr-2" />
+                    Отправить запрос
                   </Button>
                 </form>
               </div>
 
               {/* Right Column - Contact Info */}
               <div className="space-y-8">
-                <div>
-                  <p className="text-xl text-white/90 leading-relaxed text-pretty">
-                    По вопросам яхт-туров, дат и бронирования — свяжитесь с нами. Мы отвечаем в течение 24 часов.
-                  </p>
+                <div className="flex items-start gap-4">
+                  <div className="rounded-xl bg-white/10 p-3">
+                    <Mail className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold mb-2">Email</h4>
+                    <p className="text-white/70">info@ingasavina-tours.com</p>
+                  </div>
                 </div>
 
-                {/* Profile Card */}
-                <div className="rounded-2xl bg-white/95 text-black p-6 shadow-2xl">
-                  <div className="flex items-center gap-4 mb-4">
+                <div className="flex items-start gap-4">
+                  <div className="rounded-xl bg-white/10 p-3">
+                    <Lock className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold mb-2">Конфиденциальность</h4>
+                    <p className="text-white/70">Ваши данные защищены и не передаются третьим лицам.</p>
+                  </div>
+                </div>
+
+                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">
+                  <div className="flex items-start gap-4">
                     <img
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face"
                       alt="Инга Савина"
@@ -492,10 +529,6 @@ const Index = () => {
                       <p className="text-gray-600">Художник и автор туров</p>
                     </div>
                   </div>
-                  <Button className="w-full bg-black text-white hover:bg-gray-800 rounded-lg flex items-center justify-center gap-2">
-                    <Mail className="w-4 h-4" />
-                    Написать
-                  </Button>
                 </div>
               </div>
             </div>
@@ -504,13 +537,13 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 py-24 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="rounded-3xl bg-white/[0.03] backdrop-blur-2xl ring-1 ring-white/10 p-12">
-            {/* Main Footer Content */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
-              {/* Brand Section */}
-              <div className="lg:col-span-2">
+      <footer className="relative z-10 bg-black/40 backdrop-blur">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="py-16">
+            {/* Footer Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+              {/* Brand Column */}
+              <div>
                 <div className="flex items-center gap-2 mb-6">
                   <Compass className="w-6 h-6" />
                   <span className="text-xl font-semibold">Инга Савина</span>
