@@ -258,21 +258,22 @@ const Index = () => {
             {/* Left - Text */}
             <div className="space-y-6 md:space-y-8">
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance">Кто я и почему со мной?</h2>
-              <div className="space-y-4 md:space-y-6 text-base md:text-lg text-white/80 leading-relaxed">
-                <p className="text-xl text-white font-medium">
-                  Меня зовут Инга Савина — я художник, куратор выставок, автор творческих мастер-классов и арт-туров
+              <div className="space-y-6 text-lg text-white/80 leading-relaxed text-center lg:text-left">
+                <p className="text-white">
+                  Меня зовут <strong>Инга Савина</strong> — я художница, куратор выставок, автор творческих мастер-классов и арт-туров
                 </p>
                 <p>
-                  Уже 3 года веду арт-мастер-классы и влюблена в море. Эти туры родились из желания соединить три вещи, которые меня вдохновляют: искусство, путешествия и Ликийское побережье
+                  Уже <strong>3 года</strong> веду арт-мастер-классы и влюблена в море. Эти туры родились из желания соединить три вещи, которые меня вдохновляют: <strong>искусство</strong>, <strong>путешествия</strong> и <strong>Ликийское побережье</strong>
                 </p>
                 <p>
-                  <strong className="text-white">Что отличает мои туры:</strong> это не просто яхтинг и не просто треккинг — это микс моря, гор и творчества. Мы плывём по бирюзным бухтам Турции, поднимаемся по древней Ликийской тропе с видами на Средиземное море, а вечером создаём арт-объекты
+                  <strong className="text-white">Что отличает мои туры</strong><br/>
+                  Это не просто яхтинг и не просто треккинг — это микс моря, гор и творчества. Мы плывём по бирюзным бухтам Турции, поднимаемся по древней Ликийской тропе с видами на Средиземное море, а вечером создаём арт-объекты
                 </p>
                 <p>
-                  Я показываю простые и медитативные техники: живопись вином, mix-media с картами, мозаика из смальты и природных материалов с берега. Даже если вы никогда не занимались творчеством — это ваш шанс попробовать в самой вдохновляющей обстановке
+                  Я показываю простые и медитативные техники: <strong>живопись вином</strong>, <strong>mix-media с картами</strong>, <strong>мозаика из смальты</strong> и природных материалов с берега. Даже если вы никогда не занимались творчеством — это ваш шанс попробовать в самой вдохновляющей обстановке
                 </p>
-                <p className="text-white font-medium">
-                  Приезжайте за тем, чтобы перезагрузиться, найти вдохновение и привезти домой не только фото, но и свои работы
+                <p className="text-white">
+                  Приезжайте за тем, чтобы <strong>перезагрузиться</strong>, найти <strong>вдохновение</strong> и привезти домой не только фото, но и свои работы
                 </p>
               </div>
             </div>
@@ -314,8 +315,8 @@ const Index = () => {
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-black/30 ring-1 ring-white/20 mb-6">
                 <Wallet className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-semibold mb-4">Маленькая группа</h3>
-              <p className="text-white/80 leading-relaxed">До 6 человек на яхте — комфорт, уют и камерная атмосфера</p>
+<h3 className="text-xl font-semibold mb-4">Маленькая группа</h3>
+              <p className="text-white/80 leading-relaxed"><strong>До 6 человек</strong> на яхте — комфорт, уют и камерная атмосфера</p>
             </div>
 
             {/* Eco-Friendly Caving */}
@@ -323,8 +324,8 @@ const Index = () => {
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-black/30 ring-1 ring-white/20 mb-6">
                 <Leaf className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-semibold mb-4">Без подготовки</h3>
-              <p className="text-white/80 leading-relaxed">Не нужна физподготовка или опыт яхтинга</p>
+<h3 className="text-xl font-semibold mb-4">Без подготовки</h3>
+              <p className="text-white/80 leading-relaxed">Не нужна <strong>физподготовка</strong> или опыт яхтинга</p>
             </div>
           </div>
         </div>
@@ -337,8 +338,8 @@ const Index = () => {
             {/* Section Header */}
             <div className="text-center mb-12 md:mb-16">
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-balance">Маршрут вашего путешествия</h2>
-              <p className="text-base md:text-xl text-white/80 max-w-3xl mx-auto text-pretty">
-                8 дней незабываемых впечатлений: яхтинг, треккинг, творчество и тёплая компания до 10 человек.
+              <p className="text-lg text-white/80 max-w-3xl mx-auto">
+                <strong>8 дней</strong> незабываемых впечатлений: яхтинг, треккинг, творчество и тёплая компания
               </p>
             </div>
 
@@ -567,8 +568,8 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-balance">Ваш дом на воде — яхта Bavaria</h2>
-            <p className="text-base md:text-xl text-white/80 max-w-3xl mx-auto text-pretty">
-              Комфортабельное размещение в каютах по 2 человека с удобными спальными местами
+            <p className="text-lg text-white/80 max-w-3xl mx-auto">
+              Комфортабельное размещение в каютах <strong>по 2 человека</strong> с удобными спальными местами
             </p>
           </div>
 
@@ -646,8 +647,8 @@ const Index = () => {
           <div className="rounded-2xl md:rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6 md:p-12">
             <div className="text-center mb-12 md:mb-16">
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-balance">Что включено в стоимость</h2>
-              <p className="text-base md:text-xl text-white/80 max-w-3xl mx-auto text-pretty">
-                Всё для вашего комфортного и незабываемого путешествия уже учтено.
+              <p className="text-lg text-white/80 max-w-3xl mx-auto">
+                Всё для вашего комфортного и незабываемого путешествия уже учтено
               </p>
             </div>
 
@@ -765,8 +766,8 @@ const Index = () => {
           <div className="rounded-2xl md:rounded-3xl bg-gradient-to-br from-white/10 to-white/5 ring-1 ring-white/10 backdrop-blur p-6 md:p-12">
             <div className="text-center mb-8 md:mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 md:mb-6 text-balance">Расскажите о своих ожиданиях</h2>
-              <p className="text-base md:text-xl text-white/80 max-w-2xl mx-auto text-pretty">
-                Чтобы сделать ваше путешествие идеальным, мы хотим узнать, что для вас важно.
+              <p className="text-lg text-white/80 max-w-2xl mx-auto">
+                Чтобы сделать ваше путешествие идеальным, мы хотим узнать что для вас важно
               </p>
             </div>
 
@@ -860,8 +861,8 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-balance">Отзывы участников</h2>
-            <p className="text-base md:text-xl text-white/80 max-w-3xl mx-auto text-pretty">
-              Что говорят те, кто уже путешествовал с нами по Ликийскому побережью.
+            <p className="text-lg text-white/80 max-w-3xl mx-auto">
+              Что говорят те, кто уже путешествовал с нами по Ликийскому побережью
             </p>
           </div>
 
@@ -911,8 +912,8 @@ const Index = () => {
           <div className="rounded-2xl md:rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6 md:p-12">
             <div className="text-center mb-12 md:mb-16">
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-balance">Что взять с собой</h2>
-              <p className="text-base md:text-xl text-white/80 max-w-3xl mx-auto text-pretty">
-                Для вашего комфорта и безопасности рекомендуем подготовить следующие вещи.
+              <p className="text-lg text-white/80 max-w-3xl mx-auto">
+                Для вашего комфорта и безопасности рекомендуем подготовить следующие вещи
               </p>
             </div>
 
@@ -1032,8 +1033,8 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-balance">Галерея моментов</h2>
-            <p className="text-base md:text-xl text-white/80 max-w-3xl mx-auto text-pretty">
-              Взгляд на путешествие глазами художника — море, древние города и творческий процесс.
+            <p className="text-lg text-white/80 max-w-3xl mx-auto">
+              Взгляд на путешествие глазами художницы — море, древние города и творческий процесс
             </p>
           </div>
 
@@ -1089,7 +1090,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-balance">Даты туров 2026</h2>
-            <p className="text-base md:text-xl text-white/80 max-w-3xl mx-auto text-pretty">
+            <p className="text-lg text-white/80 max-w-3xl mx-auto">
               Выберите удобную дату для вашего арт-путешествия по Ликийскому побережью
             </p>
           </div>
@@ -1190,8 +1191,8 @@ const Index = () => {
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-balance">
                   Частые вопросы
                 </h2>
-                <p className="text-base md:text-xl text-white/80 leading-relaxed text-pretty">
-                  Все, что нужно знать о яхт-туре: от формата до бронирования места в этом уникальном путешествии.
+                <p className="text-lg text-white/80 leading-relaxed">
+                  Все что нужно знать о яхт-туре: от формата до бронирования места в этом уникальном путешествии
                 </p>
               </div>
 
@@ -1232,8 +1233,8 @@ const Index = () => {
           <div className="rounded-2xl md:rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6 md:p-12">
             <div className="text-center mb-8 md:mb-12">
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-balance">Свяжитесь с нами</h2>
-              <p className="text-base md:text-xl text-white/80 leading-relaxed text-pretty">
-                По вопросам яхт-туров, дат и бронирования — свяжитесь с нами. Мы отвечаем в течение 24 часов.
+              <p className="text-lg text-white/80 leading-relaxed">
+                По вопросам яхт-туров, дат и бронирования — свяжитесь с нами. Мы отвечаем в течение <strong>24 часов</strong>
               </p>
             </div>
 
@@ -1410,8 +1411,8 @@ const Index = () => {
                   <Compass className="w-6 h-6" />
                   <span className="text-xl font-semibold">Инга Савина</span>
                 </div>
-                <p className="text-white/80 leading-relaxed text-pretty">
-                  Авторские яхт-туры, где море встречается с искусством. Мы помогаем увидеть красоту в моменте и открыть новые грани Средиземноморья.
+                <p className="text-white/80 leading-relaxed">
+                  Авторские яхт-туры, где море встречается с искусством. Мы помогаем увидеть красоту в моменте и открыть новые грани Средиземноморья
                 </p>
               </div>
 
