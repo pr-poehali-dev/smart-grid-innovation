@@ -341,8 +341,8 @@ const Index = () => {
                 <div className="grid md:grid-cols-[200px_1fr] gap-6">
                   <div className="aspect-square md:aspect-auto">
                     <img
-                      src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/f52f12cc-4879-47db-b855-14803d30bf8c.jpg"
-                      alt="Бухта с яхтами"
+                      src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/0cf31084-431e-4915-98bb-f6c58a8ae386.jpg"
+                      alt="Парусник Bavaria в прозрачных бухтах"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -366,8 +366,8 @@ const Index = () => {
                 <div className="grid md:grid-cols-[200px_1fr] gap-6">
                   <div className="aspect-square md:aspect-auto">
                     <img
-                      src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/c64486f2-634e-49f9-b6db-0ff14dd0c288.jpg"
-                      alt="Каюта на яхте"
+                      src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/5552695c-5429-4148-805e-5e7d1cadf899.jpg"
+                      alt="Мозаика из смальты - морской пейзаж с птицей"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -392,8 +392,8 @@ const Index = () => {
                 <div className="grid md:grid-cols-[200px_1fr] gap-6">
                   <div className="aspect-square md:aspect-auto">
                     <img
-                      src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/ebe2cfff-9936-4fca-b08b-cabb53ca3442.jpg"
-                      alt="Салон яхты"
+                      src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/59ca5811-a867-4011-9c89-22cf09dfe7c3.jpg"
+                      alt="Панорама Олюдениз - финал путешествия"
                       className="w-full h-full object-cover"
                     />
                   </div>
