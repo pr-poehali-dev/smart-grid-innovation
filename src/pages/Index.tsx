@@ -755,7 +755,7 @@ const Index = () => {
 
                 <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
                   <h4 className="font-semibold text-lg mb-3">Питание</h4>
-                  <p className="text-white/80">Полный пансион на яхте: завтраки, обеды, ужины. Свежие продукты, турецкая кухня, вегетарианские опции</p>
+                  <p className="text-white/80">Готовим вместе на яхте из закупленных свежих продуктов: завтраки, обеды, ужины. Турецкая кухня, вегетарианские опции</p>
                 </div>
 
                 <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
