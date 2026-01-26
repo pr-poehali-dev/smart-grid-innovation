@@ -143,12 +143,22 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Right - Image */}
-            <div className="relative">
-              <div className="aspect-[4/5] rounded-3xl overflow-hidden ring-1 ring-white/10">
+            {/* Right - Images Grid */}
+            <div className="space-y-6">
+              {/* Main portrait */}
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden ring-1 ring-white/10">
                 <img
-                  src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/files/b93f7de1-df3d-4518-ab93-98ea1a754bf7.jpg"
+                  src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/files/2ab875e9-4679-4ae7-9c67-49db8c2d8060.jpg"
                   alt="Инга Савина"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
+              {/* Paradise Beach */}
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden ring-1 ring-white/10">
+                <img
+                  src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/files/76c5c983-07fc-45dd-a5bc-64190f98d941.jpg"
+                  alt="Paradise Beach"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -648,6 +658,63 @@ const Index = () => {
               </div>
             </div>
 
+            {/* Yacht Gallery */}
+            <div className="mt-16 space-y-8">
+              <div className="text-center">
+                <h3 className="text-4xl font-bold mb-4">Ваш дом на воде — яхта Bavaria</h3>
+                <p className="text-xl text-white/80 max-w-3xl mx-auto">
+                  Комфортабельное размещение в каютах по 2 человека с удобными спальными местами
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Yacht exterior */}
+                <div className="rounded-2xl overflow-hidden ring-1 ring-white/10">
+                  <img
+                    src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/0cf31084-431e-4915-98bb-f6c58a8ae386.jpg"
+                    alt="Яхта Bavaria"
+                    className="w-full h-full object-cover aspect-[4/3]"
+                  />
+                </div>
+
+                {/* Yacht sailing */}
+                <div className="rounded-2xl overflow-hidden ring-1 ring-white/10">
+                  <img
+                    src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/64e13c47-70f5-4ae8-8b14-6f6db11094e2.jpg"
+                    alt="Яхта под парусом"
+                    className="w-full h-full object-cover aspect-[4/3]"
+                  />
+                </div>
+
+                {/* Cabin interior */}
+                <div className="rounded-2xl overflow-hidden ring-1 ring-white/10">
+                  <img
+                    src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/c64486f2-634e-49f9-b6db-0ff14dd0c288.jpg"
+                    alt="Каюта на яхте"
+                    className="w-full h-full object-cover aspect-[4/3]"
+                  />
+                </div>
+
+                {/* Salon interior */}
+                <div className="rounded-2xl overflow-hidden ring-1 ring-white/10">
+                  <img
+                    src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/ebe2cfff-9936-4fca-b08b-cabb53ca3442.jpg"
+                    alt="Салон яхты"
+                    className="w-full h-full object-cover aspect-[4/3]"
+                  />
+                </div>
+
+                {/* Paradise Beach view */}
+                <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 md:col-span-2">
+                  <img
+                    src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/f52f12cc-4879-47db-b855-14803d30bf8c.jpg"
+                    alt="Вид на Paradise Beach с Ликийской тропы"
+                    className="w-full h-full object-cover aspect-[21/9]"
+                  />
+                </div>
+              </div>
+            </div>
+
             {/* Important Note */}
             <div className="mt-12 rounded-2xl bg-white/10 ring-1 ring-white/20 backdrop-blur p-8">
               <h3 className="text-xl font-semibold mb-4 flex items-center gap-3">
@@ -697,8 +764,8 @@ const Index = () => {
                 </div>
 
                 <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
-                  <h4 className="font-semibold text-lg mb-3">Яхта и команда</h4>
-                  <p className="text-white/80">Комфортабельная яхта с опытным капитаном и командой, все удобства на борту</p>
+                  <h4 className="font-semibold text-lg mb-3">Яхта Bavaria</h4>
+                  <p className="text-white/80">Комфортабельное размещение в каюте по 2 человека, опытный капитан и команда</p>
                 </div>
 
                 <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
