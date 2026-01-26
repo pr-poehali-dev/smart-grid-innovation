@@ -367,8 +367,8 @@ const Index = () => {
                 <div className="grid md:grid-cols-[200px_1fr] gap-6">
                   <div className="aspect-square md:aspect-auto">
                     <img
-                      src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/0cf31084-431e-4915-98bb-f6c58a8ae386.jpg"
-                      alt="Парусник Bavaria в прозрачных бухтах"
+                      src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/b1ca7bf6-c344-4dc2-a2a5-b28a31358c62.jpg"
+                      alt="Бирюзовая лагуна - прозрачные бухты с высоты"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -1163,16 +1163,44 @@ const Index = () => {
                   </div>
                 </div>
 
+                <div className="flex items-start gap-4">
+                  <div className="rounded-xl bg-white/10 p-3">
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold mb-2">Телефон</h4>
+                    <a href="tel:+79207517515" className="text-white/70 hover:text-white transition-colors">
+                      +7 (920) 751-75-15
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="rounded-xl bg-white/10 p-3">
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold mb-2">Telegram</h4>
+                    <a href="https://t.me/savinga" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors">
+                      @savinga
+                    </a>
+                  </div>
+                </div>
+
                 <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">
                   <div className="flex items-start gap-4">
                     <img
-                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face"
+                      src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/3f12d4d6-1129-45dc-b2be-b6936e6a1562.jpg"
                       alt="Инга Савина"
                       className="w-16 h-16 rounded-full object-cover"
                     />
                     <div>
-                      <h4 className="text-lg font-semibold">Инга Савина</h4>
-                      <p className="text-gray-600">Художник и автор туров</p>
+                      <h4 className="text-lg font-semibold text-white">Инга Савина</h4>
+                      <p className="text-white/60">Художник и автор туров</p>
                     </div>
                   </div>
                 </div>
