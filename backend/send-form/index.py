@@ -61,6 +61,8 @@ def handler(event: dict, context) -> dict:
         
         message = f"""📝 Анкета ожиданий от участника
 
+📞 Контакт: {body.get('contact', 'Не указано')}
+
 {exp_text}
 
 🎒 Опыт яхтинга/треккинга:

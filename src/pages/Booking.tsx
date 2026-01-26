@@ -14,6 +14,7 @@ const Booking = () => {
   const [selectedTour, setSelectedTour] = useState<string>("")
   const [guests, setGuests] = useState<number>(2)
   const [showSuccessModal, setShowSuccessModal] = useState(false)
+  const [activeTab, setActiveTab] = useState<'booking' | 'masterclasses'>('booking')
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -78,7 +79,121 @@ const Booking = () => {
           </p>
         </div>
 
-        <div className="rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6 md:p-12">
+        {/* Tabs */}
+        <div className="flex gap-4 mb-8 justify-center">
+          <button
+            onClick={() => setActiveTab('booking')}
+            className={`px-6 py-3 rounded-full font-semibold transition-all ${
+              activeTab === 'booking'
+                ? 'bg-white text-black'
+                : 'bg-white/10 text-white hover:bg-white/20'
+            }`}
+          >
+            Бронирование
+          </button>
+          <button
+            onClick={() => setActiveTab('masterclasses')}
+            className={`px-6 py-3 rounded-full font-semibold transition-all ${
+              activeTab === 'masterclasses'
+                ? 'bg-white text-black'
+                : 'bg-white/10 text-white hover:bg-white/20'
+            }`}
+          >
+            Мастер-классы
+          </button>
+        </div>
+
+        {activeTab === 'masterclasses' ? (
+          <div className="rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6 md:p-12">
+            <h2 className="text-3xl font-bold mb-8">Творческие мастер-классы</h2>
+            
+            <div className="space-y-8">
+              {/* Мастер-класс 1 */}
+              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-8">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="text-4xl">🍷</div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-2">Живопись вином</h3>
+                    <p className="text-white/60 text-sm mb-4">День 4 — Долина Бабочек</p>
+                  </div>
+                </div>
+                <p className="text-white/80 leading-relaxed mb-4">
+                  Уникальная техника создания абстрактных картин с помощью красного вина. Работаем на плотной бумаге или холсте, создавая плавные переходы и текстуры. Вино реагирует с материалами, создавая неповторимые оттенки от бледно-розового до насыщенного бордового.
+                </p>
+                <div className="space-y-2 text-sm text-white/70">
+                  <div>✓ Все материалы предоставляются</div>
+                  <div>✓ Подходит для любого уровня подготовки</div>
+                  <div>✓ Работы можно забрать с собой</div>
+                  <div>✓ Длительность: 2-3 часа</div>
+                </div>
+              </div>
+
+              {/* Мастер-класс 2 */}
+              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-8">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="text-4xl">🗺️</div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-2">Mix-media: Карта в искусстве</h3>
+                    <p className="text-white/60 text-sm mb-4">День 6 — Прозрачные бухты</p>
+                  </div>
+                </div>
+                <p className="text-white/80 leading-relaxed mb-4">
+                  Создаём арт-объекты, комбинируя винтажные карты с акварелью, тушью и коллажем. Используем морскую тематику: старые морские карты, компасы, координаты памятных мест. Каждая работа становится уникальным воспоминанием о путешествии.
+                </p>
+                <div className="space-y-2 text-sm text-white/70">
+                  <div>✓ Винтажные карты и материалы предоставляются</div>
+                  <div>✓ Работа в смешанной технике</div>
+                  <div>✓ Персонализированные сувениры</div>
+                  <div>✓ Длительность: 2-3 часа</div>
+                </div>
+              </div>
+
+              {/* Мастер-класс 3 */}
+              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-8">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="text-4xl">🎨</div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-2">Мозаика из смальты</h3>
+                    <p className="text-white/60 text-sm mb-4">День 7 — Секретные бухты</p>
+                  </div>
+                </div>
+                <p className="text-white/80 leading-relaxed mb-4">
+                  Древнее искусство мозаики в современной интерпретации. Используем цветную смальту (стеклянные кусочки) и природные материалы с пляжа: ракушки, гладкие камни, морское стекло. Создаём небольшие панно на морскую тематику — идеальный арт-объект на память.
+                </p>
+                <div className="space-y-2 text-sm text-white/70">
+                  <div>✓ Профессиональная смальта всех оттенков</div>
+                  <div>✓ Основа и материалы для крепления</div>
+                  <div>✓ Собираем природные материалы на пляже</div>
+                  <div>✓ Работы упаковываются для транспортировки</div>
+                  <div>✓ Длительность: 3-4 часа</div>
+                </div>
+              </div>
+
+              {/* Важная информация */}
+              <div className="rounded-2xl bg-gradient-to-br from-white/10 to-white/5 ring-1 ring-white/20 p-6 md:p-8">
+                <h4 className="text-xl font-bold mb-4">Важно знать</h4>
+                <div className="space-y-3 text-white/80">
+                  <p>• <strong>Опыт не требуется</strong> — все техники объясняются с нуля, помогаю каждому участнику индивидуально</p>
+                  <p>• <strong>Все материалы включены</strong> в стоимость тура: холсты, краски, смальта, основы, инструменты</p>
+                  <p>• <strong>Работы можно забрать домой</strong> — упаковываем так, чтобы довезти в целости</p>
+                  <p>• <strong>Атмосфера</strong> — мастер-классы проходят на природе, под открытым небом с видом на море</p>
+                  <p>• <strong>Можно приносить свои материалы</strong> — если у вас есть любимые краски, скетчбуки или инструменты</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center mt-8">
+              <Button
+                onClick={() => setActiveTab('booking')}
+                size="lg"
+                className="bg-white text-black hover:bg-white/90 rounded-full px-12 py-4 text-lg font-semibold"
+              >
+                Перейти к бронированию
+              </Button>
+            </div>
+          </div>
+        ) : (
+          <div className="rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6 md:p-12">
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* Tour Selection */}
             <div>
@@ -243,6 +358,7 @@ const Booking = () => {
             </p>
           </form>
         </div>
+        )}
       </div>
 
       {/* Success Modal */}

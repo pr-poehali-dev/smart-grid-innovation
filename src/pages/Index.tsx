@@ -16,7 +16,8 @@ const Index = () => {
   const [expectationsData, setExpectationsData] = useState({
     expectations: [] as string[],
     experience: '',
-    questions: ''
+    questions: '',
+    contact: ''
   })
 
   const toggleFaq = (index: number) => {
@@ -50,7 +51,7 @@ const Index = () => {
     
     // Всегда показываем успешное сообщение пользователю
     setShowSuccessModal(true)
-    setExpectationsData({ expectations: [], experience: '', questions: '' })
+    setExpectationsData({ expectations: [], experience: '', questions: '', contact: '' })
     
     // Пытаемся отправить в Telegram (в фоне)
     try {
@@ -774,6 +775,19 @@ const Index = () => {
                   onChange={(e) => setExpectationsData({...expectationsData, questions: e.target.value})}
                   className="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/20 border-0 text-white placeholder:text-white/50 focus:ring-2 focus:ring-white/30 focus:outline-none"
                   placeholder="Мы учтём все ваши пожелания..."
+                />
+              </div>
+
+              <div>
+                <label htmlFor="contact" className="block text-lg font-semibold mb-4">Телефон или Telegram для связи *</label>
+                <input
+                  type="text"
+                  id="contact"
+                  required
+                  value={expectationsData.contact}
+                  onChange={(e) => setExpectationsData({...expectationsData, contact: e.target.value})}
+                  className="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/20 border-0 text-white placeholder:text-white/50 focus:ring-2 focus:ring-white/30 focus:outline-none"
+                  placeholder="+7 (900) 123-45-67 или @username"
                 />
               </div>
 
