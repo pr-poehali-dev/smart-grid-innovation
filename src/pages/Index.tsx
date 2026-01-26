@@ -148,17 +148,8 @@ const Index = () => {
               {/* Main portrait */}
               <div className="aspect-[4/3] rounded-3xl overflow-hidden ring-1 ring-white/10">
                 <img
-                  src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/files/2ab875e9-4679-4ae7-9c67-49db8c2d8060.jpg"
-                  alt="Инга Савина"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              
-              {/* Paradise Beach */}
-              <div className="aspect-[4/3] rounded-3xl overflow-hidden ring-1 ring-white/10">
-                <img
-                  src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/files/76c5c983-07fc-45dd-a5bc-64190f98d941.jpg"
-                  alt="Paradise Beach"
+                  src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/5ee339f6-b408-4104-9162-673d1ab1be60.jpg"
+                  alt="Инга Савина на Paradise Beach"
                   className="w-full h-full object-cover"
                 />
               </div>
