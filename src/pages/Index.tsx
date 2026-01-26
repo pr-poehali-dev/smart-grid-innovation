@@ -213,7 +213,17 @@ const Index = () => {
 
           {/* Subheading */}
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 max-w-4xl mb-12 leading-relaxed text-pretty px-4">
-            Путешествие с художником Ингой Савиной: 8 дней на яхте по бирюзовым бухтам Турции, треккинг по Ликийской тропе и арт-мастер-классы под открытым небом. Для тех, кто хочет вдохновения, новых впечатлений и творческой перезагрузки.
+            Путешествие с художницей Ингой Савиной
+          </p>
+          
+          <div className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl mb-12 space-y-2 px-4">
+            <div>8 дней на яхте по бирюзовым бухтам Турции</div>
+            <div>Треккинг по Ликийской тропе</div>
+            <div>Арт-мастер-классы под открытым небом</div>
+          </div>
+          
+          <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-3xl mb-12 px-4">
+            Для тех, кто хочет вдохновения, новых впечатлений и творческой перезагрузки
           </p>
 
           {/* CTA Buttons */}
