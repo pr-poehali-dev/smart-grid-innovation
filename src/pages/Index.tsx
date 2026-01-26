@@ -426,63 +426,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section id="gallery" className="relative z-10 py-24 px-6 scroll-mt-24">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance">Галерея моментов</h2>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto text-pretty">
-              Взгляд на путешествие глазами художника — море, древние города и творческий процесс.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
-              <img 
-                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/737ad2e8-0ac4-42b7-badf-4de8c8447a39.jpg" 
-                alt="Ликийское побережье"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
-              <img 
-                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/4e545080-d6a0-4c74-bcd3-53ba30551644.jpg" 
-                alt="Мастер-класс на пленэре"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
-              <img 
-                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/ab73aaf4-3000-42a6-a95d-50e4a57cf257.jpg" 
-                alt="Древние руины"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
-              <img 
-                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/30fee0a7-88df-4986-9724-a54c60ba1fd3.jpg" 
-                alt="Творческий процесс"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
-              <img 
-                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/fe6714be-61fe-4663-81ec-d0a0f2f71b51.jpg" 
-                alt="Материалы для творчества"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
-              <img 
-                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/files/fdd8a51f-a1e6-4318-ace0-eea7a2717a58.jpg" 
-                alt="Яхта в бухте"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Expectations Survey Section */}
       <section className="relative z-10 py-24 px-6">
         <div className="max-w-4xl mx-auto">
@@ -888,6 +831,63 @@ const Index = () => {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section id="gallery" className="relative z-10 py-24 px-6 scroll-mt-24">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance">Галерея моментов</h2>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto text-pretty">
+              Взгляд на путешествие глазами художника — море, древние города и творческий процесс.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
+              <img 
+                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/737ad2e8-0ac4-42b7-badf-4de8c8447a39.jpg" 
+                alt="Ликийское побережье"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
+              <img 
+                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/4e545080-d6a0-4c74-bcd3-53ba30551644.jpg" 
+                alt="Мастер-класс на пленэре"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
+              <img 
+                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/ab73aaf4-3000-42a6-a95d-50e4a57cf257.jpg" 
+                alt="Древние руины"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
+              <img 
+                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/30fee0a7-88df-4986-9724-a54c60ba1fd3.jpg" 
+                alt="Творческий процесс"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
+              <img 
+                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/fe6714be-61fe-4663-81ec-d0a0f2f71b51.jpg" 
+                alt="Материалы для творчества"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
+              <img 
+                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/files/fdd8a51f-a1e6-4318-ace0-eea7a2717a58.jpg" 
+                alt="Яхта в бухте"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
             </div>
           </div>
         </div>
