@@ -19,7 +19,8 @@ const Booking = () => {
     name: '',
     email: '',
     phone: '',
-    message: ''
+    message: '',
+    honeypot: ''
   })
 
   const tours: Tour[] = [
@@ -32,10 +33,31 @@ const Booking = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
+    // Проверка honeypot (защита от ботов)
+    if (formData.honeypot) {
+      console.log('Bot detected')
+      return
+    }
+    
+    // Проверка обязательных контактов
+    if (!formData.name || !formData.email || !formData.phone) {
+      alert('Пожалуйста, заполните все обязательные поля: имя, email и телефон')
+      return
+    }
+    
+    if (!selectedTour) {
+      alert('Пожалуйста, выберите даты тура')
+      return
+    }
+    
     const selectedTourInfo = tours.find(t => t.id === selectedTour)
     
     setShowSuccessModal(true)
-    setFormData({ name: '', email: '', phone: '', message: '' })
+    const dataToSend = { ...formData }
+    const tourToSend = selectedTourInfo?.dates || 'Не выбрано'
+    const guestsToSend = guests
+    
+    setFormData({ name: '', email: '', phone: '', message: '', honeypot: '' })
     setSelectedTour("")
     setGuests(2)
     
@@ -45,9 +67,12 @@ const Booking = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           type: 'booking',
-          tour: selectedTourInfo?.dates || 'Не выбрано',
-          guests: guests,
-          ...formData
+          tour: tourToSend,
+          guests: guestsToSend,
+          name: dataToSend.name,
+          email: dataToSend.email,
+          phone: dataToSend.phone,
+          message: dataToSend.message
         })
       })
     } catch (error) {
@@ -322,6 +347,16 @@ const Booking = () => {
                   placeholder="Особые пожелания, вопросы..."
                 />
               </div>
+
+              <input
+                type="text"
+                name="website"
+                value={formData.honeypot}
+                onChange={(e) => setFormData({...formData, honeypot: e.target.value})}
+                className="absolute opacity-0 pointer-events-none"
+                tabIndex={-1}
+                autoComplete="off"
+              />
             </div>
 
             {/* Price Info */}

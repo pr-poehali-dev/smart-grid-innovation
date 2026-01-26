@@ -14,12 +14,13 @@ const Index = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [showSuccessModal, setShowSuccessModal] = useState(false)
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+  const [formData, setFormData] = useState({ name: '', email: '', message: '', honeypot: '' })
   const [expectationsData, setExpectationsData] = useState({
     expectations: [] as string[],
     experience: '',
     questions: '',
-    contact: ''
+    contact: '',
+    honeypot: ''
   })
 
   const toggleFaq = (index: number) => {
@@ -29,18 +30,31 @@ const Index = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
-    // Всегда показываем успешное сообщение пользователю
-    setShowSuccessModal(true)
-    setFormData({ name: '', email: '', message: '' })
+    // Проверка honeypot (защита от ботов)
+    if (formData.honeypot) {
+      console.log('Bot detected')
+      return
+    }
     
-    // Пытаемся отправить в Telegram (в фоне)
+    // Проверка обязательных контактов
+    if (!formData.email || !formData.name) {
+      alert('Пожалуйста, укажите имя и email')
+      return
+    }
+    
+    setShowSuccessModal(true)
+    const dataToSend = { ...formData }
+    setFormData({ name: '', email: '', message: '', honeypot: '' })
+    
     try {
       await fetch('https://functions.poehali.dev/2eeee9fa-08f6-4675-8994-a60805039821', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           type: 'contact',
-          ...formData
+          name: dataToSend.name,
+          email: dataToSend.email,
+          message: dataToSend.message
         })
       })
     } catch (error) {
@@ -51,18 +65,32 @@ const Index = () => {
   const handleExpectationsSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
-    // Всегда показываем успешное сообщение пользователю
-    setShowSuccessModal(true)
-    setExpectationsData({ expectations: [], experience: '', questions: '', contact: '' })
+    // Проверка honeypot (защита от ботов)
+    if (expectationsData.honeypot) {
+      console.log('Bot detected')
+      return
+    }
     
-    // Пытаемся отправить в Telegram (в фоне)
+    // Проверка обязательного контакта
+    if (!expectationsData.contact) {
+      alert('Пожалуйста, укажите телефон или Telegram для связи')
+      return
+    }
+    
+    setShowSuccessModal(true)
+    const dataToSend = { ...expectationsData }
+    setExpectationsData({ expectations: [], experience: '', questions: '', contact: '', honeypot: '' })
+    
     try {
       await fetch('https://functions.poehali.dev/2eeee9fa-08f6-4675-8994-a60805039821', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           type: 'expectations',
-          ...expectationsData
+          expectations: dataToSend.expectations,
+          experience: dataToSend.experience,
+          questions: dataToSend.questions,
+          contact: dataToSend.contact
         })
       })
     } catch (error) {
@@ -793,6 +821,16 @@ const Index = () => {
                 />
               </div>
 
+              <input
+                type="text"
+                name="website"
+                value={expectationsData.honeypot}
+                onChange={(e) => setExpectationsData({...expectationsData, honeypot: e.target.value})}
+                className="absolute opacity-0 pointer-events-none"
+                tabIndex={-1}
+                autoComplete="off"
+              />
+
               <div className="text-center pt-4">
                 <Button
                   type="submit"
@@ -1236,6 +1274,15 @@ const Index = () => {
                       placeholder="Расскажите о своих пожеланиях и интересе к туру..."
                     />
                   </div>
+                  <input
+                    type="text"
+                    name="website"
+                    value={formData.honeypot}
+                    onChange={(e) => setFormData({...formData, honeypot: e.target.value})}
+                    className="absolute opacity-0 pointer-events-none"
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
                   <Button
                     type="submit"
                     size="lg"
