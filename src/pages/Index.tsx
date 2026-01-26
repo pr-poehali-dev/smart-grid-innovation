@@ -272,12 +272,13 @@ const Index = () => {
                   </div>
                   <div className="p-8">
                     <div className="text-4xl font-bold text-white/40 mb-4">День 3</div>
-                    <h3 className="text-2xl font-semibold mb-4">Острова залива Фетхие</h3>
+                    <h3 className="text-2xl font-semibold mb-4">Острова залива Фетхие — пляж Капуташ</h3>
                     <p className="text-white/80 leading-relaxed mb-4">
-                      Морская прогулка по живописным бухтам и островам залива. Купание, снорклинг, солнечные ванны и полная перезагрузка. Обед и ужин на яхте, уютные посиделки с видом на закат над водой.
+                      Морская прогулка по живописным бухтам и островам залива. Остановка на легендарном пляже Капуташ — бирюзовая жемчужина между скалами с невероятными видами. Купание, снорклинг, солнечные ванны и полная перезагрузка. Обед и ужин на яхте, уютные посиделки с видом на закат над водой.
                     </p>
                     <div className="flex flex-wrap gap-2">
                       <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Острова</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Капуташ</span>
                       <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Снорклинг</span>
                       <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Закат</span>
                     </div>
