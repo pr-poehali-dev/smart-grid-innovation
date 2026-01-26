@@ -314,14 +314,13 @@ const Index = () => {
                 <div className="flex items-start gap-6">
                   <div className="text-4xl font-bold text-white/40 min-w-[80px]">День 6</div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-semibold mb-4">Прозрачные бухты — Mix-media и мозаика</h3>
+                    <h3 className="text-2xl font-semibold mb-4">Прозрачные бухты — Mix-media</h3>
                     <p className="text-white/80 leading-relaxed mb-4">
-                      Уединённый яхтинг вдоль скалистого побережья, остановки для купания и релакса в прозрачных бухтах. Творческие мастер-классы на берегу: "Mix-media: Карта в искусстве" и создание мозаики из смальты и природных материалов, найденных на пляже — ракушки, камни, стекло. Фотосессия и совместное творчество. Вечер на палубе под звёздами
+                      Уединённый яхтинг вдоль скалистого побережья, остановки для купания и релакса в прозрачных бухтах. Творческий мастер-класс "Mix-media: Карта в искусстве" на берегу — создаём уникальные арт-объекты. Фотосессия и совместное творчество. Вечер на палубе под звёздами
                     </p>
                     <div className="flex flex-wrap gap-2">
                       <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Уединённые бухты</span>
                       <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Mix-media</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Мозаика из смальты</span>
                       <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Звёздная ночь</span>
                     </div>
                   </div>
@@ -333,13 +332,14 @@ const Index = () => {
                 <div className="flex items-start gap-6">
                   <div className="text-4xl font-bold text-white/40 min-w-[80px]">День 7</div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-semibold mb-4">Возвращение в Фетхие — отель и прощальный ужин</h3>
+                    <h3 className="text-2xl font-semibold mb-4">Секретные бухты — мозаика из смальты</h3>
                     <p className="text-white/80 leading-relaxed mb-4">
-                      Ленивое утро, последний совместный завтрак на яхте. Неспешное возвращение в Фетхие. Заселение в отель с бассейном — комфорт, возможность расслабиться и привести себя в порядок. Прогулка по городу, шопинг, прощальный ужин в ресторане с видом на море.
+                      Утренний яхтинг в уединённые бухты. Мастер-класс по созданию мозаики из смальты и природных материалов, найденных на пляже — ракушки, камни, морское стекло. Создаём уникальные арт-объекты на память. Купание, снорклинг. Неспешное возвращение в Фетхие. Заселение в отель с бассейном. Прощальный ужин в ресторане с видом на море
                     </p>
                     <div className="flex flex-wrap gap-2">
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Мозаика из смальты</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Природные материалы</span>
                       <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Отель с бассейном</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Прогулка по городу</span>
                       <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Прощальный ужин</span>
                     </div>
                   </div>
