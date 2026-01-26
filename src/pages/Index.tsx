@@ -1,4 +1,4 @@
-import { Compass, Lock, Sparkles, Mountain, Wallet, Leaf, Plus, Minus, Mail } from "lucide-react"
+import { Compass, Lock, Sparkles, Mountain, Wallet, Leaf, Plus, Minus, Mail, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 
@@ -9,6 +9,7 @@ interface FAQ {
 
 const Index = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index)
@@ -51,14 +52,14 @@ const Index = () => {
         </div>
 
         {/* Navigation */}
-        <nav className="relative z-10 flex items-center justify-between p-6">
+        <nav className="relative z-10 flex items-center justify-between p-4 md:p-6">
           {/* Logo */}
-          <div className="flex items-center gap-2 px-4 py-2 bg-black/40 ring-1 ring-white/20 backdrop-blur rounded-full">
-            <Compass className="w-5 h-5" />
-            <span className="font-medium text-balance">Инга Савина</span>
+          <div className="flex items-center gap-2 px-3 md:px-4 py-2 bg-black/40 ring-1 ring-white/20 backdrop-blur rounded-full">
+            <Compass className="w-4 h-4 md:w-5 md:h-5" />
+            <span className="font-medium text-sm md:text-base text-balance">Инга Савина</span>
           </div>
 
-          {/* Navigation Links */}
+          {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center gap-1">
             <a href="#route" className="px-4 py-2 bg-black/40 ring-1 ring-white/20 backdrop-blur rounded-full hover:bg-black/50 transition-colors">Туры</a>
             <a href="#about" className="px-4 py-2 bg-black/40 ring-1 ring-white/20 backdrop-blur rounded-full hover:bg-black/50 transition-colors">О проекте</a>
@@ -67,8 +68,8 @@ const Index = () => {
             <a href="#contact" className="px-4 py-2 bg-black/40 ring-1 ring-white/20 backdrop-blur rounded-full hover:bg-black/50 transition-colors">Контакты</a>
           </div>
 
-          {/* Action Buttons */}
-          <div className="flex items-center gap-3">
+          {/* Desktop Action Buttons */}
+          <div className="hidden md:flex items-center gap-3">
             <a
               href="#"
               className="px-4 py-2 bg-black/40 ring-1 ring-white/20 backdrop-blur rounded-full hover:bg-black/50 transition-colors"
@@ -77,32 +78,57 @@ const Index = () => {
             </a>
             <Button className="bg-white text-black hover:bg-white/90 rounded-full px-6">Забронировать</Button>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-2 bg-black/40 ring-1 ring-white/20 backdrop-blur rounded-full"
+          >
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
         </nav>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden relative z-20 bg-black/95 backdrop-blur-xl">
+            <div className="flex flex-col p-6 space-y-4">
+              <a href="#route" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 bg-white/10 rounded-xl hover:bg-white/20 transition-colors">Туры</a>
+              <a href="#about" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 bg-white/10 rounded-xl hover:bg-white/20 transition-colors">О проекте</a>
+              <a href="#gallery" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 bg-white/10 rounded-xl hover:bg-white/20 transition-colors">Галерея</a>
+              <a href="#faq" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 bg-white/10 rounded-xl hover:bg-white/20 transition-colors">Вопросы</a>
+              <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 bg-white/10 rounded-xl hover:bg-white/20 transition-colors">Контакты</a>
+              <div className="pt-4 border-t border-white/10 space-y-3">
+                <a href="#" className="block px-4 py-3 bg-white/10 rounded-xl hover:bg-white/20 transition-colors text-center">Войти</a>
+                <Button onClick={() => setMobileMenuOpen(false)} className="w-full bg-white text-black hover:bg-white/90 rounded-xl py-3">Забронировать тур</Button>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Hero Content */}
         <div className="relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-120px)] px-6 text-center">
           {/* Badge */}
-          <div className="mb-6 px-4 py-2 bg-black/40 ring-1 ring-white/20 backdrop-blur rounded-full">
-            <span className="text-sm font-medium">Арт-туры: яхтинг + Ликийская тропа + творчество</span>
+          <div className="mb-6 px-3 md:px-4 py-2 bg-black/40 ring-1 ring-white/20 backdrop-blur rounded-full">
+            <span className="text-xs md:text-sm font-medium">Арт-туры: яхтинг + Ликийская тропа + творчество</span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-6xl md:text-8xl font-light tracking-tight mb-6 text-balance">Море, горы и искусство</h1>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-light tracking-tight mb-6 text-balance">Море, горы и искусство</h1>
 
           {/* Subheading */}
-          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mb-12 leading-relaxed text-pretty">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 max-w-4xl mb-12 leading-relaxed text-pretty px-4">
             Путешествие с художником Ингой Савиной: 8 дней на яхте по бирюзовым бухтам Турции, треккинг по Ликийской тропе и арт-мастер-классы под открытым небом. Для тех, кто хочет вдохновения, новых впечатлений и творческой перезагрузки.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-16">
-            <Button size="lg" className="bg-white text-black hover:bg-white/90 rounded-full px-8 py-4 text-lg">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-12 md:mb-16 w-full max-w-md px-4">
+            <Button size="lg" className="bg-white text-black hover:bg-white/90 rounded-full px-6 md:px-8 py-3 md:py-4 text-base md:text-lg w-full sm:w-auto">
               Забронировать тур
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="bg-black/40 ring-1 ring-white/20 backdrop-blur border-0 text-white hover:bg-black/50 rounded-full px-8 py-4 text-lg"
+              className="bg-black/40 ring-1 ring-white/20 backdrop-blur border-0 text-white hover:bg-black/50 rounded-full px-6 md:px-8 py-3 md:py-4 text-base md:text-lg w-full sm:w-auto"
               asChild
             >
               <a href="#route">Смотреть маршрут</a>
@@ -110,21 +136,21 @@ const Index = () => {
           </div>
 
           {/* Footer Note */}
-          <div className="flex items-center gap-2 px-4 py-2 bg-black/40 ring-1 ring-white/20 backdrop-blur rounded-full">
-            <Sparkles className="w-4 h-4" />
-            <span className="text-sm font-medium">Идеальный баланс приключений, расслабления и арт-вдохновения</span>
+          <div className="flex items-center gap-2 px-3 md:px-4 py-2 bg-black/40 ring-1 ring-white/20 backdrop-blur rounded-full mx-4">
+            <Sparkles className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
+            <span className="text-xs md:text-sm font-medium text-center">Идеальный баланс приключений, расслабления и арт-вдохновения</span>
           </div>
         </div>
       </div>
 
       {/* About Section */}
-      <section id="about" className="relative z-10 py-24 px-6 scroll-mt-24">
+      <section id="about" className="relative z-10 py-12 md:py-24 px-4 md:px-6 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
             {/* Left - Text */}
-            <div className="space-y-8">
-              <h2 className="text-5xl md:text-6xl font-bold tracking-tight text-balance">Кто я и почему со мной?</h2>
-              <div className="space-y-6 text-lg text-white/80 leading-relaxed">
+            <div className="space-y-6 md:space-y-8">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance">Кто я и почему со мной?</h2>
+              <div className="space-y-4 md:space-y-6 text-base md:text-lg text-white/80 leading-relaxed">
                 <p className="text-xl text-white font-medium">
                   Меня зовут Инга Савина — я художник, куратор выставок, автор творческих мастер-классов и арт-туров
                 </p>
@@ -156,7 +182,7 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 md:gap-8">
             {/* Expert-Led Tours */}
             <div className="rounded-2xl bg-black/20 ring-1 ring-white/15 backdrop-blur p-8 text-center">
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-black/30 ring-1 ring-white/20 mb-6">
@@ -197,22 +223,22 @@ const Index = () => {
       </section>
 
       {/* Journey Section */}
-      <section id="route" className="relative z-10 py-24 px-6 scroll-mt-24">
+      <section id="route" className="relative z-10 py-12 md:py-24 px-4 md:px-6 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
-          <div className="rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-12">
+          <div className="rounded-2xl md:rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6 md:p-12">
             {/* Section Header */}
-            <div className="text-center mb-16">
-              <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance">Маршрут вашего путешествия</h2>
-              <p className="text-xl text-white/80 max-w-3xl mx-auto text-pretty">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-balance">Маршрут вашего путешествия</h2>
+              <p className="text-base md:text-xl text-white/80 max-w-3xl mx-auto text-pretty">
                 8 дней незабываемых впечатлений: яхтинг, треккинг, творчество и тёплая компания до 10 человек.
               </p>
             </div>
 
             {/* Detailed Journey Timeline */}
-            <div className="space-y-6 mb-12">
+            <div className="space-y-4 md:space-y-6 mb-8 md:mb-12">
               {/* Day 1 */}
-              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur overflow-hidden">
-                <div className="grid md:grid-cols-[200px_1fr] gap-6">
+              <div className="rounded-xl md:rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur overflow-hidden">
+                <div className="grid md:grid-cols-[200px_1fr] gap-0 md:gap-6">
                   <div className="aspect-square md:aspect-auto">
                     <img
                       src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/e1464d14-13dd-4c2f-ba3e-2d87adeb1a27.jpg"
@@ -220,16 +246,16 @@ const Index = () => {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="p-8">
-                    <div className="text-4xl font-bold text-white/40 mb-4">День 1</div>
-                    <h3 className="text-2xl font-semibold mb-4">Встреча — Фетхие</h3>
+                  <div className="p-4 md:p-8">
+                    <div className="text-2xl md:text-4xl font-bold text-white/40 mb-3 md:mb-4">День 1</div>
+                    <h3 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4">Встреча — Фетхие</h3>
                     <p className="text-white/80 leading-relaxed mb-4">
                       Встреча в аэропорту Даламан, групповой трансфер в Фетхие. Расслабление в турецком хаммаме. Заселение на яхту, прогулка по старому городу. Ужин-знакомство с группой — делимся ожиданиями от путешествия.
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Даламан</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Хаммам</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Заселение на яхту</span>
+                      <span className="px-2 md:px-3 py-1 bg-white/10 rounded-full text-xs md:text-sm">Даламан</span>
+                      <span className="px-2 md:px-3 py-1 bg-white/10 rounded-full text-xs md:text-sm">Хаммам</span>
+                      <span className="px-2 md:px-3 py-1 bg-white/10 rounded-full text-xs md:text-sm">Заселение на яхту</span>
                     </div>
                   </div>
                 </div>
@@ -428,16 +454,16 @@ const Index = () => {
       </section>
 
       {/* Yacht Gallery Section */}
-      <section className="relative z-10 py-24 px-6">
+      <section className="relative z-10 py-12 md:py-24 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance">Ваш дом на воде — яхта Bavaria</h2>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto text-pretty">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-balance">Ваш дом на воде — яхта Bavaria</h2>
+            <p className="text-base md:text-xl text-white/80 max-w-3xl mx-auto text-pretty">
               Комфортабельное размещение в каютах по 2 человека с удобными спальными местами
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             {/* Yacht exterior */}
             <div className="rounded-2xl overflow-hidden ring-1 ring-white/10">
               <img
@@ -485,11 +511,11 @@ const Index = () => {
           </div>
 
           {/* Yacht Layout Description */}
-          <div className="mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
-            <h3 className="text-2xl font-semibold mb-6">Планировка яхты Bavaria</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-white/80">
+          <div className="mt-8 md:mt-12 rounded-xl md:rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6 md:p-8">
+            <h3 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6">Планировка яхты Bavaria</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 text-white/80">
               <div>
-                <h4 className="font-semibold text-lg text-white mb-3">Каюты для гостей</h4>
+                <h4 className="font-semibold text-base md:text-lg text-white mb-2 md:mb-3">Каюты для гостей</h4>
                 <p className="leading-relaxed mb-4">
                   Яхта оборудована комфортабельными двухместными каютами с удобными спальными местами, индивидуальным освещением и вентиляцией. Каждая каюта имеет иллюминаторы с видом на море.
                 </p>
@@ -506,20 +532,20 @@ const Index = () => {
       </section>
 
       {/* What's Included Section */}
-      <section className="relative z-10 py-24 px-6">
+      <section className="relative z-10 py-12 md:py-24 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-12">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance">Что включено в стоимость</h2>
-              <p className="text-xl text-white/80 max-w-3xl mx-auto text-pretty">
+          <div className="rounded-2xl md:rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6 md:p-12">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-balance">Что включено в стоимость</h2>
+              <p className="text-base md:text-xl text-white/80 max-w-3xl mx-auto text-pretty">
                 Всё для вашего комфортного и незабываемого путешествия уже учтено.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               {/* Included Items */}
-              <div className="space-y-6">
-                <h3 className="text-2xl font-semibold mb-6 flex items-center gap-3">
+              <div className="space-y-4 md:space-y-6">
+                <h3 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 flex items-center gap-3">
                   <span className="text-3xl">✅</span>
                   Включено
                 </h3>
@@ -566,8 +592,8 @@ const Index = () => {
               </div>
 
               {/* Not Included Items */}
-              <div className="space-y-6">
-                <h3 className="text-2xl font-semibold mb-6 flex items-center gap-3">
+              <div className="space-y-4 md:space-y-6">
+                <h3 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 flex items-center gap-3">
                   <span className="text-3xl">ℹ️</span>
                   Оплачивается дополнительно
                 </h3>
@@ -623,17 +649,17 @@ const Index = () => {
       </section>
 
       {/* Expectations Survey Section */}
-      <section className="relative z-10 py-24 px-6">
+      <section className="relative z-10 py-12 md:py-24 px-4 md:px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="rounded-3xl bg-gradient-to-br from-white/10 to-white/5 ring-1 ring-white/10 backdrop-blur p-12">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-balance">Расскажите о своих ожиданиях</h2>
-              <p className="text-xl text-white/80 max-w-2xl mx-auto text-pretty">
+          <div className="rounded-2xl md:rounded-3xl bg-gradient-to-br from-white/10 to-white/5 ring-1 ring-white/10 backdrop-blur p-6 md:p-12">
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 md:mb-6 text-balance">Расскажите о своих ожиданиях</h2>
+              <p className="text-base md:text-xl text-white/80 max-w-2xl mx-auto text-pretty">
                 Чтобы сделать ваше путешествие идеальным, мы хотим узнать, что для вас важно.
               </p>
             </div>
 
-            <form className="space-y-8">
+            <form className="space-y-6 md:space-y-8">
               <div>
                 <label className="block text-lg font-semibold mb-4">Что вы ждёте от этого путешествия?</label>
                 <div className="space-y-3">
@@ -687,11 +713,11 @@ const Index = () => {
       </section>
 
       {/* Reviews Section */}
-      <section className="relative z-10 py-24 px-6">
+      <section className="relative z-10 py-12 md:py-24 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance">Отзывы участников</h2>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto text-pretty">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-balance">Отзывы участников</h2>
+            <p className="text-base md:text-xl text-white/80 max-w-3xl mx-auto text-pretty">
               Что говорят те, кто уже путешествовал с нами по Ликийскому побережью.
             </p>
           </div>
@@ -737,12 +763,12 @@ const Index = () => {
       </section>
 
       {/* Packing Tips Section */}
-      <section className="relative z-10 py-24 px-6">
+      <section className="relative z-10 py-12 md:py-24 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-12">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance">Что взять с собой</h2>
-              <p className="text-xl text-white/80 max-w-3xl mx-auto text-pretty">
+          <div className="rounded-2xl md:rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6 md:p-12">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-balance">Что взять с собой</h2>
+              <p className="text-base md:text-xl text-white/80 max-w-3xl mx-auto text-pretty">
                 Для вашего комфорта и безопасности рекомендуем подготовить следующие вещи.
               </p>
             </div>
@@ -859,16 +885,16 @@ const Index = () => {
       </section>
 
       {/* Gallery Section */}
-      <section id="gallery" className="relative z-10 py-24 px-6 scroll-mt-24">
+      <section id="gallery" className="relative z-10 py-12 md:py-24 px-4 md:px-6 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance">Галерея моментов</h2>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto text-pretty">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-balance">Галерея моментов</h2>
+            <p className="text-base md:text-xl text-white/80 max-w-3xl mx-auto text-pretty">
               Взгляд на путешествие глазами художника — море, древние города и творческий процесс.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
               <img 
                 src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/737ad2e8-0ac4-42b7-badf-4de8c8447a39.jpg" 
@@ -916,16 +942,16 @@ const Index = () => {
       </section>
 
       {/* Dates Section */}
-      <section className="relative z-10 py-24 px-6">
+      <section className="relative z-10 py-12 md:py-24 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance">Даты туров 2026</h2>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto text-pretty">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-balance">Даты туров 2026</h2>
+            <p className="text-base md:text-xl text-white/80 max-w-3xl mx-auto text-pretty">
               Выберите удобную дату для вашего арт-путешествия по Ликийскому побережью
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-5xl mx-auto">
             {/* Tour 1 */}
             <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8 hover:bg-white/10 transition-colors">
               <div className="text-center mb-6">
@@ -1008,16 +1034,16 @@ const Index = () => {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="relative z-10 py-24 px-6 scroll-mt-24">
+      <section id="faq" className="relative z-10 py-12 md:py-24 px-4 md:px-6 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
-          <div className="rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-12">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="rounded-2xl md:rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6 md:p-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-start">
               {/* Left Column - Title and Description */}
               <div>
-                <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-balance">
                   Частые вопросы
                 </h2>
-                <p className="text-xl text-white/80 leading-relaxed text-pretty">
+                <p className="text-base md:text-xl text-white/80 leading-relaxed text-pretty">
                   Все, что нужно знать о яхт-туре: от формата до бронирования места в этом уникальном путешествии.
                 </p>
               </div>
@@ -1054,21 +1080,21 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="relative z-10 py-24 px-6 scroll-mt-24">
+      <section id="contact" className="relative z-10 py-12 md:py-24 px-4 md:px-6 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
-          <div className="rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-12">
-            <div className="text-center mb-12">
-              <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance">Свяжитесь с нами</h2>
-              <p className="text-xl text-white/80 leading-relaxed text-pretty">
+          <div className="rounded-2xl md:rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6 md:p-12">
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-balance">Свяжитесь с нами</h2>
+              <p className="text-base md:text-xl text-white/80 leading-relaxed text-pretty">
                 По вопросам яхт-туров, дат и бронирования — свяжитесь с нами. Мы отвечаем в течение 24 часов.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-start">
               {/* Left Column - Contact Form */}
-              <div className="rounded-2xl bg-white/95 text-black p-8 shadow-2xl">
-                <h3 className="text-2xl font-bold mb-6">Отправить запрос</h3>
-                <form className="space-y-6">
+              <div className="rounded-xl md:rounded-2xl bg-white/95 text-black p-6 md:p-8 shadow-2xl">
+                <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">Отправить запрос</h3>
+                <form className="space-y-4 md:space-y-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium mb-2">
                       Имя
@@ -1114,7 +1140,7 @@ const Index = () => {
               </div>
 
               {/* Right Column - Contact Info */}
-              <div className="space-y-8">
+              <div className="space-y-6 md:space-y-8">
                 <div className="flex items-start gap-4">
                   <div className="rounded-xl bg-white/10 p-3">
                     <Mail className="w-6 h-6" />
