@@ -182,8 +182,8 @@ const Index = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-12 md:mb-16 w-full max-w-md px-4">
-            <Button size="lg" className="bg-white text-black hover:bg-white/90 rounded-full px-6 md:px-8 py-3 md:py-4 text-base md:text-lg w-full sm:w-auto">
-              Забронировать тур
+            <Button size="lg" className="bg-white text-black hover:bg-white/90 rounded-full px-6 md:px-8 py-3 md:py-4 text-base md:text-lg w-full sm:w-auto" asChild>
+              <a href="#contact">Забронировать тур</a>
             </Button>
             <Button
               size="lg"
