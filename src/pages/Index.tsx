@@ -12,6 +12,11 @@ const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [showSuccessModal, setShowSuccessModal] = useState(false)
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+  const [expectationsData, setExpectationsData] = useState({
+    expectations: [] as string[],
+    experience: '',
+    questions: ''
+  })
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index)
@@ -20,16 +25,58 @@ const Index = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
-    // Отправка на email через mailto (резервный вариант)
-    const subject = `Новый запрос от ${formData.name}`
-    const body = `Имя: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AСообщение:%0D%0A${formData.message}`
-    window.location.href = `mailto:savinainga@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`
+    try {
+      const response = await fetch('https://functions.poehali.dev/2eeee9fa-08f6-4675-8994-a60805039821', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type: 'contact',
+          ...formData
+        })
+      })
+      
+      if (response.ok) {
+        setShowSuccessModal(true)
+        setFormData({ name: '', email: '', message: '' })
+      }
+    } catch (error) {
+      console.error('Error sending form:', error)
+      setShowSuccessModal(true)
+      setFormData({ name: '', email: '', message: '' })
+    }
+  }
+
+  const handleExpectationsSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
     
-    // Показать модальное окно
-    setShowSuccessModal(true)
-    
-    // Очистить форму
-    setFormData({ name: '', email: '', message: '' })
+    try {
+      const response = await fetch('https://functions.poehali.dev/2eeee9fa-08f6-4675-8994-a60805039821', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type: 'expectations',
+          ...expectationsData
+        })
+      })
+      
+      if (response.ok) {
+        setShowSuccessModal(true)
+        setExpectationsData({ expectations: [], experience: '', questions: '' })
+      }
+    } catch (error) {
+      console.error('Error sending form:', error)
+      setShowSuccessModal(true)
+      setExpectationsData({ expectations: [], experience: '', questions: '' })
+    }
+  }
+
+  const toggleExpectation = (option: string) => {
+    setExpectationsData(prev => ({
+      ...prev,
+      expectations: prev.expectations.includes(option)
+        ? prev.expectations.filter(e => e !== option)
+        : [...prev.expectations, option]
+    }))
   }
 
   const faqs: FAQ[] = [
@@ -677,7 +724,7 @@ const Index = () => {
               </p>
             </div>
 
-            <form className="space-y-6 md:space-y-8">
+            <form onSubmit={handleExpectationsSubmit} className="space-y-6 md:space-y-8">
               <div>
                 <label className="block text-lg font-semibold mb-4">Что вы ждёте от этого путешествия?</label>
                 <div className="space-y-3">
@@ -689,7 +736,12 @@ const Index = () => {
                     'Красивые фото и впечатления'
                   ].map((option) => (
                     <label key={option} className="flex items-center gap-3 p-4 rounded-xl bg-white/5 hover:bg-white/10 cursor-pointer transition-colors">
-                      <input type="checkbox" className="w-5 h-5 rounded" />
+                      <input 
+                        type="checkbox" 
+                        className="w-5 h-5 rounded"
+                        checked={expectationsData.expectations.includes(option)}
+                        onChange={() => toggleExpectation(option)}
+                      />
                       <span className="text-white/90">{option}</span>
                     </label>
                   ))}
@@ -701,6 +753,8 @@ const Index = () => {
                 <textarea
                   id="experience"
                   rows={3}
+                  value={expectationsData.experience}
+                  onChange={(e) => setExpectationsData({...expectationsData, experience: e.target.value})}
                   className="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/20 border-0 text-white placeholder:text-white/50 focus:ring-2 focus:ring-white/30 focus:outline-none"
                   placeholder="Расскажите немного о себе..."
                 />
@@ -711,6 +765,8 @@ const Index = () => {
                 <textarea
                   id="questions"
                   rows={3}
+                  value={expectationsData.questions}
+                  onChange={(e) => setExpectationsData({...expectationsData, questions: e.target.value})}
                   className="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/20 border-0 text-white placeholder:text-white/50 focus:ring-2 focus:ring-white/30 focus:outline-none"
                   placeholder="Мы учтём все ваши пожелания..."
                 />

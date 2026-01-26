@@ -1,0 +1,42 @@
+{
+  "tests": [
+    {
+      "name": "Test contact form submission",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "type": "contact",
+        "name": "Иван Петров",
+        "email": "ivan@example.com",
+        "message": "Хочу забронировать тур на май"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Test expectations form submission",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "type": "expectations",
+        "expectations": ["Творческое вдохновение и мастер-классы", "Релакс и перезагрузка"],
+        "experience": "Никогда не был на яхте",
+        "questions": "Какая погода в мае?"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Test OPTIONS request",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    }
+  ]
+}
