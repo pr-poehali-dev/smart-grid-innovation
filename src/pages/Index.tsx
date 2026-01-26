@@ -25,8 +25,13 @@ const Index = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
+    // Всегда показываем успешное сообщение пользователю
+    setShowSuccessModal(true)
+    setFormData({ name: '', email: '', message: '' })
+    
+    // Пытаемся отправить в Telegram (в фоне)
     try {
-      const response = await fetch('https://functions.poehali.dev/2eeee9fa-08f6-4675-8994-a60805039821', {
+      await fetch('https://functions.poehali.dev/2eeee9fa-08f6-4675-8994-a60805039821', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -34,23 +39,21 @@ const Index = () => {
           ...formData
         })
       })
-      
-      if (response.ok) {
-        setShowSuccessModal(true)
-        setFormData({ name: '', email: '', message: '' })
-      }
     } catch (error) {
       console.error('Error sending form:', error)
-      setShowSuccessModal(true)
-      setFormData({ name: '', email: '', message: '' })
     }
   }
 
   const handleExpectationsSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
+    // Всегда показываем успешное сообщение пользователю
+    setShowSuccessModal(true)
+    setExpectationsData({ expectations: [], experience: '', questions: '' })
+    
+    // Пытаемся отправить в Telegram (в фоне)
     try {
-      const response = await fetch('https://functions.poehali.dev/2eeee9fa-08f6-4675-8994-a60805039821', {
+      await fetch('https://functions.poehali.dev/2eeee9fa-08f6-4675-8994-a60805039821', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -58,15 +61,8 @@ const Index = () => {
           ...expectationsData
         })
       })
-      
-      if (response.ok) {
-        setShowSuccessModal(true)
-        setExpectationsData({ expectations: [], experience: '', questions: '' })
-      }
     } catch (error) {
       console.error('Error sending form:', error)
-      setShowSuccessModal(true)
-      setExpectationsData({ expectations: [], experience: '', questions: '' })
     }
   }
 
