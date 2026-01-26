@@ -426,6 +426,65 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Yacht Gallery Section */}
+      <section className="relative z-10 py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance">Ваш дом на воде — яхта Bavaria</h2>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto text-pretty">
+              Комфортабельное размещение в каютах по 2 человека с удобными спальными местами
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Yacht exterior */}
+            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10">
+              <img
+                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/0cf31084-431e-4915-98bb-f6c58a8ae386.jpg"
+                alt="Яхта Bavaria"
+                className="w-full h-full object-cover aspect-[4/3]"
+              />
+            </div>
+
+            {/* Yacht sailing */}
+            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10">
+              <img
+                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/64e13c47-70f5-4ae8-8b14-6f6db11094e2.jpg"
+                alt="Яхта под парусом"
+                className="w-full h-full object-cover aspect-[4/3]"
+              />
+            </div>
+
+            {/* Cabin interior */}
+            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10">
+              <img
+                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/c64486f2-634e-49f9-b6db-0ff14dd0c288.jpg"
+                alt="Каюта на яхте"
+                className="w-full h-full object-cover aspect-[4/3]"
+              />
+            </div>
+
+            {/* Salon interior */}
+            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10">
+              <img
+                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/ebe2cfff-9936-4fca-b08b-cabb53ca3442.jpg"
+                alt="Салон яхты"
+                className="w-full h-full object-cover aspect-[4/3]"
+              />
+            </div>
+
+            {/* Paradise Beach view */}
+            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 md:col-span-2">
+              <img
+                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/f52f12cc-4879-47db-b855-14803d30bf8c.jpg"
+                alt="Вид на Paradise Beach с Ликийской тропы"
+                className="w-full h-full object-cover aspect-[21/9]"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Expectations Survey Section */}
       <section className="relative z-10 py-24 px-6">
         <div className="max-w-4xl mx-auto">
@@ -644,63 +703,6 @@ const Index = () => {
                     <li>• Личная косметика (шампунь, мыло, зубная паста)</li>
                     <li>• Любимая книга, наушники, плейлист</li>
                   </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Yacht Gallery */}
-            <div className="mt-16 space-y-8">
-              <div className="text-center">
-                <h3 className="text-4xl font-bold mb-4">Ваш дом на воде — яхта Bavaria</h3>
-                <p className="text-xl text-white/80 max-w-3xl mx-auto">
-                  Комфортабельное размещение в каютах по 2 человека с удобными спальными местами
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Yacht exterior */}
-                <div className="rounded-2xl overflow-hidden ring-1 ring-white/10">
-                  <img
-                    src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/0cf31084-431e-4915-98bb-f6c58a8ae386.jpg"
-                    alt="Яхта Bavaria"
-                    className="w-full h-full object-cover aspect-[4/3]"
-                  />
-                </div>
-
-                {/* Yacht sailing */}
-                <div className="rounded-2xl overflow-hidden ring-1 ring-white/10">
-                  <img
-                    src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/64e13c47-70f5-4ae8-8b14-6f6db11094e2.jpg"
-                    alt="Яхта под парусом"
-                    className="w-full h-full object-cover aspect-[4/3]"
-                  />
-                </div>
-
-                {/* Cabin interior */}
-                <div className="rounded-2xl overflow-hidden ring-1 ring-white/10">
-                  <img
-                    src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/c64486f2-634e-49f9-b6db-0ff14dd0c288.jpg"
-                    alt="Каюта на яхте"
-                    className="w-full h-full object-cover aspect-[4/3]"
-                  />
-                </div>
-
-                {/* Salon interior */}
-                <div className="rounded-2xl overflow-hidden ring-1 ring-white/10">
-                  <img
-                    src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/ebe2cfff-9936-4fca-b08b-cabb53ca3442.jpg"
-                    alt="Салон яхты"
-                    className="w-full h-full object-cover aspect-[4/3]"
-                  />
-                </div>
-
-                {/* Paradise Beach view */}
-                <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 md:col-span-2">
-                  <img
-                    src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/f52f12cc-4879-47db-b855-14803d30bf8c.jpg"
-                    alt="Вид на Paradise Beach с Ликийской тропы"
-                    className="w-full h-full object-cover aspect-[21/9]"
-                  />
                 </div>
               </div>
             </div>
