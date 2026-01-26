@@ -2,9 +2,10 @@ import json
 import os
 import urllib.request
 import urllib.parse
+import psycopg2
 
 def handler(event: dict, context) -> dict:
-    '''Отправка данных форм в Telegram'''
+    '''Отправка данных форм в Telegram и сохранение в БД'''
     
     method = event.get('httpMethod', 'POST')
     
@@ -31,6 +32,10 @@ def handler(event: dict, context) -> dict:
     # Получаем данные из запроса
     body = json.loads(event.get('body', '{}'))
     form_type = body.get('type', 'contact')
+    
+    # Получаем IP и User-Agent из запроса
+    ip_address = event.get('requestContext', {}).get('identity', {}).get('sourceIp')
+    user_agent = event.get('headers', {}).get('user-agent')
     
     # Формируем сообщение в зависимости от типа формы
     if form_type == 'contact':
@@ -79,6 +84,39 @@ def handler(event: dict, context) -> dict:
             'isBase64Encoded': False
         }
     
+    # Сохранение в базу данных
+    db_url = os.environ.get('DATABASE_URL')
+    lead_id = None
+    
+    if db_url:
+        try:
+            conn = psycopg2.connect(db_url)
+            cur = conn.cursor()
+            
+            if form_type == 'contact':
+                cur.execute(
+                    "INSERT INTO leads (form_type, name, email, message, ip_address, user_agent) VALUES (%s, %s, %s, %s, %s, %s) RETURNING id",
+                    (form_type, body.get('name'), body.get('email'), body.get('message'), ip_address, user_agent)
+                )
+            elif form_type == 'booking':
+                cur.execute(
+                    "INSERT INTO leads (form_type, name, email, phone, message, tour_dates, guests_count, ip_address, user_agent) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING id",
+                    (form_type, body.get('name'), body.get('email'), body.get('phone'), body.get('message'), body.get('tour'), body.get('guests'), ip_address, user_agent)
+                )
+            elif form_type == 'expectations':
+                cur.execute(
+                    "INSERT INTO leads (form_type, expectations, experience, questions, contact_info, ip_address, user_agent) VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING id",
+                    (form_type, body.get('expectations', []), body.get('experience'), body.get('questions'), body.get('contact'), ip_address, user_agent)
+                )
+            
+            lead_id = cur.fetchone()[0]
+            conn.commit()
+            cur.close()
+            conn.close()
+            print(f'Lead saved to DB with ID: {lead_id}')
+        except Exception as e:
+            print(f'DB error: {type(e).__name__}: {str(e)}')
+    
     # Отправка в Telegram
     bot_token = os.environ.get('TELEGRAM_BOT_TOKEN')
     chat_id = os.environ.get('TELEGRAM_CHAT_ID')
@@ -118,7 +156,7 @@ def handler(event: dict, context) -> dict:
                 return {
                     'statusCode': 200,
                     'headers': {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},
-                    'body': json.dumps({'success': True}),
+                    'body': json.dumps({'success': True, 'lead_id': lead_id}),
                     'isBase64Encoded': False
                 }
             else:
