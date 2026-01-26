@@ -42,6 +42,19 @@ def handler(event: dict, context) -> dict:
 💬 Сообщение:
 {body.get('message', 'Не указано')}"""
     
+    elif form_type == 'booking':
+        message = f"""🎫 Новая бронь тура!
+
+📅 Даты: {body.get('tour', 'Не выбрано')}
+👥 Участников: {body.get('guests', 'Не указано')}
+
+👤 Имя: {body.get('name', 'Не указано')}
+📧 Email: {body.get('email', 'Не указано')}
+📱 Телефон: {body.get('phone', 'Не указано')}
+
+💬 Комментарий:
+{body.get('message', 'Нет')}"""
+    
     elif form_type == 'expectations':
         expectations = body.get('expectations', [])
         exp_text = '\n'.join([f"✓ {exp}" for exp in expectations]) if expectations else 'Не указано'

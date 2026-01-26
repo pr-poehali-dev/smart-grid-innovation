@@ -1,6 +1,7 @@
 import { Compass, Lock, Sparkles, Mountain, Wallet, Leaf, Plus, Minus, Mail, Menu, X, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 interface FAQ {
   question: string
@@ -136,7 +137,9 @@ const Index = () => {
             >
               Войти
             </a>
-            <Button className="bg-white text-black hover:bg-white/90 rounded-full px-6">Забронировать</Button>
+            <Link to="/booking">
+              <Button className="bg-white text-black hover:bg-white/90 rounded-full px-6">Забронировать</Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -159,7 +162,9 @@ const Index = () => {
               <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 bg-white/10 rounded-xl hover:bg-white/20 transition-colors">Контакты</a>
               <div className="pt-4 border-t border-white/10 space-y-3">
                 <a href="#" className="block px-4 py-3 bg-white/10 rounded-xl hover:bg-white/20 transition-colors text-center">Войти</a>
-                <Button onClick={() => setMobileMenuOpen(false)} className="w-full bg-white text-black hover:bg-white/90 rounded-xl py-3">Забронировать тур</Button>
+                <Link to="/booking" onClick={() => setMobileMenuOpen(false)} className="w-full">
+                  <Button className="w-full bg-white text-black hover:bg-white/90 rounded-xl py-3">Забронировать тур</Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -182,9 +187,11 @@ const Index = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-12 md:mb-16 w-full max-w-md px-4">
-            <Button size="lg" className="bg-white text-black hover:bg-white/90 rounded-full px-6 md:px-8 py-3 md:py-4 text-base md:text-lg w-full sm:w-auto" asChild>
-              <a href="#contact">Забронировать тур</a>
-            </Button>
+            <Link to="/booking">
+              <Button size="lg" className="bg-white text-black hover:bg-white/90 rounded-full px-6 md:px-8 py-3 md:py-4 text-base md:text-lg w-full sm:w-auto">
+                Забронировать тур
+              </Button>
+            </Link>
             <Button
               size="lg"
               variant="outline"
@@ -501,13 +508,14 @@ const Index = () => {
 
             {/* Check Availability Button */}
             <div className="text-center">
-              <Button
-                size="lg"
-                className="bg-white text-black hover:bg-white/90 rounded-full px-12 py-4 text-lg font-semibold"
-                asChild
-              >
-                <a href="#contact">Забронировать тур</a>
-              </Button>
+              <Link to="/booking">
+                <Button
+                  size="lg"
+                  className="bg-white text-black hover:bg-white/90 rounded-full px-12 py-4 text-lg font-semibold"
+                >
+                  Забронировать тур
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -694,13 +702,14 @@ const Index = () => {
                       <p className="text-white/80 text-sm">✓ При большой группе — более просторная яхта</p>
                       <p className="text-white/80 text-sm">✓ Готовим самостоятельно (основные продукты включены)</p>
                     </div>
-                    <Button 
-                      size="lg"
-                      className="bg-white text-black hover:bg-white/90 rounded-full px-8 w-full"
-                      asChild
-                    >
-                      <a href="#contact">Забронировать тур</a>
-                    </Button>
+                    <Link to="/booking">
+                      <Button 
+                        size="lg"
+                        className="bg-white text-black hover:bg-white/90 rounded-full px-8 w-full"
+                      >
+                        Забронировать тур
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -1031,13 +1040,14 @@ const Index = () => {
                 <h3 className="text-3xl font-bold mb-2">9 — 16 мая</h3>
                 <p className="text-white/60 text-sm">2026 год</p>
               </div>
-              <Button 
-                size="lg"
-                className="bg-white text-black hover:bg-white/90 rounded-full px-8 w-full"
-                asChild
-              >
-                <a href="#contact">Забронировать</a>
-              </Button>
+              <Link to="/booking">
+                <Button 
+                  size="lg"
+                  className="bg-white text-black hover:bg-white/90 rounded-full px-8 w-full"
+                >
+                  Забронировать
+                </Button>
+              </Link>
             </div>
 
             {/* Tour 2 */}
@@ -1049,13 +1059,14 @@ const Index = () => {
                 <h3 className="text-3xl font-bold mb-2">16 — 23 мая</h3>
                 <p className="text-white/60 text-sm">2026 год</p>
               </div>
-              <Button 
-                size="lg"
-                className="bg-white text-black hover:bg-white/90 rounded-full px-8 w-full"
-                asChild
-              >
-                <a href="#contact">Забронировать</a>
-              </Button>
+              <Link to="/booking">
+                <Button 
+                  size="lg"
+                  className="bg-white text-black hover:bg-white/90 rounded-full px-8 w-full"
+                >
+                  Забронировать
+                </Button>
+              </Link>
             </div>
 
             {/* Tour 3 */}
@@ -1067,13 +1078,14 @@ const Index = () => {
                 <h3 className="text-3xl font-bold mb-2">19 — 26 сентября</h3>
                 <p className="text-white/60 text-sm">2026 год</p>
               </div>
-              <Button 
-                size="lg"
-                className="bg-white text-black hover:bg-white/90 rounded-full px-8 w-full"
-                asChild
-              >
-                <a href="#contact">Забронировать</a>
-              </Button>
+              <Link to="/booking">
+                <Button 
+                  size="lg"
+                  className="bg-white text-black hover:bg-white/90 rounded-full px-8 w-full"
+                >
+                  Забронировать
+                </Button>
+              </Link>
             </div>
 
             {/* Tour 4 */}
@@ -1085,13 +1097,14 @@ const Index = () => {
                 <h3 className="text-3xl font-bold mb-2">26 сентября — 3 октября</h3>
                 <p className="text-white/60 text-sm">2026 год</p>
               </div>
-              <Button 
-                size="lg"
-                className="bg-white text-black hover:bg-white/90 rounded-full px-8 w-full"
-                asChild
-              >
-                <a href="#contact">Забронировать</a>
-              </Button>
+              <Link to="/booking">
+                <Button 
+                  size="lg"
+                  className="bg-white text-black hover:bg-white/90 rounded-full px-8 w-full"
+                >
+                  Забронировать
+                </Button>
+              </Link>
             </div>
           </div>
 
