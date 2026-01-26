@@ -240,8 +240,8 @@ const Index = () => {
                 <div className="grid md:grid-cols-[200px_1fr] gap-6">
                   <div className="aspect-square md:aspect-auto">
                     <img
-                      src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/737ad2e8-0ac4-42b7-badf-4de8c8447a39.jpg"
-                      alt="Ликийская тропа"
+                      src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/768d9b19-ccc7-46b0-963f-6e902f52e6de.jpg"
+                      alt="Арка Ликийской тропы - начало пути"
                       className="w-full h-full object-cover"
                     />
                   </div>
