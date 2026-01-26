@@ -474,11 +474,11 @@ const Index = () => {
               />
             </div>
 
-            {/* Paradise Beach view */}
+            {/* Yacht layout plan */}
             <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 md:col-span-2">
               <img
-                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/f52f12cc-4879-47db-b855-14803d30bf8c.jpg"
-                alt="Вид на Paradise Beach с Ликийской тропы"
+                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/e0899192-d93b-4ca6-89b9-20d24392e5cf.jpg"
+                alt="Планировка яхты Bavaria - схема палубы и кают"
                 className="w-full h-full object-cover aspect-[21/9]"
               />
             </div>
