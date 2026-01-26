@@ -50,7 +50,7 @@ const Index = () => {
     },
     {
       question: "Сколько человек в группе?",
-      answer: "Максимум 10 человек — это позволяет создать комфортную и тёплую атмосферу в группе.",
+      answer: "До 6 человек на стандартной яхте Bavaria. При большом количестве участников яхта меняется на более просторную, что позволяет сохранить комфорт для всех.",
     },
   ]
 
@@ -224,7 +224,7 @@ const Index = () => {
                 <Wallet className="w-6 h-6" />
               </div>
               <h3 className="text-xl font-semibold mb-4">Маленькая группа</h3>
-              <p className="text-white/80 leading-relaxed">До 10 человек — комфорт, поддержка и тёплая компания</p>
+              <p className="text-white/80 leading-relaxed">До 6 человек на яхте — комфорт, уют и камерная атмосфера</p>
             </div>
 
             {/* Eco-Friendly Caving */}
@@ -647,7 +647,8 @@ const Index = () => {
                     <p className="text-5xl font-bold mb-2">от 1200€</p>
                     <p className="text-white/60 text-sm mb-6">на человека</p>
                     <div className="space-y-2 mb-6 text-left">
-                      <p className="text-white/80 text-sm">✓ Два варианта размещения на яхте</p>
+                      <p className="text-white/80 text-sm">✓ Группы до 6 человек на яхте Bavaria</p>
+                      <p className="text-white/80 text-sm">✓ При большой группе — более просторная яхта</p>
                       <p className="text-white/80 text-sm">✓ Готовим самостоятельно (основные продукты включены)</p>
                     </div>
                     <Button 
@@ -1044,7 +1045,7 @@ const Index = () => {
 
           <div className="text-center mt-12">
             <p className="text-white/60 text-sm max-w-2xl mx-auto">
-              Количество мест ограничено — максимум 10 человек в группе. Рекомендуем бронировать заранее.
+              Количество мест ограничено — до 6 человек на яхте Bavaria. Рекомендуем бронировать заранее.
             </p>
           </div>
         </div>
