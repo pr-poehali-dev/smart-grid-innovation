@@ -126,19 +126,19 @@ const Index = () => {
               <h2 className="text-5xl md:text-6xl font-bold tracking-tight text-balance">Кто я и почему со мной?</h2>
               <div className="space-y-6 text-lg text-white/80 leading-relaxed">
                 <p className="text-xl text-white font-medium">
-                  Меня зовут Инга Савина — я художник, преподаватель рисования и автор этих арт-туров.
+                  Меня зовут Инга Савина — я художник, куратор творческих мастер-классов и автор этих арт-туров
                 </p>
                 <p>
-                  Уже 5 лет веду мастер-классы по живописи и влюблена в море. Эти туры родились из желания соединить три вещи, которые меня вдохновляют: искусство, путешествия и Ликийское побережье.
+                  Уже 5 лет веду арт-мастер-классы и влюблена в море. Эти туры родились из желания соединить три вещи, которые меня вдохновляют: искусство, путешествия и Ликийское побережье
                 </p>
                 <p>
-                  <strong className="text-white">Что отличает мои туры:</strong> это не просто яхтинг и не просто треккинг — это микс моря, гор и творчества. Мы плывём по бирюзным бухтам Турции, поднимаемся по древней Ликийской тропе с видами на Средиземное море, а вечером рисуем на пленэрах.
+                  <strong className="text-white">Что отличает мои туры:</strong> это не просто яхтинг и не просто треккинг — это микс моря, гор и творчества. Мы плывём по бирюзным бухтам Турции, поднимаемся по древней Ликийской тропе с видами на Средиземное море, а вечером создаём арт-объекты на пленэрах
                 </p>
                 <p>
-                  Я учу простым и медитативным техникам: живопись вином, mix-media с картами, зарисовки с натуры. Даже если вы никогда не рисовали — это ваш шанс попробовать в самой вдохновляющей обстановке.
+                  Я показываю простые и медитативные техники: живопись вином, mix-media с картами, мозаика из смальты и природных материалов с берега. Даже если вы никогда не занимались творчеством — это ваш шанс попробовать в самой вдохновляющей обстановке
                 </p>
                 <p className="text-white font-medium">
-                  Приезжайте за тем, чтобы перезагрузиться, найти вдохновение и привезти домой не только фото, но и свои работы.
+                  Приезжайте за тем, чтобы перезагрузиться, найти вдохновение и привезти домой не только фото, но и свои работы
                 </p>
               </div>
             </div>
@@ -162,7 +162,7 @@ const Index = () => {
                 <Sparkles className="w-6 h-6" />
               </div>
               <h3 className="text-xl font-semibold mb-4">Арт-мастер-классы</h3>
-              <p className="text-white/80 leading-relaxed">Живопись вином и Mix-media на пленэрах под открытым небом.</p>
+              <p className="text-white/80 leading-relaxed">Живопись вином, Mix-media и мозаика из смальты на пленэрах под открытым небом</p>
             </div>
 
             {/* Lycian Way Trekking */}
@@ -171,7 +171,7 @@ const Index = () => {
                 <Mountain className="w-6 h-6" />
               </div>
               <h3 className="text-xl font-semibold mb-4">Море + Тропа</h3>
-              <p className="text-white/80 leading-relaxed">Яхтинг по бирюзным бухтам и треккинг по Ликийской тропе.</p>
+              <p className="text-white/80 leading-relaxed">Яхтинг по бирюзным бухтам и треккинг по Ликийской тропе</p>
             </div>
 
             {/* All-Inclusive Package */}
@@ -180,7 +180,7 @@ const Index = () => {
                 <Wallet className="w-6 h-6" />
               </div>
               <h3 className="text-xl font-semibold mb-4">Маленькая группа</h3>
-              <p className="text-white/80 leading-relaxed">До 10 человек — комфорт, поддержка и тёплая компания.</p>
+              <p className="text-white/80 leading-relaxed">До 10 человек — комфорт, поддержка и тёплая компания</p>
             </div>
 
             {/* Eco-Friendly Caving */}
@@ -189,7 +189,7 @@ const Index = () => {
                 <Leaf className="w-6 h-6" />
               </div>
               <h3 className="text-xl font-semibold mb-4">Без подготовки</h3>
-              <p className="text-white/80 leading-relaxed">Не нужна физподготовка или опыт яхтинга.</p>
+              <p className="text-white/80 leading-relaxed">Не нужна физподготовка или опыт яхтинга</p>
             </div>
           </div>
         </div>
@@ -304,13 +304,14 @@ const Index = () => {
                 <div className="flex items-start gap-6">
                   <div className="text-4xl font-bold text-white/40 min-w-[80px]">День 6</div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-semibold mb-4">Прозрачные бухты — Mix-media Арт-день</h3>
+                    <h3 className="text-2xl font-semibold mb-4">Прозрачные бухты — Mix-media и мозаика</h3>
                     <p className="text-white/80 leading-relaxed mb-4">
-                      Уединённый яхтинг вдоль скалистого побережья, остановки для купания и релакса в прозрачных бухтах. Творческий мастер-класс "Mix-media: Карта в искусстве" на берегу — создаём уникальные арт-объекты. Фотосессия и совместное творчество. Вечер на палубе под звёздами.
+                      Уединённый яхтинг вдоль скалистого побережья, остановки для купания и релакса в прозрачных бухтах. Творческие мастер-классы на берегу: "Mix-media: Карта в искусстве" и создание мозаики из смальты и природных материалов, найденных на пляже — ракушки, камни, стекло. Фотосессия и совместное творчество. Вечер на палубе под звёздами
                     </p>
                     <div className="flex flex-wrap gap-2">
                       <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Уединённые бухты</span>
                       <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Mix-media</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Мозаика из смальты</span>
                       <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Звёздная ночь</span>
                     </div>
                   </div>
@@ -702,7 +703,7 @@ const Index = () => {
 
                 <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
                   <h4 className="font-semibold text-lg mb-3">Творческие мастер-классы</h4>
-                  <p className="text-white/80">2 мастер-класса с Ингой: "Живопись вином" и "Mix-media", все материалы предоставляются</p>
+                  <p className="text-white/80">3 мастер-класса с Ингой: "Живопись вином", "Mix-media" и "Мозаика из смальты", все материалы предоставляются</p>
                 </div>
 
                 <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
