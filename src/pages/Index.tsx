@@ -211,10 +211,17 @@ const Index = () => {
             {/* Detailed Journey Timeline */}
             <div className="space-y-6 mb-12">
               {/* Day 1 */}
-              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
-                <div className="flex items-start gap-6">
-                  <div className="text-4xl font-bold text-white/40 min-w-[80px]">День 1</div>
-                  <div className="flex-1">
+              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur overflow-hidden">
+                <div className="grid md:grid-cols-[200px_1fr] gap-6">
+                  <div className="aspect-square md:aspect-auto">
+                    <img
+                      src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/0cf31084-431e-4915-98bb-f6c58a8ae386.jpg"
+                      alt="Яхта в Фетхие"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-8">
+                    <div className="text-4xl font-bold text-white/40 mb-4">День 1</div>
                     <h3 className="text-2xl font-semibold mb-4">Встреча — Фетхие</h3>
                     <p className="text-white/80 leading-relaxed mb-4">
                       Встреча в аэропорту Даламан, групповой трансфер в Фетхие. Расслабление в турецком хаммаме. Заселение на яхту, прогулка по старому городу. Ужин-знакомство с группой — делимся ожиданиями от путешествия.
@@ -229,10 +236,17 @@ const Index = () => {
               </div>
 
               {/* Day 2 */}
-              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
-                <div className="flex items-start gap-6">
-                  <div className="text-4xl font-bold text-white/40 min-w-[80px]">День 2</div>
-                  <div className="flex-1">
+              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur overflow-hidden">
+                <div className="grid md:grid-cols-[200px_1fr] gap-6">
+                  <div className="aspect-square md:aspect-auto">
+                    <img
+                      src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/737ad2e8-0ac4-42b7-badf-4de8c8447a39.jpg"
+                      alt="Ликийская тропа"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-8">
+                    <div className="text-4xl font-bold text-white/40 mb-4">День 2</div>
                     <h3 className="text-2xl font-semibold mb-4">Олюдениз — арка Ликийской тропы</h3>
                     <p className="text-white/80 leading-relaxed mb-4">
                       Яхтинг вдоль побережья в сторону Олюдениз. Прогулка к знаменитой арке — символическому началу Ликийской тропы. Свободное время на легендарном пляже Олюдениз, купание и релакс. Вечерняя якорная стоянка, обсуждение планов.
@@ -247,10 +261,17 @@ const Index = () => {
               </div>
 
               {/* Day 3 */}
-              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
-                <div className="flex items-start gap-6">
-                  <div className="text-4xl font-bold text-white/40 min-w-[80px]">День 3</div>
-                  <div className="flex-1">
+              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur overflow-hidden">
+                <div className="grid md:grid-cols-[200px_1fr] gap-6">
+                  <div className="aspect-square md:aspect-auto">
+                    <img
+                      src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/64e13c47-70f5-4ae8-8b14-6f6db11094e2.jpg"
+                      alt="Яхтинг по заливу"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-8">
+                    <div className="text-4xl font-bold text-white/40 mb-4">День 3</div>
                     <h3 className="text-2xl font-semibold mb-4">Острова залива Фетхие</h3>
                     <p className="text-white/80 leading-relaxed mb-4">
                       Морская прогулка по живописным бухтам и островам залива. Купание, снорклинг, солнечные ванны и полная перезагрузка. Обед и ужин на яхте, уютные посиделки с видом на закат над водой.
@@ -265,10 +286,17 @@ const Index = () => {
               </div>
 
               {/* Day 4 */}
-              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
-                <div className="flex items-start gap-6">
-                  <div className="text-4xl font-bold text-white/40 min-w-[80px]">День 4</div>
-                  <div className="flex-1">
+              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur overflow-hidden">
+                <div className="grid md:grid-cols-[200px_1fr] gap-6">
+                  <div className="aspect-square md:aspect-auto">
+                    <img
+                      src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/4e545080-d6a0-4c74-bcd3-53ba30551644.jpg"
+                      alt="Мастер-класс на пленэре"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-8">
+                    <div className="text-4xl font-bold text-white/40 mb-4">День 4</div>
                     <h3 className="text-2xl font-semibold mb-4">Долина Бабочек — арт-мастер-класс</h3>
                     <p className="text-white/80 leading-relaxed mb-4">
                       Якорная стоянка в заповедной Долине Бабочек. Прогулка к водопаду, изучение местной природы. Мастер-класс "Живопись вином" — создаём арт-объекты. День для фото, отдыха и неспешных бесед
@@ -283,10 +311,17 @@ const Index = () => {
               </div>
 
               {/* Day 5 */}
-              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
-                <div className="flex items-start gap-6">
-                  <div className="text-4xl font-bold text-white/40 min-w-[80px]">День 5</div>
-                  <div className="flex-1">
+              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur overflow-hidden">
+                <div className="grid md:grid-cols-[200px_1fr] gap-6">
+                  <div className="aspect-square md:aspect-auto">
+                    <img
+                      src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/5ee339f6-b408-4104-9162-673d1ab1be60.jpg"
+                      alt="Paradise Beach"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-8">
+                    <div className="text-4xl font-bold text-white/40 mb-4">День 5</div>
                     <h3 className="text-2xl font-semibold mb-4">Кабак — треккинг — Paradise & Secret Beach</h3>
                     <p className="text-white/80 leading-relaxed mb-4">
                       Утренний переход в Кабак, начало пешего похода по Ликийской тропе. Треккинг с видами на лазурную Турцию: от Кабака до Paradise Beach (~3 км), неспешный маршрут с фотостопами, 3+ часа удовольствия. Купание, пикник на Paradise Beach. Для желающих — проход до Secret Beach (ещё 20–30 минут), уединённый и невероятно красивый пляж. Возвращение по тропе или лодочный трансфер. Ужин и обмен впечатлениями на яхте.
@@ -301,10 +336,17 @@ const Index = () => {
               </div>
 
               {/* Day 6 */}
-              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
-                <div className="flex items-start gap-6">
-                  <div className="text-4xl font-bold text-white/40 min-w-[80px]">День 6</div>
-                  <div className="flex-1">
+              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur overflow-hidden">
+                <div className="grid md:grid-cols-[200px_1fr] gap-6">
+                  <div className="aspect-square md:aspect-auto">
+                    <img
+                      src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/30fee0a7-88df-4986-9724-a54c60ba1fd3.jpg"
+                      alt="Творческий процесс"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-8">
+                    <div className="text-4xl font-bold text-white/40 mb-4">День 6</div>
                     <h3 className="text-2xl font-semibold mb-4">Прозрачные бухты — Mix-media</h3>
                     <p className="text-white/80 leading-relaxed mb-4">
                       Уединённый яхтинг вдоль скалистого побережья, остановки для купания и релакса в прозрачных бухтах. Творческий мастер-класс "Mix-media: Карта в искусстве" на берегу — создаём уникальные арт-объекты. Фотосессия и совместное творчество. Вечер на палубе под звёздами
@@ -319,10 +361,17 @@ const Index = () => {
               </div>
 
               {/* Day 7 */}
-              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
-                <div className="flex items-start gap-6">
-                  <div className="text-4xl font-bold text-white/40 min-w-[80px]">День 7</div>
-                  <div className="flex-1">
+              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur overflow-hidden">
+                <div className="grid md:grid-cols-[200px_1fr] gap-6">
+                  <div className="aspect-square md:aspect-auto">
+                    <img
+                      src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/fe6714be-61fe-4663-81ec-d0a0f2f71b51.jpg"
+                      alt="Материалы для творчества"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-8">
+                    <div className="text-4xl font-bold text-white/40 mb-4">День 7</div>
                     <h3 className="text-2xl font-semibold mb-4">Секретные бухты — мозаика из смальты</h3>
                     <p className="text-white/80 leading-relaxed mb-4">
                       Утренний яхтинг в уединённые бухты. Мастер-класс по созданию мозаики из смальты и природных материалов, найденных на пляже — ракушки, камни, морское стекло. Создаём уникальные арт-объекты на память. Купание, снорклинг. Неспешное возвращение в Фетхие. Заселение в отель с бассейном. Прощальный ужин в ресторане с видом на море
@@ -338,10 +387,17 @@ const Index = () => {
               </div>
 
               {/* Day 8 */}
-              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
-                <div className="flex items-start gap-6">
-                  <div className="text-4xl font-bold text-white/40 min-w-[80px]">День 8</div>
-                  <div className="flex-1">
+              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur overflow-hidden">
+                <div className="grid md:grid-cols-[200px_1fr] gap-6">
+                  <div className="aspect-square md:aspect-auto">
+                    <img
+                      src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/ab73aaf4-3000-42a6-a95d-50e4a57cf257.jpg"
+                      alt="Древние руины"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-8">
+                    <div className="text-4xl font-bold text-white/40 mb-4">День 8</div>
                     <h3 className="text-2xl font-semibold mb-4">Финал путешествия</h3>
                     <p className="text-white/80 leading-relaxed mb-4">
                       Завтрак в отеле, свободное утро для отдыха или последних покупок. Трансфер в аэропорт Даламан. Вылет домой с чемоданом впечатлений, новыми друзьями и творческими работами. До встречи в следующем путешествии!
