@@ -1,4 +1,4 @@
-import { Compass, Lock, Sparkles, Mountain, Wallet, Leaf, Plus, Minus, Mail, Menu, X } from "lucide-react"
+import { Compass, Lock, Sparkles, Mountain, Wallet, Leaf, Plus, Minus, Mail, Menu, X, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 
@@ -10,9 +10,26 @@ interface FAQ {
 const Index = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [showSuccessModal, setShowSuccessModal] = useState(false)
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index)
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    
+    // Отправка на email через mailto (резервный вариант)
+    const subject = `Новый запрос от ${formData.name}`
+    const body = `Имя: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AСообщение:%0D%0A${formData.message}`
+    window.location.href = `mailto:savinainga@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`
+    
+    // Показать модальное окно
+    setShowSuccessModal(true)
+    
+    // Очистить форму
+    setFormData({ name: '', email: '', message: '' })
   }
 
   const faqs: FAQ[] = [
@@ -342,8 +359,8 @@ const Index = () => {
                 <div className="grid md:grid-cols-[200px_1fr] gap-6">
                   <div className="aspect-square md:aspect-auto">
                     <img
-                      src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/5ee339f6-b408-4104-9162-673d1ab1be60.jpg"
-                      alt="Paradise Beach"
+                      src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/b831f6c9-62bb-4b30-a2fb-95be755fd94a.jpg"
+                      alt="Кабак - закатная бухта"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -1094,7 +1111,7 @@ const Index = () => {
               {/* Left Column - Contact Form */}
               <div className="rounded-xl md:rounded-2xl bg-white/95 text-black p-6 md:p-8 shadow-2xl">
                 <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">Отправить запрос</h3>
-                <form className="space-y-4 md:space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium mb-2">
                       Имя
@@ -1102,6 +1119,9 @@ const Index = () => {
                     <input
                       type="text"
                       id="name"
+                      required
+                      value={formData.name}
+                      onChange={(e) => setFormData({...formData, name: e.target.value})}
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       placeholder="Ваше полное имя"
                     />
@@ -1113,6 +1133,9 @@ const Index = () => {
                     <input
                       type="email"
                       id="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => setFormData({...formData, email: e.target.value})}
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       placeholder="your.email@example.com"
                     />
@@ -1124,6 +1147,9 @@ const Index = () => {
                     <textarea
                       id="message"
                       rows={5}
+                      required
+                      value={formData.message}
+                      onChange={(e) => setFormData({...formData, message: e.target.value})}
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
                       placeholder="Расскажите о своих пожеланиях и интересе к туру..."
                     />
@@ -1209,6 +1235,29 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Success Modal */}
+      {showSuccessModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+          <div className="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl animate-in fade-in zoom-in duration-300">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-6">
+                <Check className="w-8 h-8 text-green-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-black mb-3">Ваш запрос принят</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Свяжемся в ближайшее время для уточнения деталей.
+              </p>
+              <Button
+                onClick={() => setShowSuccessModal(false)}
+                className="w-full bg-black text-white hover:bg-black/90 rounded-lg h-[50px] font-semibold"
+              >
+                Закрыть
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Footer */}
       <footer className="relative z-10 bg-black/40 backdrop-blur">
