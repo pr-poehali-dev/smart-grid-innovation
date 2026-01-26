@@ -83,15 +83,15 @@ const Index = () => {
         <div className="relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-120px)] px-6 text-center">
           {/* Badge */}
           <div className="mb-6 px-4 py-2 bg-black/40 ring-1 ring-white/20 backdrop-blur rounded-full">
-            <span className="text-sm font-medium">Авторские туры с художником</span>
+            <span className="text-sm font-medium">Арт-туры: яхтинг + Ликийская тропа + творчество</span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-6xl md:text-8xl font-light tracking-tight mb-6 text-balance">Красота в моменте</h1>
+          <h1 className="text-6xl md:text-8xl font-light tracking-tight mb-6 text-balance">Море, горы и искусство</h1>
 
           {/* Subheading */}
           <p className="text-xl md:text-2xl text-white/90 max-w-4xl mb-12 leading-relaxed text-pretty">
-            Яркий и вдохновляющий маршрут для тех, кто мечтает соединить море, горы, творчество и новые знакомства. Яхтинг по самому живописному побережью Ликии, прогулки по Ликийской тропе, секретные пляжи и пленэры с мастер-классами.
+            Путешествие с художником Ингой Савиной: 8 дней на яхте по бирюзовым бухтам Турции, треккинг по Ликийской тропе и арт-мастер-классы под открытым небом. Для тех, кто хочет вдохновения, новых впечатлений и творческой перезагрузки.
           </p>
 
           {/* CTA Buttons */}
@@ -120,14 +120,49 @@ const Index = () => {
       {/* About Section */}
       <section id="about" className="relative z-10 py-24 px-6 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+            {/* Left - Text */}
+            <div className="space-y-8">
+              <h2 className="text-5xl md:text-6xl font-bold tracking-tight text-balance">Кто я и почему со мной?</h2>
+              <div className="space-y-6 text-lg text-white/80 leading-relaxed">
+                <p className="text-xl text-white font-medium">
+                  Меня зовут Инга Савина — я художник, преподаватель рисования и автор этих арт-туров.
+                </p>
+                <p>
+                  Уже 5 лет веду мастер-классы по живописи и влюблена в море. Эти туры родились из желания соединить три вещи, которые меня вдохновляют: искусство, путешествия и Ликийское побережье.
+                </p>
+                <p>
+                  <strong className="text-white">Что отличает мои туры:</strong> это не просто яхтинг и не просто треккинг — это микс моря, гор и творчества. Мы плывём по бирюзным бухтам Турции, поднимаемся по древней Ликийской тропе с видами на Средиземное море, а вечером рисуем на пленэрах.
+                </p>
+                <p>
+                  Я учу простым и медитативным техникам: живопись вином, mix-media с картами, зарисовки с натуры. Даже если вы никогда не рисовали — это ваш шанс попробовать в самой вдохновляющей обстановке.
+                </p>
+                <p className="text-white font-medium">
+                  Приезжайте за тем, чтобы перезагрузиться, найти вдохновение и привезти домой не только фото, но и свои работы.
+                </p>
+              </div>
+            </div>
+
+            {/* Right - Image */}
+            <div className="relative">
+              <div className="aspect-[4/5] rounded-3xl overflow-hidden ring-1 ring-white/10">
+                <img
+                  src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/files/b93f7de1-df3d-4518-ab93-98ea1a754bf7.jpg"
+                  alt="Инга Савина"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
             {/* Expert-Led Tours */}
             <div className="rounded-2xl bg-black/20 ring-1 ring-white/15 backdrop-blur p-8 text-center">
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-black/30 ring-1 ring-white/20 mb-6">
                 <Sparkles className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-semibold mb-4">Мастер-классы</h3>
-              <p className="text-white/80 leading-relaxed">Живопись вином и Mix-media на пленэрах с Ингой.</p>
+              <h3 className="text-xl font-semibold mb-4">Арт-мастер-классы</h3>
+              <p className="text-white/80 leading-relaxed">Живопись вином и Mix-media на пленэрах под открытым небом.</p>
             </div>
 
             {/* Lycian Way Trekking */}
@@ -135,8 +170,8 @@ const Index = () => {
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-black/30 ring-1 ring-white/20 mb-6">
                 <Mountain className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-semibold mb-4">Секретные пляжи</h3>
-              <p className="text-white/80 leading-relaxed">Paradise Beach, Secret Beach и уединённые бухты Ликии.</p>
+              <h3 className="text-xl font-semibold mb-4">Море + Тропа</h3>
+              <p className="text-white/80 leading-relaxed">Яхтинг по бирюзным бухтам и треккинг по Ликийской тропе.</p>
             </div>
 
             {/* All-Inclusive Package */}
