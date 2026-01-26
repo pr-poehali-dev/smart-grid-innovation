@@ -68,6 +68,9 @@ def handler(event: dict, context) -> dict:
     bot_token = os.environ.get('TELEGRAM_BOT_TOKEN')
     chat_id = os.environ.get('TELEGRAM_CHAT_ID')
     
+    print(f'Bot token present: {bool(bot_token)}')
+    print(f'Chat ID present: {bool(chat_id)}')
+    
     if not bot_token or not chat_id:
         return {
             'statusCode': 500,
@@ -79,9 +82,11 @@ def handler(event: dict, context) -> dict:
     telegram_url = f'https://api.telegram.org/bot{bot_token}/sendMessage'
     data = {
         'chat_id': chat_id,
-        'text': message,
-        'parse_mode': 'HTML'
+        'text': message
     }
+    
+    print(f'Sending to Telegram: {telegram_url}')
+    print(f'Data: chat_id={chat_id}, message length={len(message)}')
     
     try:
         req = urllib.request.Request(
@@ -90,8 +95,9 @@ def handler(event: dict, context) -> dict:
             headers={'Content-Type': 'application/json'}
         )
         
-        with urllib.request.urlopen(req) as response:
+        with urllib.request.urlopen(req, timeout=10) as response:
             result = json.loads(response.read().decode('utf-8'))
+            print(f'Telegram response: {result}')
             
             if result.get('ok'):
                 return {
@@ -101,6 +107,7 @@ def handler(event: dict, context) -> dict:
                     'isBase64Encoded': False
                 }
             else:
+                print(f'Telegram API returned not ok: {result}')
                 return {
                     'statusCode': 500,
                     'headers': {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},
@@ -108,7 +115,17 @@ def handler(event: dict, context) -> dict:
                     'isBase64Encoded': False
                 }
     
+    except urllib.error.HTTPError as e:
+        error_body = e.read().decode('utf-8')
+        print(f'HTTPError: {e.code} - {error_body}')
+        return {
+            'statusCode': 500,
+            'headers': {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},
+            'body': json.dumps({'error': f'HTTP {e.code}', 'details': error_body}),
+            'isBase64Encoded': False
+        }
     except Exception as e:
+        print(f'Exception: {type(e).__name__}: {str(e)}')
         return {
             'statusCode': 500,
             'headers': {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},
