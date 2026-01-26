@@ -531,7 +531,7 @@ const Index = () => {
 
                 <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
                   <h4 className="font-semibold text-lg mb-3">Экскурсии и активности</h4>
-                  <p className="text-white/80">Треккинг по Ликийской тропе, посещение Долины Бабочек, прогулка к арке тропы, снорклинг</p>
+                  <p className="text-white/80">Треккинг по Ликийской тропе, посещение Долины Бабочек, прогулка к арке тропы, снорклинг. Увидим все самые красивые пляжи на Средиземноморском побережье: Капуташ, Долина Бабочек, Парадайз и бухта Олюдениз</p>
                 </div>
 
                 <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
