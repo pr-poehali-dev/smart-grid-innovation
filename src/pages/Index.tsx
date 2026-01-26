@@ -483,6 +483,25 @@ const Index = () => {
               />
             </div>
           </div>
+
+          {/* Yacht Layout Description */}
+          <div className="mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
+            <h3 className="text-2xl font-semibold mb-6">Планировка яхты Bavaria</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-white/80">
+              <div>
+                <h4 className="font-semibold text-lg text-white mb-3">Каюты для гостей</h4>
+                <p className="leading-relaxed mb-4">
+                  Яхта оборудована комфортабельными двухместными каютами с удобными спальными местами, индивидуальным освещением и вентиляцией. Каждая каюта имеет иллюминаторы с видом на море.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-lg text-white mb-3">Общие пространства</h4>
+                <p className="leading-relaxed mb-4">
+                  Просторный салон с обеденной зоной, камбуз (кухня) с полным оборудованием, санузлы с душем. На палубе — зона отдыха с мягкими подушками и обеденный стол под открытым небом.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
