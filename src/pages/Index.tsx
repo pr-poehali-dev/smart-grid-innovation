@@ -249,11 +249,11 @@ const Index = () => {
                     <div className="text-4xl font-bold text-white/40 mb-4">День 2</div>
                     <h3 className="text-2xl font-semibold mb-4">Олюдениз — арка Ликийской тропы</h3>
                     <p className="text-white/80 leading-relaxed mb-4">
-                      Яхтинг вдоль побережья в сторону Олюдениз. Прогулка к знаменитой арке — символическому началу Ликийской тропы. Свободное время на легендарном пляже Олюдениз, купание и релакс. Вечерняя якорная стоянка, обсуждение планов.
+                      Яхтинг вдоль побережья в сторону Олюдениз. Лёгкий треккинг к знаменитой арке — символическому началу Ликийской тропы. Свободное время на легендарном пляже Олюдениз, купание и релакс. Вечерняя якорная стоянка, обсуждение планов.
                     </p>
                     <div className="flex flex-wrap gap-2">
                       <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Олюдениз</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Арка тропы</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Треккинг к арке</span>
                       <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Пляж</span>
                     </div>
                   </div>
@@ -300,11 +300,11 @@ const Index = () => {
                     <div className="text-4xl font-bold text-white/40 mb-4">День 4</div>
                     <h3 className="text-2xl font-semibold mb-4">Долина Бабочек — арт-мастер-класс</h3>
                     <p className="text-white/80 leading-relaxed mb-4">
-                      Якорная стоянка в заповедной Долине Бабочек. Прогулка к водопаду, изучение местной природы. Мастер-класс "Живопись вином" — создаём арт-объекты. День для фото, отдыха и неспешных бесед
+                      Якорная стоянка в заповедной Долине Бабочек. Лёгкий треккинг к водопаду, изучение местной природы. Мастер-класс "Живопись вином" — создаём арт-объекты. День для фото, отдыха и неспешных бесед
                     </p>
                     <div className="flex flex-wrap gap-2">
                       <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Долина Бабочек</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Водопад</span>
+                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Треккинг к водопаду</span>
                       <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Живопись вином</span>
                     </div>
                   </div>
