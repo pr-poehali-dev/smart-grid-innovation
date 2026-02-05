@@ -352,7 +352,7 @@ const Index = () => {
             <div className="text-center mb-12 md:mb-16">
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-balance">Маршрут вашего путешествия</h2>
               <p className="text-lg text-white/80 max-w-3xl mx-auto">
-                <strong>8 дней</strong> незабываемых впечатлений: яхтинг, треккинг, творчество и тёплая компания
+                <strong>7 дней на яхте + 1 день релакса в отеле</strong> — незабываемые впечатления: яхтинг, треккинг, творчество и тёплая компания
               </p>
             </div>
 
