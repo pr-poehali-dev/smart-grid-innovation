@@ -212,7 +212,7 @@ const Index = () => {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-light tracking-tight mb-6 text-balance">Море, горы и искусство</h1>
 
           {/* Subheading */}
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 max-w-4xl mb-12 leading-relaxed text-pretty px-4" style={{ fontFamily: "'Caveat', cursive", fontWeight: 700 }}>
+          <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl max-w-4xl mb-12 leading-relaxed text-pretty px-4" style={{ fontFamily: "'Caveat', cursive", fontWeight: 700, color: '#ff8c42' }}>
             Путешествие с художницей Ингой Савиной
           </p>
           
@@ -885,7 +885,7 @@ const Index = () => {
               <div className="mb-6">
                 <h4 className="font-semibold text-lg">Евгения Миронова</h4>
                 <p className="text-white/60 text-sm">Дизайнер, Тула</p>
-                <p className="text-white/50 text-xs">Сентябрь 2024</p>
+                <p className="text-white/50 text-xs">Сентябрь 2025</p>
               </div>
               <p className="text-white/80 leading-relaxed">
                 "Ездили на девичник с подругами. Всё было организовано хорошо: красивые места, вкусная еда, интересные мастер-классы. Получилось отдохнуть и попробовать что-то новое. Привезли домой свои картины."
@@ -897,7 +897,7 @@ const Index = () => {
               <div className="mb-6">
                 <h4 className="font-semibold text-lg">Альбина Смирнова</h4>
                 <p className="text-white/60 text-sm">Бухгалтер, Тула</p>
-                <p className="text-white/50 text-xs">Сентябрь 2024</p>
+                <p className="text-white/50 text-xs">Сентябрь 2025</p>
               </div>
               <p className="text-white/80 leading-relaxed">
                 "Первый опыт на яхте оказался приятнее, чем ожидала. Каждый день что-то новое: купались, гуляли по горам, рисовали. Компания подобралась хорошая. Вернулись отдохнувшими."
@@ -909,7 +909,7 @@ const Index = () => {
               <div className="mb-6">
                 <h4 className="font-semibold text-lg">Евгения Миллер</h4>
                 <p className="text-white/60 text-sm">Предприниматель, Тула</p>
-                <p className="text-white/50 text-xs">Сентябрь 2024</p>
+                <p className="text-white/50 text-xs">Сентябрь 2025</p>
               </div>
               <p className="text-white/80 leading-relaxed">
                 "Отмечала день рождения на яхте. Хотели необычный формат — получилось. Яхта, красивые места, мастер-классы. Мне понравился Mix-media — не думала, что смогу так рисовать. Хороший отдых."
