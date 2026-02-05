@@ -242,14 +242,23 @@ const Index = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-12 md:mb-16 w-full max-w-md px-4">
             <Link to="/booking">
-              <Button size="lg" className="bg-white text-black hover:bg-white/90 rounded-full px-6 md:px-8 py-3 md:py-4 text-base md:text-lg w-full sm:w-auto">
+              <Button 
+                size="lg" 
+                className="rounded-full px-6 md:px-8 py-3 md:py-4 text-base md:text-lg w-full sm:w-auto"
+                style={{ backgroundColor: '#ff8c42', color: 'white' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#ff7a2e'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#ff8c42'}
+              >
                 Забронировать тур
               </Button>
             </Link>
             <Button
               size="lg"
               variant="outline"
-              className="bg-black/40 ring-1 ring-white/20 backdrop-blur border-0 text-white hover:bg-black/50 rounded-full px-6 md:px-8 py-3 md:py-4 text-base md:text-lg w-full sm:w-auto"
+              className="ring-1 backdrop-blur border-0 text-white rounded-full px-6 md:px-8 py-3 md:py-4 text-base md:text-lg w-full sm:w-auto"
+              style={{ backgroundColor: 'rgba(255, 140, 66, 0.2)', borderColor: '#ff8c42' }}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255, 140, 66, 0.3)'}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'rgba(255, 140, 66, 0.2)'}
               asChild
             >
               <a href="#route">Смотреть маршрут</a>
@@ -257,8 +266,8 @@ const Index = () => {
           </div>
 
           {/* Footer Note */}
-          <div className="flex items-center gap-2 px-3 md:px-4 py-2 bg-black/40 ring-1 ring-white/20 backdrop-blur rounded-full mx-4">
-            <Sparkles className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
+          <div className="flex items-center gap-2 px-3 md:px-4 py-2 backdrop-blur rounded-full mx-4" style={{ backgroundColor: 'rgba(255, 140, 66, 0.3)', borderWidth: '1px', borderColor: '#ff8c42' }}>
+            <Sparkles className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" style={{ color: '#ff8c42' }} />
             <span className="text-xs md:text-sm font-medium text-center">Идеальный баланс приключений, расслабления и арт-вдохновения</span>
           </div>
         </div>
@@ -561,12 +570,22 @@ const Index = () => {
               </div>
             </div>
 
+            {/* Important Note */}
+            <div className="mb-8 rounded-xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
+              <p className="text-white/70 text-sm leading-relaxed text-center">
+                <span className="text-white/90">*</span> Маршрут может быть скорректирован капитаном в зависимости от погодных условий и с учётом безопасности группы. Все ключевые точки программы сохраняются.
+              </p>
+            </div>
+
             {/* Check Availability Button */}
             <div className="text-center">
               <Link to="/booking">
                 <Button
                   size="lg"
-                  className="bg-white text-black hover:bg-white/90 rounded-full px-12 py-4 text-lg font-semibold"
+                  className="rounded-full px-12 py-4 text-lg font-semibold"
+                  style={{ backgroundColor: '#ff8c42', color: 'white' }}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#ff7a2e'}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#ff8c42'}
                 >
                   Забронировать тур
                 </Button>
