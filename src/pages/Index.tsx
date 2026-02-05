@@ -212,7 +212,7 @@ const Index = () => {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-light tracking-tight mb-6 text-balance">Море, горы и искусство</h1>
 
           {/* Subheading */}
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 max-w-4xl mb-12 leading-relaxed text-pretty px-4">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 max-w-4xl mb-12 leading-relaxed text-pretty px-4" style={{ fontFamily: "'Caveat', cursive", fontWeight: 700 }}>
             Путешествие с художницей Ингой Савиной
           </p>
           
