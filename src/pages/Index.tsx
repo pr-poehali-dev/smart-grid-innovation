@@ -216,10 +216,23 @@ const Index = () => {
             Путешествие с художницей Ингой Савиной
           </p>
           
-          <div className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl mb-12 space-y-2 px-4">
-            <div>8 дней на яхте по бирюзовым бухтам Турции</div>
-            <div>Треккинг по Ликийской тропе</div>
-            <div>Арт-мастер-классы под открытым небом</div>
+          <div className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl mb-12 space-y-3 px-4">
+            <div className="flex items-center justify-center gap-3">
+              <span className="w-2 h-2 bg-white rounded-full flex-shrink-0"></span>
+              <span className="font-semibold">7 дней на яхте по бирюзовым бухтам Турции</span>
+            </div>
+            <div className="flex items-center justify-center gap-3">
+              <span className="w-2 h-2 bg-white rounded-full flex-shrink-0"></span>
+              <span className="font-semibold">1 день релакса в отеле</span>
+            </div>
+            <div className="flex items-center justify-center gap-3">
+              <span className="w-2 h-2 bg-white rounded-full flex-shrink-0"></span>
+              <span className="font-semibold">Треккинг по Ликийской тропе</span>
+            </div>
+            <div className="flex items-center justify-center gap-3">
+              <span className="w-2 h-2 bg-white rounded-full flex-shrink-0"></span>
+              <span className="font-semibold">Арт-мастер-классы под открытым небом</span>
+            </div>
           </div>
           
           <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-3xl mb-12 px-4">
