@@ -794,6 +794,10 @@ const Index = () => {
                       <p className="text-white/80 text-sm">✓ При большой группе — более просторная яхта</p>
                       <p className="text-white/80 text-sm">✓ Готовим самостоятельно (основные продукты включены)</p>
                     </div>
+                    <div className="rounded-xl bg-white/10 ring-1 ring-white/20 p-4 mb-6">
+                      <p className="text-white/90 text-sm font-semibold mb-1">💳 Оплата двумя платежами</p>
+                      <p className="text-white/70 text-sm">Возможна рассрочка</p>
+                    </div>
                     <Link to="/booking">
                       <Button 
                         size="lg"
