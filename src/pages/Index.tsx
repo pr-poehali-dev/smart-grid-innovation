@@ -273,6 +273,24 @@ const Index = () => {
         </div>
       </div>
 
+      {/* Video Section */}
+      <section className="relative z-10 py-12 md:py-20 px-4 md:px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Почувствуй атмосферу тура</h2>
+            <p className="text-lg md:text-xl text-white/80">Посмотри, как проходят наши путешествия</p>
+          </div>
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl" style={{ paddingBottom: '56.25%', height: 0 }}>
+            <iframe
+              src="https://drive.google.com/file/d/1V0nAs1y0mvTfc4UA_NM0AeCcrt-eTPSj/preview"
+              className="absolute top-0 left-0 w-full h-full"
+              allow="autoplay"
+              style={{ border: 0 }}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* About Section */}
       <section id="about" className="relative z-10 py-12 md:py-24 px-4 md:px-6 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
