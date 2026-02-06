@@ -202,7 +202,7 @@ const Index = () => {
         )}
 
         {/* Hero Content */}
-        <div className="relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-120px)] px-6 text-center">
+        <div className="relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-120px)] px-6 text-center rounded-sm">
           {/* Badge */}
           <div className="mb-6 px-3 md:px-4 py-2 bg-black/40 ring-1 ring-white/20 backdrop-blur rounded-full">
             <span className="text-xs md:text-sm font-medium">Арт-туры: яхтинг + Ликийская тропа + творчество</span>
@@ -212,9 +212,9 @@ const Index = () => {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-light tracking-tight mb-6 text-balance">Море, горы и искусство</h1>
 
           {/* Subheading */}
-          <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl max-w-4xl mb-12 leading-relaxed text-pretty px-4" style={{ fontFamily: "'Caveat', cursive", fontWeight: 700, color: '#ff8c42' }}>
-            Путешествие с художницей Ингой Савиной
-          </p>
+          <p className="sm:text-2xl md:text-3xl lg:text-4xl max-w-4xl mb-12 leading-relaxed text-pretty px-[27px] text-6xl" style={{ fontFamily: "'Caveat', cursive", fontWeight: 700, color: '#ff8c42' }}>Путешествие с художницей 
+
+Ингой Савиной</p>
           
           <div className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl mb-12 space-y-3 px-4">
             <div className="flex items-center justify-center gap-3">
