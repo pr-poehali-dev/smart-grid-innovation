@@ -235,7 +235,7 @@ const Index = () => {
             </div>
           </div>
           
-          <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-3xl mb-12 px-4">
+          <p className="sm:text-lg md:text-xl max-w-3xl mb-12 px-4 font-bold text-amber-600 text-center text-xl">
             Для тех, кто хочет вдохновения, новых впечатлений и творческой перезагрузки
           </p>
 
