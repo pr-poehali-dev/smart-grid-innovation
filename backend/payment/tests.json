@@ -1,0 +1,21 @@
+{
+  "tests": [
+    {
+      "name": "Create payment",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "amount": 1000,
+        "description": "Тест оплаты",
+        "email": "test@example.com"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "id": "string",
+        "status": "string",
+        "confirmation_url": "string"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

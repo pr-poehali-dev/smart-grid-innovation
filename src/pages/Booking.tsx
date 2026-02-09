@@ -57,32 +57,51 @@ const Booking = () => {
     }
     
     const selectedTourInfo = tours.find(t => t.id === selectedTour)
-    
-    setShowSuccessModal(true)
-    const dataToSend = { ...formData }
     const tourToSend = selectedTourInfo?.dates || 'Не выбрано'
     const guestsToSend = guests
+    const dataToSend = { ...formData }
     
-    setFormData({ name: '', email: '', phone: '', message: '', honeypot: '', consent: false })
-    setSelectedTour("")
-    setGuests(2)
-    
+    // Создаем платеж в ЮKassa
     try {
-      await fetch('https://functions.poehali.dev/2eeee9fa-08f6-4675-8994-a60805039821', {
+      const paymentResponse = await fetch('https://functions.poehali.dev/eb3987f2-5633-463a-801b-411ea2866f14', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          type: 'booking',
-          tour: tourToSend,
-          guests: guestsToSend,
-          name: dataToSend.name,
+          amount: 36000.00,
+          description: `Тур ${tourToSend}, ${guestsToSend} чел.`,
+          return_url: `${window.location.origin}/booking/success`,
           email: dataToSend.email,
-          phone: dataToSend.phone,
-          message: dataToSend.message
+          phone: dataToSend.phone
         })
       })
+      
+      const paymentData = await paymentResponse.json()
+      
+      if (paymentData.confirmation_url) {
+        // Отправляем данные бронирования в Telegram
+        await fetch('https://functions.poehali.dev/2eeee9fa-08f6-4675-8994-a60805039821', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            type: 'booking',
+            tour: tourToSend,
+            guests: guestsToSend,
+            name: dataToSend.name,
+            email: dataToSend.email,
+            phone: dataToSend.phone,
+            message: dataToSend.message,
+            payment_id: paymentData.id
+          })
+        })
+        
+        // Перенаправляем на страницу оплаты ЮKassa
+        window.location.href = paymentData.confirmation_url
+      } else {
+        alert('Ошибка создания платежа. Попробуйте позже.')
+      }
     } catch (error) {
-      console.error('Error sending booking:', error)
+      console.error('Error creating payment:', error)
+      alert('Ошибка при создании платежа. Попробуйте позже.')
     }
   }
 
