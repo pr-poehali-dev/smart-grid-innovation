@@ -529,25 +529,14 @@ const Booking = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="space-y-4">
+            <div>
               <Button
-                type="button"
-                onClick={handlePayment}
+                type="submit"
                 size="lg"
                 disabled={!selectedTour}
                 className="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white hover:from-green-600 hover:to-emerald-700 rounded-full py-6 text-xl font-bold disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-green-500/30"
               >
-                💳 Оплатить {calculateDeposit()}€ (предоплата 40%)
-              </Button>
-
-              <Button
-                type="submit"
-                size="lg"
-                variant="outline"
-                disabled={!selectedTour}
-                className="w-full bg-white/5 ring-1 ring-white/20 text-white hover:bg-white/10 rounded-full py-6 text-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                Забронировать без оплаты
+                Забронировать тур
               </Button>
             </div>
 
