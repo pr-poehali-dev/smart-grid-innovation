@@ -25,7 +25,12 @@ const Booking = () => {
   })
 
   const PRICE_PER_PERSON = 1200
-  const calculateTotal = () => PRICE_PER_PERSON * guests
+  const getDiscount = () => guests >= 4 ? 0.1 : 0
+  const calculateTotal = () => {
+    const basePrice = PRICE_PER_PERSON * guests
+    const discount = basePrice * getDiscount()
+    return Math.round(basePrice - discount)
+  }
   const calculateDeposit = () => Math.round(calculateTotal() * 0.5)
 
   const tours: Tour[] = [
@@ -35,70 +40,103 @@ const Booking = () => {
     { id: "sep2", dates: "26 сентября — 3 октября 2026", label: "Бархатный сезон", available: true }
   ]
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    
-    // Проверка honeypot (защита от ботов)
+  const validateForm = () => {
     if (formData.honeypot) {
       console.log('Bot detected')
-      return
+      return false
     }
     
-    // Проверка обязательных контактов
     if (!formData.name || !formData.email || !formData.phone) {
       alert('Пожалуйста, заполните все обязательные поля: имя, email и телефон')
-      return
+      return false
     }
     
     if (!selectedTour) {
       alert('Пожалуйста, выберите даты тура')
-      return
+      return false
     }
     
     if (!formData.consent) {
       alert('Пожалуйста, дайте согласие на обработку персональных данных')
-      return
+      return false
     }
+    
+    return true
+  }
+
+  const handleBookingOnly = async (e: React.FormEvent) => {
+    e.preventDefault()
+    
+    if (!validateForm()) return
     
     const selectedTourInfo = tours.find(t => t.id === selectedTour)
     const tourToSend = selectedTourInfo?.dates || 'Не выбрано'
-    const guestsToSend = guests
-    const dataToSend = { ...formData }
     
-    // Создаем платеж в ЮKassa
+    try {
+      await fetch('https://functions.poehali.dev/2eeee9fa-08f6-4675-8994-a60805039821', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type: 'booking',
+          tour: tourToSend,
+          guests: guests,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          payment_status: 'pending'
+        })
+      })
+      
+      setShowSuccessModal(true)
+      setFormData({ name: '', email: '', phone: '', message: '', honeypot: '', consent: false })
+      setSelectedTour("")
+      setGuests(2)
+    } catch (error) {
+      console.error('Error sending booking:', error)
+      alert('Ошибка при отправке заявки. Попробуйте позже.')
+    }
+  }
+
+  const handlePayment = async (e: React.MouseEvent) => {
+    e.preventDefault()
+    
+    if (!validateForm()) return
+    
+    const selectedTourInfo = tours.find(t => t.id === selectedTour)
+    const tourToSend = selectedTourInfo?.dates || 'Не выбрано'
+    
     try {
       const paymentResponse = await fetch('https://functions.poehali.dev/eb3987f2-5633-463a-801b-411ea2866f14', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           amount: calculateDeposit() * 100,
-          description: `Тур ${tourToSend}, ${guestsToSend} чел. (предоплата 50%)`,
+          description: `Тур ${tourToSend}, ${guests} чел. (предоплата 50%)`,
           return_url: `${window.location.origin}/booking/success`,
-          email: dataToSend.email,
-          phone: dataToSend.phone
+          email: formData.email,
+          phone: formData.phone
         })
       })
       
       const paymentData = await paymentResponse.json()
       
       if (paymentData.confirmation_url) {
-        // Отправляем данные бронирования в Telegram
         await fetch('https://functions.poehali.dev/2eeee9fa-08f6-4675-8994-a60805039821', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             type: 'booking',
             tour: tourToSend,
-            guests: guestsToSend,
-            name: dataToSend.name,
-            email: dataToSend.email,
-            phone: dataToSend.phone,
-            message: dataToSend.message,
+            guests: guests,
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            message: formData.message,
             payment_id: paymentData.id
           })
         })
         
-        // Перенаправляем на страницу оплаты ЮKassa
         window.location.href = paymentData.confirmation_url
       } else {
         alert('Ошибка создания платежа. Попробуйте позже.')
@@ -248,7 +286,7 @@ const Booking = () => {
           </div>
         ) : (
           <div className="rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6 md:p-12">
-          <form onSubmit={handleSubmit} className="space-y-8">
+          <form onSubmit={handleBookingOnly} className="space-y-8">
             {/* Tour Selection */}
             <div>
               <label className="block text-xl font-semibold mb-6 flex items-center gap-3">
@@ -426,6 +464,17 @@ const Booking = () => {
                 </div>
 
                 <div className="space-y-3">
+                  {getDiscount() > 0 && (
+                    <div className="rounded-xl bg-gradient-to-r from-amber-500/20 to-orange-500/20 ring-1 ring-amber-500/30 p-4 mb-3">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-2xl">🎉</span>
+                        <span className="font-bold text-amber-400">Скидка за группу!</span>
+                      </div>
+                      <div className="text-white/80 text-sm">
+                        10% скидка при бронировании от 4 человек
+                      </div>
+                    </div>
+                  )}
                   <div className="flex items-center justify-between text-lg">
                     <span className="text-white/80">Общая стоимость:</span>
                     <span className="text-3xl font-bold">{calculateTotal()}€</span>
@@ -449,18 +498,31 @@ const Booking = () => {
               </div>
             </div>
 
-            {/* Submit Button */}
-            <Button
-              type="submit"
-              size="lg"
-              disabled={!selectedTour}
-              className="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white hover:from-green-600 hover:to-emerald-700 rounded-full py-6 text-xl font-bold disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-green-500/30"
-            >
-              💳 Оплатить {calculateDeposit()}€ (предоплата 50%)
-            </Button>
+            {/* Action Buttons */}
+            <div className="space-y-4">
+              <Button
+                type="button"
+                onClick={handlePayment}
+                size="lg"
+                disabled={!selectedTour}
+                className="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white hover:from-green-600 hover:to-emerald-700 rounded-full py-6 text-xl font-bold disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-green-500/30"
+              >
+                💳 Оплатить {calculateDeposit()}€ (предоплата 50%)
+              </Button>
+
+              <Button
+                type="submit"
+                size="lg"
+                variant="outline"
+                disabled={!selectedTour}
+                className="w-full bg-white/5 ring-1 ring-white/20 text-white hover:bg-white/10 rounded-full py-6 text-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                Забронировать без оплаты
+              </Button>
+            </div>
 
             <p className="text-white/50 text-sm text-center">
-              После отправки заявки мы свяжемся с вами в течение 24 часов для подтверждения брони и уточнения деталей
+              При бронировании без оплаты мы свяжемся с вами в течение 24 часов для уточнения деталей
             </p>
           </form>
         </div>
