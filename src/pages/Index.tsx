@@ -357,6 +357,7 @@ const Index = () => {
               </div>
 <h3 className="text-xl font-semibold mb-4">Маленькая группа</h3>
               <p className="text-white/80 leading-relaxed"><strong>До 6 человек</strong> на яхте — комфорт, уют и камерная атмосфера</p>
+              <p className="text-amber-400 text-sm font-semibold mt-3">🎉 Скидка 10% от 4 человек</p>
             </div>
 
             {/* Eco-Friendly Caving */}
@@ -889,6 +890,7 @@ const Index = () => {
                       <p className="text-white/80 text-sm">✓ Группы до 6 человек на яхте Bavaria</p>
                       <p className="text-white/80 text-sm">✓ При большой группе — более просторная яхта</p>
                       <p className="text-white/80 text-sm">✓ Готовим самостоятельно (основные продукты включены)</p>
+                      <p className="text-amber-400 text-sm font-semibold">🎉 Скидка 10% от 4 человек</p>
                     </div>
                     <div className="rounded-xl bg-white/10 ring-1 ring-white/20 p-4 mb-6">
                       <p className="text-white/90 text-sm font-semibold mb-1">💳 Оплата двумя платежами</p>
