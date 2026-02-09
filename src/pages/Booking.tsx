@@ -340,26 +340,37 @@ const Booking = () => {
                 <Users className="w-6 h-6" />
                 Количество участников
               </label>
-              <div className="flex items-center gap-6">
-                <button
-                  type="button"
-                  onClick={() => setGuests(Math.max(1, guests - 1))}
-                  className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-2xl font-bold transition-colors"
-                >
-                  −
-                </button>
-                <div className="text-4xl font-bold w-16 text-center">{guests}</div>
-                <button
-                  type="button"
-                  onClick={() => setGuests(Math.min(10, guests + 1))}
-                  className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-2xl font-bold transition-colors"
-                >
-                  +
-                </button>
-                <div className="ml-4 text-white/60">
-                  <div className="text-sm">До 6 человек — яхта Bavaria</div>
-                  <div className="text-sm">Больше 6 — просторная яхта</div>
+              <div className="space-y-4">
+                <div className="flex items-center gap-6">
+                  <button
+                    type="button"
+                    onClick={() => setGuests(Math.max(1, guests - 1))}
+                    className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-2xl font-bold transition-colors"
+                  >
+                    −
+                  </button>
+                  <div className="text-4xl font-bold w-16 text-center">{guests}</div>
+                  <button
+                    type="button"
+                    onClick={() => setGuests(Math.min(10, guests + 1))}
+                    className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-2xl font-bold transition-colors"
+                  >
+                    +
+                  </button>
+                  <div className="ml-4 text-white/60">
+                    <div className="text-sm">До 6 человек — яхта Bavaria</div>
+                    <div className="text-sm">Больше 6 — просторная яхта</div>
+                  </div>
                 </div>
+                
+                {guests >= 4 && (
+                  <div className="rounded-xl bg-gradient-to-r from-amber-500/20 to-orange-500/20 ring-1 ring-amber-500/30 p-4">
+                    <div className="flex items-center gap-2">
+                      <span className="text-2xl">🎉</span>
+                      <span className="font-bold text-amber-400">Скидка 10% за группу от 4 человек!</span>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
 
