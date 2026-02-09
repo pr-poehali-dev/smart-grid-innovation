@@ -1,10 +1,33 @@
 import json
 import os
 import uuid
+import requests
+import xml.etree.ElementTree as ET
 from yookassa import Configuration, Payment
 
 Configuration.account_id = os.environ.get('YOOKASSA_SHOP_ID')
 Configuration.secret_key = os.environ.get('YOOKASSA_SECRET_KEY')
+
+def get_eur_to_rub_rate() -> float:
+    '''Получает курс EUR/RUB от ЦБ РФ'''
+    try:
+        response = requests.get('https://www.cbr.ru/scripts/XML_daily.asp', timeout=5)
+        response.raise_for_status()
+        
+        root = ET.fromstring(response.content)
+        for valute in root.findall('Valute'):
+            char_code = valute.find('CharCode')
+            if char_code is not None and char_code.text == 'EUR':
+                value = valute.find('Value')
+                nominal = valute.find('Nominal')
+                if value is not None and nominal is not None:
+                    rate = float(value.text.replace(',', '.'))
+                    nominal_val = float(nominal.text.replace(',', '.'))
+                    return rate / nominal_val
+        
+        return 100.0
+    except Exception:
+        return 100.0
 
 def handler(event: dict, context) -> dict:
     '''API для создания платежей через ЮKassa'''
@@ -25,24 +48,27 @@ def handler(event: dict, context) -> dict:
         try:
             body = json.loads(event.get('body', '{}'))
             
-            amount = body.get('amount')
+            amount_eur = body.get('amount_eur')
             description = body.get('description', 'Оплата тура')
             return_url = body.get('return_url', 'https://ingasavina.ru/booking/success')
             email = body.get('email')
             phone = body.get('phone')
             
-            if not amount:
+            if not amount_eur:
                 return {
                     'statusCode': 400,
                     'headers': {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},
-                    'body': json.dumps({'error': 'Amount is required'})
+                    'body': json.dumps({'error': 'Amount in EUR is required'})
                 }
+            
+            rate = get_eur_to_rub_rate()
+            amount_rub = round(amount_eur * rate, 2)
             
             idempotence_key = str(uuid.uuid4())
             
             payment_data = {
                 'amount': {
-                    'value': str(amount),
+                    'value': f'{amount_rub:.2f}',
                     'currency': 'RUB'
                 },
                 'confirmation': {
@@ -60,7 +86,7 @@ def handler(event: dict, context) -> dict:
                         'description': description,
                         'quantity': '1.00',
                         'amount': {
-                            'value': str(amount),
+                            'value': f'{amount_rub:.2f}',
                             'currency': 'RUB'
                         },
                         'vat_code': 1
@@ -80,7 +106,10 @@ def handler(event: dict, context) -> dict:
                 'body': json.dumps({
                     'id': payment.id,
                     'status': payment.status,
-                    'confirmation_url': payment.confirmation.confirmation_url
+                    'confirmation_url': payment.confirmation.confirmation_url,
+                    'amount_eur': amount_eur,
+                    'amount_rub': amount_rub,
+                    'exchange_rate': rate
                 })
             }
             

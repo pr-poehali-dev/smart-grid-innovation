@@ -1,11 +1,11 @@
 {
   "tests": [
     {
-      "name": "Create payment",
+      "name": "Create payment with EUR conversion",
       "method": "POST",
       "path": "/",
       "body": {
-        "amount": 1000,
+        "amount_eur": 10,
         "description": "Тест оплаты",
         "email": "test@example.com"
       },
@@ -13,7 +13,10 @@
       "expectedBody": {
         "id": "string",
         "status": "string",
-        "confirmation_url": "string"
+        "confirmation_url": "string",
+        "amount_eur": "number",
+        "amount_rub": "number",
+        "exchange_rate": "number"
       },
       "bodyMatcher": "partial"
     }

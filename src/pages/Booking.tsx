@@ -15,6 +15,7 @@ const Booking = () => {
   const [guests, setGuests] = useState<number>(2)
   const [showSuccessModal, setShowSuccessModal] = useState(false)
   const [activeTab, setActiveTab] = useState<'booking' | 'masterclasses'>('booking')
+  const [exchangeRate, setExchangeRate] = useState<number | null>(null)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -111,7 +112,7 @@ const Booking = () => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          amount: calculateDeposit() * 100,
+          amount_eur: calculateDeposit(),
           description: `Тур ${tourToSend}, ${guests} чел. (предоплата 50%)`,
           return_url: `${window.location.origin}/booking/success`,
           email: formData.email,
@@ -121,7 +122,14 @@ const Booking = () => {
       
       const paymentData = await paymentResponse.json()
       
+      if (paymentData.error) {
+        alert(`Ошибка: ${paymentData.error}`)
+        return
+      }
+      
       if (paymentData.confirmation_url) {
+        setExchangeRate(paymentData.exchange_rate)
+        
         await fetch('https://functions.poehali.dev/2eeee9fa-08f6-4675-8994-a60805039821', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -133,7 +141,10 @@ const Booking = () => {
             email: formData.email,
             phone: formData.phone,
             message: formData.message,
-            payment_id: paymentData.id
+            payment_id: paymentData.id,
+            amount_eur: paymentData.amount_eur,
+            amount_rub: paymentData.amount_rub,
+            exchange_rate: paymentData.exchange_rate
           })
         })
         
@@ -484,6 +495,11 @@ const Booking = () => {
                       <span className="text-white/80">Предоплата (50%):</span>
                       <span className="text-2xl font-bold text-green-400">{calculateDeposit()}€</span>
                     </div>
+                    {exchangeRate && (
+                      <div className="text-white/70 text-sm mb-2">
+                        ≈ {Math.round(calculateDeposit() * exchangeRate).toLocaleString('ru-RU')} ₽ (курс ЦБ: {exchangeRate.toFixed(2)} ₽)
+                      </div>
+                    )}
                     <div className="text-white/60 text-sm">
                       Оставшиеся {calculateTotal() - calculateDeposit()}€ оплачиваются капитану по прибытии
                     </div>
