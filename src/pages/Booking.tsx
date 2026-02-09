@@ -504,17 +504,28 @@ const Booking = () => {
             {/* Action Buttons */}
             <div className="space-y-4">
               <Button
-                type="submit"
+                type="button"
+                onClick={handlePayment}
                 size="lg"
                 disabled={!selectedTour}
                 className="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white hover:from-green-600 hover:to-emerald-700 rounded-full py-6 text-xl font-bold disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-green-500/30"
               >
-                ✈️ Забронировать тур
+                💳 Оплатить {calculateDeposit()}€ (предоплата 50%)
+              </Button>
+
+              <Button
+                type="submit"
+                size="lg"
+                variant="outline"
+                disabled={!selectedTour}
+                className="w-full bg-white/5 ring-1 ring-white/20 text-white hover:bg-white/10 rounded-full py-6 text-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                Забронировать без оплаты
               </Button>
             </div>
 
             <p className="text-white/50 text-sm text-center">
-              После отправки заявки я свяжусь с вами в течение 24 часов и вышлю ссылку для оплаты
+              При бронировании без оплаты я свяжусь с вами в течение 24 часов и вышлю ссылку для оплаты
             </p>
           </form>
         </div>
