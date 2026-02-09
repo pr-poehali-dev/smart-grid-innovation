@@ -371,6 +371,102 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Dates Section (before route) */}
+      <section className="relative z-10 py-12 md:py-24 px-4 md:px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-balance">Даты туров 2026</h2>
+            <p className="text-lg text-white/80 max-w-3xl mx-auto">
+              Выберите удобную дату для вашего арт-путешествия по Ликийскому побережью
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-5xl mx-auto">
+            {/* Tour 1 */}
+            <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8 hover:bg-white/10 transition-colors">
+              <div className="text-center mb-6">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full mb-4">
+                  <span className="text-sm font-medium">Майские праздники</span>
+                </div>
+                <h3 className="text-3xl font-bold mb-2">9 — 16 мая</h3>
+                <p className="text-white/60 text-sm">2026 год</p>
+              </div>
+              <Link to="/booking">
+                <Button 
+                  size="lg"
+                  className="bg-white text-black hover:bg-white/90 rounded-full px-8 w-full"
+                >
+                  Забронировать
+                </Button>
+              </Link>
+            </div>
+
+            {/* Tour 2 */}
+            <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8 hover:bg-white/10 transition-colors">
+              <div className="text-center mb-6">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full mb-4">
+                  <span className="text-sm font-medium">Май</span>
+                </div>
+                <h3 className="text-3xl font-bold mb-2">16 — 23 мая</h3>
+                <p className="text-white/60 text-sm">2026 год</p>
+              </div>
+              <Link to="/booking">
+                <Button 
+                  size="lg"
+                  className="bg-white text-black hover:bg-white/90 rounded-full px-8 w-full"
+                >
+                  Забронировать
+                </Button>
+              </Link>
+            </div>
+
+            {/* Tour 3 */}
+            <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8 hover:bg-white/10 transition-colors">
+              <div className="text-center mb-6">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full mb-4">
+                  <span className="text-sm font-medium">Бархатный сезон</span>
+                </div>
+                <h3 className="text-3xl font-bold mb-2">19 — 26 сентября</h3>
+                <p className="text-white/60 text-sm">2026 год</p>
+              </div>
+              <Link to="/booking">
+                <Button 
+                  size="lg"
+                  className="bg-white text-black hover:bg-white/90 rounded-full px-8 w-full"
+                >
+                  Забронировать
+                </Button>
+              </Link>
+            </div>
+
+            {/* Tour 4 */}
+            <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8 hover:bg-white/10 transition-colors">
+              <div className="text-center mb-6">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full mb-4">
+                  <span className="text-sm font-medium">Бархатный сезон</span>
+                </div>
+                <h3 className="text-3xl font-bold mb-2">26 сентября — 3 октября</h3>
+                <p className="text-white/60 text-sm">2026 год</p>
+              </div>
+              <Link to="/booking">
+                <Button 
+                  size="lg"
+                  className="bg-white text-black hover:bg-white/90 rounded-full px-8 w-full"
+                >
+                  Забронировать
+                </Button>
+              </Link>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-white/60 text-sm max-w-2xl mx-auto">
+              Количество мест ограничено — до 6 человек на яхте Bavaria. Рекомендуем бронировать заранее.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Journey Section */}
       <section id="route" className="relative z-10 py-12 md:py-24 px-4 md:px-6 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
