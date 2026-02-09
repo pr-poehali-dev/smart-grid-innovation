@@ -32,7 +32,7 @@ const Booking = () => {
     const discount = basePrice * getDiscount()
     return Math.round(basePrice - discount)
   }
-  const calculateDeposit = () => Math.round(calculateTotal() * 0.5)
+  const calculateDeposit = () => Math.round(calculateTotal() * 0.4)
 
   const tours: Tour[] = [
     { id: "may1", dates: "9 — 16 мая 2026", label: "Майские праздники", available: true },
@@ -113,7 +113,7 @@ const Booking = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           amount_eur: calculateDeposit(),
-          description: `Тур ${tourToSend}, ${guests} чел. (предоплата 50%)`,
+          description: `Тур ${tourToSend}, ${guests} чел. (предоплата 40%)`,  
           return_url: `${window.location.origin}/booking/success`,
           email: formData.email,
           phone: formData.phone
@@ -492,7 +492,7 @@ const Booking = () => {
                   </div>
                   <div className="rounded-xl bg-white/10 p-4">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-white/80">Предоплата (50%):</span>
+                      <span className="text-white/80">Предоплата (40%):</span>
                       <span className="text-2xl font-bold text-green-400">{calculateDeposit()}€</span>
                     </div>
                     {exchangeRate && (
@@ -501,7 +501,7 @@ const Booking = () => {
                       </div>
                     )}
                     <div className="text-white/60 text-sm">
-                      Оставшиеся {calculateTotal() - calculateDeposit()}€ оплачиваются капитану по прибытии
+                      Оставшиеся {calculateTotal() - calculateDeposit()}€ (60%) оплачиваются капитану по прибытии
                     </div>
                   </div>
                 </div>
@@ -526,7 +526,7 @@ const Booking = () => {
                 disabled={!selectedTour}
                 className="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white hover:from-green-600 hover:to-emerald-700 rounded-full py-6 text-xl font-bold disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-green-500/30"
               >
-                💳 Оплатить {calculateDeposit()}€ (предоплата 50%)
+                💳 Оплатить {calculateDeposit()}€ (предоплата 40%)
               </Button>
 
               <Button
