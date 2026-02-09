@@ -20,7 +20,8 @@ const Booking = () => {
     email: '',
     phone: '',
     message: '',
-    honeypot: ''
+    honeypot: '',
+    consent: false
   })
 
   const tours: Tour[] = [
@@ -50,6 +51,11 @@ const Booking = () => {
       return
     }
     
+    if (!formData.consent) {
+      alert('Пожалуйста, дайте согласие на обработку персональных данных')
+      return
+    }
+    
     const selectedTourInfo = tours.find(t => t.id === selectedTour)
     
     setShowSuccessModal(true)
@@ -57,7 +63,7 @@ const Booking = () => {
     const tourToSend = selectedTourInfo?.dates || 'Не выбрано'
     const guestsToSend = guests
     
-    setFormData({ name: '', email: '', phone: '', message: '', honeypot: '' })
+    setFormData({ name: '', email: '', phone: '', message: '', honeypot: '', consent: false })
     setSelectedTour("")
     setGuests(2)
     
@@ -357,6 +363,25 @@ const Booking = () => {
                 tabIndex={-1}
                 autoComplete="off"
               />
+              
+              <div className="pt-4">
+                <label className="flex items-start gap-3 cursor-pointer group">
+                  <input
+                    type="checkbox"
+                    checked={formData.consent}
+                    onChange={(e) => setFormData({...formData, consent: e.target.checked})}
+                    className="mt-1 w-5 h-5 rounded border-2 border-white/20 bg-white/5 text-white focus:ring-2 focus:ring-white/30 cursor-pointer"
+                    required
+                  />
+                  <span className="text-sm text-white/70 leading-relaxed group-hover:text-white/90 transition-colors">
+                    Я даю согласие на обработку моих персональных данных в соответствии с{' '}
+                    <a href="https://pd.poehali.dev" target="_blank" rel="noopener noreferrer" className="text-white underline hover:text-white/80">
+                      политикой конфиденциальности
+                    </a>
+                    {' '}и Федеральным законом №152-ФЗ «О персональных данных»
+                  </span>
+                </label>
+              </div>
             </div>
 
             {/* Price Info */}
