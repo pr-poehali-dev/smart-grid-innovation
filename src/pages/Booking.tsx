@@ -375,10 +375,14 @@ const Booking = () => {
                   />
                   <span className="text-sm text-white/70 leading-relaxed group-hover:text-white/90 transition-colors">
                     Я даю согласие на обработку моих персональных данных в соответствии с{' '}
-                    <a href="https://pd.poehali.dev" target="_blank" rel="noopener noreferrer" className="text-white underline hover:text-white/80">
+                    <Link to="/privacy" className="text-white underline hover:text-white/80">
                       политикой конфиденциальности
-                    </a>
-                    {' '}и Федеральным законом №152-ФЗ «О персональных данных»
+                    </Link>
+                    {' '}и{' '}
+                    <Link to="/terms" className="text-white underline hover:text-white/80">
+                      договором оферты
+                    </Link>
+                    , а также с Федеральным законом №152-ФЗ «О персональных данных»
                   </span>
                 </label>
               </div>
