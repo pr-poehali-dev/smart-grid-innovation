@@ -24,6 +24,10 @@ const Booking = () => {
     consent: false
   })
 
+  const PRICE_PER_PERSON = 1200
+  const calculateTotal = () => PRICE_PER_PERSON * guests
+  const calculateDeposit = () => Math.round(calculateTotal() * 0.5)
+
   const tours: Tour[] = [
     { id: "may1", dates: "9 — 16 мая 2026", label: "Майские праздники", available: true },
     { id: "may2", dates: "16 — 23 мая 2026", label: "Май", available: true },
@@ -67,8 +71,8 @@ const Booking = () => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          amount: 36000.00,
-          description: `Тур ${tourToSend}, ${guestsToSend} чел.`,
+          amount: calculateDeposit() * 100,
+          description: `Тур ${tourToSend}, ${guestsToSend} чел. (предоплата 50%)`,
           return_url: `${window.location.origin}/booking/success`,
           email: dataToSend.email,
           phone: dataToSend.phone
@@ -408,21 +412,40 @@ const Booking = () => {
             </div>
 
             {/* Price Info */}
-            <div className="rounded-2xl bg-gradient-to-br from-white/10 to-white/5 ring-1 ring-white/20 p-6">
-              <div className="flex items-center justify-between mb-4">
-                <div>
-                  <div className="text-white/70 text-sm mb-1">Стоимость тура</div>
-                  <div className="text-3xl font-bold">от 1200€</div>
+            <div className="rounded-2xl bg-gradient-to-br from-white/10 to-white/5 ring-2 ring-white/20 p-8">
+              <div className="space-y-6">
+                <div className="flex items-center justify-between pb-4 border-b border-white/10">
+                  <div>
+                    <div className="text-white/70 text-sm mb-1">Стоимость за человека</div>
+                    <div className="text-2xl font-bold">{PRICE_PER_PERSON}€</div>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-white/70 text-sm mb-1">Участников</div>
+                    <div className="text-2xl font-bold">{guests}</div>
+                  </div>
                 </div>
-                <div className="text-right">
-                  <div className="text-white/70 text-sm mb-1">Участников</div>
-                  <div className="text-3xl font-bold">{guests}</div>
+
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between text-lg">
+                    <span className="text-white/80">Общая стоимость:</span>
+                    <span className="text-3xl font-bold">{calculateTotal()}€</span>
+                  </div>
+                  <div className="rounded-xl bg-white/10 p-4">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-white/80">Предоплата (50%):</span>
+                      <span className="text-2xl font-bold text-green-400">{calculateDeposit()}€</span>
+                    </div>
+                    <div className="text-white/60 text-sm">
+                      Оставшиеся {calculateTotal() - calculateDeposit()}€ оплачиваются капитану по прибытии
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div className="text-white/60 text-sm space-y-1">
-                <div>✓ 7 ночей на яхте + 1 ночь в отеле</div>
-                <div>✓ Питание, трансферы, экскурсии</div>
-                <div>✓ 3 арт-мастер-класса с материалами</div>
+
+                <div className="text-white/60 text-sm space-y-1 pt-4 border-t border-white/10">
+                  <div>✓ 7 ночей на яхте + 1 ночь в отеле</div>
+                  <div>✓ Питание, трансферы, экскурсии</div>
+                  <div>✓ 3 арт-мастер-класса с материалами</div>
+                </div>
               </div>
             </div>
 
@@ -431,9 +454,9 @@ const Booking = () => {
               type="submit"
               size="lg"
               disabled={!selectedTour}
-              className="w-full bg-white text-black hover:bg-white/90 rounded-full py-4 text-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white hover:from-green-600 hover:to-emerald-700 rounded-full py-6 text-xl font-bold disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-green-500/30"
             >
-              Отправить заявку на бронирование
+              💳 Оплатить {calculateDeposit()}€ (предоплата 50%)
             </Button>
 
             <p className="text-white/50 text-sm text-center">
