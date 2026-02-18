@@ -2,6 +2,7 @@ import { Compass, Lock, Sparkles, Mountain, Wallet, Leaf, Plus, Minus, Mail, Men
 import { Button } from "@/components/ui/button"
 import { useState, useRef, useCallback } from "react"
 import { Link } from "react-router-dom"
+import { Helmet } from "react-helmet-async"
 
 
 
@@ -194,6 +195,53 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white">
+      <Helmet>
+        <title>Инга Савина — Авторские яхт-туры с художником | Ликийское побережье 2026</title>
+        <meta name="description" content="Яхтинг по Ликийскому побережью с мастер-классами живописи и Mix-media. 8 дней моря, гор и творчества с художником Ингой Савиной. Туры май и сентябрь 2026." />
+        <link rel="canonical" href="https://ingasavina.ru/" />
+        <meta property="og:title" content="Инга Савина — Авторские яхт-туры с художником | Ликийское побережье 2026" />
+        <meta property="og:description" content="Яхтинг по Ликийскому побережью с мастер-классами живописи и Mix-media. 8 дней моря, гор и творчества." />
+        <meta property="og:url" content="https://ingasavina.ru/" />
+        <meta property="og:image" content="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/files/b93f7de1-df3d-4518-ab93-98ea1a754bf7.jpg" />
+        <meta name="twitter:title" content="Инга Савина — Авторские яхт-туры с художником | Ликийское побережье 2026" />
+        <meta name="twitter:description" content="Яхтинг по Ликийскому побережью с мастер-классами живописи и Mix-media. 8 дней моря, гор и творчества." />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "Инга Савина — Авторские туры",
+          "description": "Авторские яхт-туры по Ликийскому побережью с мастер-классами живописи",
+          "url": "https://ingasavina.ru",
+          "telephone": "+79207517515",
+          "email": "savinainga@gmail.com",
+          "image": "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/files/b93f7de1-df3d-4518-ab93-98ea1a754bf7.jpg",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "TR",
+            "addressRegion": "Ликийское побережье"
+          },
+          "sameAs": ["https://t.me/savinga"]
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {"@type": "Question", "name": "Кто такая Инга Савина?", "acceptedAnswer": {"@type": "Answer", "text": "Инга — художник и автор этих туров. Она совмещает любовь к морю, искусству и путешествиям, создавая уникальные маршруты с арт-сессиями."}},
+            {"@type": "Question", "name": "Какой формат тура?", "acceptedAnswer": {"@type": "Answer", "text": "Это комбинированное путешествие: проживание на яхте, треккинг по Ликийской тропе, творческие мастер-классы и посещение исторических мест."}},
+            {"@type": "Question", "name": "Нужна ли специальная подготовка?", "acceptedAnswer": {"@type": "Answer", "text": "Нет, подходит для всех уровней физической подготовки. Треккинг неспешный, с фотостопами. Опыт яхтинга не требуется — с вами капитан и команда."}},
+            {"@type": "Question", "name": "Сколько человек в группе?", "acceptedAnswer": {"@type": "Answer", "text": "До 6 человек на яхте. Вы можете выбрать стандартную яхту или более просторный вариант с повышенным комфортом."}}
+          ]
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "item": {"@type": "Event", "name": "Авторский яхт-тур — Майские праздники", "startDate": "2026-05-09", "endDate": "2026-05-16", "location": {"@type": "Place", "name": "Ликийское побережье, Турция"}, "organizer": {"@type": "Person", "name": "Инга Савина"}, "offers": {"@type": "Offer", "price": "1380", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"}}},
+            {"@type": "ListItem", "position": 2, "item": {"@type": "Event", "name": "Авторский яхт-тур — Май", "startDate": "2026-05-16", "endDate": "2026-05-23", "location": {"@type": "Place", "name": "Ликийское побережье, Турция"}, "organizer": {"@type": "Person", "name": "Инга Савина"}, "offers": {"@type": "Offer", "price": "1380", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"}}},
+            {"@type": "ListItem", "position": 3, "item": {"@type": "Event", "name": "Авторский яхт-тур — Бархатный сезон", "startDate": "2026-09-19", "endDate": "2026-09-26", "location": {"@type": "Place", "name": "Ликийское побережье, Турция"}, "organizer": {"@type": "Person", "name": "Инга Савина"}, "offers": {"@type": "Offer", "price": "1380", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"}}},
+            {"@type": "ListItem", "position": 4, "item": {"@type": "Event", "name": "Авторский яхт-тур — Бархатный сезон", "startDate": "2026-09-26", "endDate": "2026-10-03", "location": {"@type": "Place", "name": "Ликийское побережье, Турция"}, "organizer": {"@type": "Person", "name": "Инга Савина"}, "offers": {"@type": "Offer", "price": "1380", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"}}}
+          ]
+        })}</script>
+      </Helmet>
       {/* Hero Section */}
       <div className="relative min-h-screen">
         {/* Background Image with Overlay */}
@@ -240,6 +288,8 @@ const Index = () => {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden p-2 bg-black/40 ring-1 ring-white/20 backdrop-blur rounded-full"
+            aria-label="Открыть меню"
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -713,6 +763,7 @@ const Index = () => {
                     if (el) el.scrollBy({ left: -320, behavior: 'smooth' });
                   }}
                   className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center ring-1 ring-white/20 opacity-0 group-hover/yacht:opacity-100 transition-opacity hover:bg-black/80"
+                  aria-label="Предыдущее фото яхты"
                 >
                   <ChevronLeft className="w-5 h-5" />
                 </button>
@@ -734,6 +785,7 @@ const Index = () => {
                     if (el) el.scrollBy({ left: 320, behavior: 'smooth' });
                   }}
                   className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center ring-1 ring-white/20 opacity-0 group-hover/yacht:opacity-100 transition-opacity hover:bg-black/80"
+                  aria-label="Следующее фото яхты"
                 >
                   <ChevronRight className="w-5 h-5" />
                 </button>
@@ -962,6 +1014,7 @@ const Index = () => {
               if (el) el.scrollBy({ left: -400, behavior: 'smooth' });
             }}
             className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center ring-1 ring-white/20 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/80"
+            aria-label="Предыдущее фото"
           >
             <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
           </button>
@@ -1010,6 +1063,7 @@ const Index = () => {
               if (el) el.scrollBy({ left: 400, behavior: 'smooth' });
             }}
             className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center ring-1 ring-white/20 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/80"
+            aria-label="Следующее фото"
           >
             <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
           </button>
@@ -1140,6 +1194,7 @@ const Index = () => {
                     <button
                       onClick={() => toggleFaq(index)}
                       className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                      aria-expanded={openFaq === index}
                     >
                       <span className="text-lg font-semibold pr-4">{faq.question}</span>
                       {openFaq === index ? (
@@ -1407,7 +1462,7 @@ const Index = () => {
 
       {lightbox && (
         <div className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center" onClick={closeLightbox}>
-          <button onClick={closeLightbox} className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+          <button onClick={closeLightbox} className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors" aria-label="Закрыть просмотр">
             <X className="w-6 h-6" />
           </button>
           {lightbox.images.length > 1 && (
@@ -1415,12 +1470,14 @@ const Index = () => {
               <button
                 onClick={(e) => { e.stopPropagation(); setLightbox(prev => prev ? { ...prev, index: (prev.index - 1 + prev.images.length) % prev.images.length } : null) }}
                 className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                aria-label="Предыдущее фото"
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
               <button
                 onClick={(e) => { e.stopPropagation(); setLightbox(prev => prev ? { ...prev, index: (prev.index + 1) % prev.images.length } : null) }}
                 className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                aria-label="Следующее фото"
               >
                 <ChevronRight className="w-6 h-6" />
               </button>

@@ -1,10 +1,22 @@
 import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, Compass } from "lucide-react"
+import { Helmet } from "react-helmet-async"
 
 const Terms = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white">
+      <Helmet>
+        <title>Договор оферты — Инга Савина</title>
+        <meta name="description" content="Публичная оферта на оказание туристических услуг. Авторские яхт-туры по Ликийскому побережью с Ингой Савиной." />
+        <link rel="canonical" href="https://ingasavina.ru/terms" />
+        <meta property="og:title" content="Договор оферты — Инга Савина" />
+        <meta property="og:description" content="Публичная оферта на оказание туристических услуг. Авторские яхт-туры по Ликийскому побережью с Ингой Савиной." />
+        <meta property="og:url" content="https://ingasavina.ru/terms" />
+        <meta property="og:image" content="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/files/b93f7de1-df3d-4518-ab93-98ea1a754bf7.jpg" />
+        <meta name="twitter:title" content="Договор оферты — Инга Савина" />
+        <meta name="twitter:description" content="Публичная оферта на оказание туристических услуг. Авторские яхт-туры по Ликийскому побережью с Ингой Савиной." />
+      </Helmet>
       <nav className="relative z-10 flex items-center justify-between p-4 md:p-6">
         <Link to="/" className="flex items-center gap-2 px-3 md:px-4 py-2 bg-black/40 ring-1 ring-white/20 backdrop-blur rounded-full hover:bg-black/50 transition-colors">
           <ArrowLeft className="w-4 h-4 md:w-5 md:h-5" />

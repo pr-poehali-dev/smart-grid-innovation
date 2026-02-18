@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Compass, Calendar, Users, Check, ArrowLeft } from "lucide-react"
 import { Link } from "react-router-dom"
+import { Helmet } from "react-helmet-async"
 
 interface Tour {
   id: string
@@ -169,6 +170,17 @@ const Booking = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white">
+      <Helmet>
+        <title>Забронировать тур — Инга Савина | Авторские яхт-туры</title>
+        <meta name="description" content="Забронируйте авторский яхт-тур по Ликийскому побережью с художником Ингой Савиной. Выберите даты, яхту и оплатите онлайн." />
+        <link rel="canonical" href="https://ingasavina.ru/booking" />
+        <meta property="og:title" content="Забронировать тур — Инга Савина | Авторские яхт-туры" />
+        <meta property="og:description" content="Забронируйте авторский яхт-тур по Ликийскому побережью с художником Ингой Савиной. Выберите даты, яхту и оплатите онлайн." />
+        <meta property="og:url" content="https://ingasavina.ru/booking" />
+        <meta property="og:image" content="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/files/b93f7de1-df3d-4518-ab93-98ea1a754bf7.jpg" />
+        <meta name="twitter:title" content="Забронировать тур — Инга Савина | Авторские яхт-туры" />
+        <meta name="twitter:description" content="Забронируйте авторский яхт-тур по Ликийскому побережью с художником Ингой Савиной. Выберите даты, яхту и оплатите онлайн." />
+      </Helmet>
       {/* Header */}
       <nav className="relative z-10 flex items-center justify-between p-4 md:p-6">
         <Link to="/" className="flex items-center gap-2 px-3 md:px-4 py-2 bg-black/40 ring-1 ring-white/20 backdrop-blur rounded-full hover:bg-black/50 transition-colors">

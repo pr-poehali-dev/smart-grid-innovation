@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Link } from "react-router-dom"
 import { ArrowLeft, Palette, Wine, Map, Sparkles } from "lucide-react"
+import { Helmet } from "react-helmet-async"
 
 const masterclasses = [
   {
@@ -65,6 +66,17 @@ const masterclasses = [
 const Masterclasses = () => {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white">
+      <Helmet>
+        <title>Арт-мастер-классы — Живопись вином, Mix-media, Мозаика | Инга Савина</title>
+        <meta name="description" content="Три уникальных творческих мастер-класса под открытым небом: живопись вином, Mix-media карта путешествия и мозаика из смальты. Включены в яхт-тур." />
+        <link rel="canonical" href="https://ingasavina.ru/masterclasses" />
+        <meta property="og:title" content="Арт-мастер-классы — Живопись вином, Mix-media, Мозаика | Инга Савина" />
+        <meta property="og:description" content="Три уникальных творческих мастер-класса под открытым небом: живопись вином, Mix-media карта путешествия и мозаика из смальты. Включены в яхт-тур." />
+        <meta property="og:url" content="https://ingasavina.ru/masterclasses" />
+        <meta property="og:image" content="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/files/b93f7de1-df3d-4518-ab93-98ea1a754bf7.jpg" />
+        <meta name="twitter:title" content="Арт-мастер-классы — Живопись вином, Mix-media, Мозаика | Инга Савина" />
+        <meta name="twitter:description" content="Три уникальных творческих мастер-класса под открытым небом: живопись вином, Mix-media карта путешествия и мозаика из смальты. Включены в яхт-тур." />
+      </Helmet>
       <div className="max-w-5xl mx-auto px-4 md:px-6 py-8 md:py-16">
         <Link to="/" className="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors mb-8">
           <ArrowLeft className="w-4 h-4" />
