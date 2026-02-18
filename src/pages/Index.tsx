@@ -823,8 +823,8 @@ const Index = () => {
                 </div>
 
                 <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
-                  <h4 className="font-semibold text-lg mb-3">Яхта Bavaria</h4>
-                  <p className="text-white/80">Комфортабельное размещение в каюте по 2 человека, опытный капитан и команда</p>
+                  <h4 className="font-semibold text-lg mb-3">Яхта на выбор</h4>
+                  <p className="text-white/80">Стандартная Bavaria или просторная яхта «Комфорт+», размещение в каютах по 2 человека, опытный капитан и команда</p>
                 </div>
 
                 <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
@@ -880,32 +880,70 @@ const Index = () => {
                   <p className="text-white/80">Входы в заповедные зоны и национальные парки (если потребуется, минимальные суммы)</p>
                 </div>
 
-                {/* Price Info Box */}
-                <div className="rounded-2xl bg-gradient-to-br from-white/10 to-white/5 ring-2 ring-white/20 backdrop-blur p-8 mt-8">
-                  <div className="text-center">
-                    <p className="text-white/70 text-sm uppercase tracking-wider mb-2">Стоимость тура</p>
-                    <p className="text-5xl font-bold mb-2">от 1200€</p>
-                    <p className="text-white/60 text-sm mb-6">на человека</p>
-                    <div className="space-y-2 mb-6 text-left">
-                      <p className="text-white/80 text-sm">✓ Группы до 6 человек на яхте Bavaria</p>
-                      <p className="text-white/80 text-sm">✓ При большой группе — более просторная яхта</p>
-                      <p className="text-white/80 text-sm">✓ Готовим самостоятельно (основные продукты включены)</p>
-                      <p className="text-amber-400 text-sm font-semibold">🎉 Скидка 10% от 4 человек</p>
+                {/* Yacht Options */}
+                <div className="space-y-4 mt-8">
+                  <h3 className="text-xl md:text-2xl font-semibold text-center mb-6">Выберите яхту</h3>
+                  
+                  {/* Standard Yacht */}
+                  <div className="rounded-2xl bg-gradient-to-br from-white/10 to-white/5 ring-2 ring-white/20 backdrop-blur p-6">
+                    <div className="flex flex-col sm:flex-row gap-6">
+                      <div className="sm:w-1/3 aspect-[4/3] rounded-xl overflow-hidden flex-shrink-0">
+                        <img 
+                          src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/5ee339f6-b408-4104-9162-673d1ab1be60.jpg"
+                          alt="Яхта Bavaria — стандарт"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="px-2 py-0.5 bg-white/10 rounded-full text-xs font-medium">Стандарт</span>
+                        </div>
+                        <h4 className="text-xl font-bold mb-1">Яхта Bavaria</h4>
+                        <p className="text-white/70 text-sm mb-3">До 6 человек, уютные каюты, проверенная классика</p>
+                        <p className="text-3xl font-bold">1 200€ <span className="text-base font-normal text-white/60">/ чел</span></p>
+                        <p className="text-amber-400 text-sm font-semibold mt-1">🎉 Скидка 10% от 4 человек</p>
+                      </div>
                     </div>
-                    <div className="rounded-xl bg-white/10 ring-1 ring-white/20 p-4 mb-6">
-                      <p className="text-white/90 text-sm font-semibold mb-1">💳 Оплата двумя платежами</p>
-                      <p className="text-white/70 text-sm">40% предоплата, 60% в день старта</p>
+                  </div>
+
+                  {/* Premium Yacht */}
+                  <div className="rounded-2xl bg-gradient-to-br from-amber-500/10 to-white/5 ring-2 ring-amber-500/30 backdrop-blur p-6 relative">
+                    <div className="absolute -top-3 right-4 px-3 py-1 bg-amber-500 text-black text-xs font-bold rounded-full">Комфорт+</div>
+                    <div className="flex flex-col sm:flex-row gap-6">
+                      <div className="sm:w-1/3 aspect-[4/3] rounded-xl overflow-hidden flex-shrink-0">
+                        <img 
+                          src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/3f3a8d1c-9ca4-499e-93ab-f18c53ce6f48.jpg"
+                          alt="Просторная яхта — Комфорт+"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="px-2 py-0.5 bg-amber-500/20 text-amber-400 rounded-full text-xs font-medium">Просторная</span>
+                        </div>
+                        <h4 className="text-xl font-bold mb-1">Просторная яхта</h4>
+                        <p className="text-white/70 text-sm mb-3">До 7 человек, больше пространства, повышенный комфорт, тиковая палуба</p>
+                        <p className="text-3xl font-bold">1 500€ <span className="text-base font-normal text-white/60">/ чел</span></p>
+                        <p className="text-amber-400 text-sm font-semibold mt-1">🎉 Скидка 10% от 4 человек</p>
+                      </div>
                     </div>
-                    <Link to="/booking">
-                      <Button 
-                        size="lg"
-                        className="bg-white text-black hover:bg-white/90 rounded-full px-8 w-full"
-                      >
-                        Забронировать тур
-                      </Button>
-                    </Link>
                   </div>
                 </div>
+
+                {/* Payment Info */}
+                <div className="rounded-xl bg-white/10 ring-1 ring-white/20 p-4 mt-6">
+                  <p className="text-white/90 text-sm font-semibold mb-1 text-center">💳 Оплата двумя платежами</p>
+                  <p className="text-white/70 text-sm text-center">40% предоплата, 60% в день старта</p>
+                </div>
+
+                <Link to="/booking" className="block mt-6">
+                  <Button 
+                    size="lg"
+                    className="bg-white text-black hover:bg-white/90 rounded-full px-8 w-full"
+                  >
+                    Забронировать тур
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

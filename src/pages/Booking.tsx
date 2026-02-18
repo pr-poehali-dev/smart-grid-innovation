@@ -10,8 +10,14 @@ interface Tour {
   available: boolean
 }
 
+const YACHT_OPTIONS = {
+  standard: { name: 'Яхта Bavaria', price: 1200, label: 'Стандарт', maxGuests: 6 },
+  premium: { name: 'Просторная яхта', price: 1500, label: 'Комфорт+', maxGuests: 7 },
+}
+
 const Booking = () => {
   const [selectedTour, setSelectedTour] = useState<string>("")
+  const [selectedYacht, setSelectedYacht] = useState<'standard' | 'premium'>('standard')
   const [guests, setGuests] = useState<number>(2)
   const [showSuccessModal, setShowSuccessModal] = useState(false)
   const [activeTab, setActiveTab] = useState<'booking' | 'masterclasses'>('booking')
@@ -25,7 +31,8 @@ const Booking = () => {
     consent: false
   })
 
-  const PRICE_PER_PERSON = 1200
+  const yacht = YACHT_OPTIONS[selectedYacht]
+  const PRICE_PER_PERSON = yacht.price
   const getDiscount = () => guests >= 4 ? 0.1 : 0
   const calculateTotal = () => {
     const basePrice = PRICE_PER_PERSON * guests
@@ -80,6 +87,7 @@ const Booking = () => {
         body: JSON.stringify({
           type: 'booking',
           tour: tourToSend,
+          yacht: yacht.name,
           guests: guests,
           name: formData.name,
           email: formData.email,
@@ -113,7 +121,7 @@ const Booking = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           amount_eur: calculateDeposit(),
-          description: `Тур ${tourToSend}, ${guests} чел. (предоплата 40%)`,  
+          description: `Тур ${tourToSend}, ${yacht.name}, ${guests} чел. (предоплата 40%)`,  
           return_url: `${window.location.origin}/booking/success`,
           email: formData.email,
           phone: formData.phone
@@ -136,6 +144,7 @@ const Booking = () => {
           body: JSON.stringify({
             type: 'booking',
             tour: tourToSend,
+            yacht: yacht.name,
             guests: guests,
             name: formData.name,
             email: formData.email,
@@ -334,6 +343,57 @@ const Booking = () => {
               </div>
             </div>
 
+            {/* Yacht Selection */}
+            <div>
+              <label className="block text-xl font-semibold mb-6 flex items-center gap-3">
+                ⛵ Выберите яхту
+              </label>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <button
+                  type="button"
+                  onClick={() => { setSelectedYacht('standard'); if (guests > 6) setGuests(6) }}
+                  className={`p-5 rounded-2xl text-left transition-all ${
+                    selectedYacht === 'standard'
+                      ? 'bg-white/20 ring-2 ring-white/40'
+                      : 'bg-white/5 ring-1 ring-white/10 hover:bg-white/10'
+                  }`}
+                >
+                  <div className="flex items-start justify-between mb-3">
+                    <span className="px-2 py-0.5 bg-white/10 rounded-full text-xs font-medium">Стандарт</span>
+                    {selectedYacht === 'standard' && <Check className="w-5 h-5 text-green-400" />}
+                  </div>
+                  <div className="aspect-[16/9] rounded-xl overflow-hidden mb-3">
+                    <img src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/5ee339f6-b408-4104-9162-673d1ab1be60.jpg" alt="Яхта Bavaria" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="text-lg font-bold mb-1">Яхта Bavaria</div>
+                  <div className="text-white/60 text-sm mb-2">До 6 человек, уютные каюты</div>
+                  <div className="text-2xl font-bold">1 200€ <span className="text-sm font-normal text-white/60">/ чел</span></div>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setSelectedYacht('premium')}
+                  className={`p-5 rounded-2xl text-left transition-all relative ${
+                    selectedYacht === 'premium'
+                      ? 'bg-amber-500/10 ring-2 ring-amber-500/40'
+                      : 'bg-white/5 ring-1 ring-white/10 hover:bg-white/10'
+                  }`}
+                >
+                  <div className="absolute -top-3 right-4 px-3 py-1 bg-amber-500 text-black text-xs font-bold rounded-full">Комфорт+</div>
+                  <div className="flex items-start justify-between mb-3">
+                    <span className="px-2 py-0.5 bg-amber-500/20 text-amber-400 rounded-full text-xs font-medium">Просторная</span>
+                    {selectedYacht === 'premium' && <Check className="w-5 h-5 text-green-400" />}
+                  </div>
+                  <div className="aspect-[16/9] rounded-xl overflow-hidden mb-3">
+                    <img src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/3f3a8d1c-9ca4-499e-93ab-f18c53ce6f48.jpg" alt="Просторная яхта" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="text-lg font-bold mb-1">Просторная яхта</div>
+                  <div className="text-white/60 text-sm mb-2">До 7 человек, повышенный комфорт, тиковая палуба</div>
+                  <div className="text-2xl font-bold">1 500€ <span className="text-sm font-normal text-white/60">/ чел</span></div>
+                </button>
+              </div>
+            </div>
+
             {/* Guests Selection */}
             <div>
               <label className="block text-xl font-semibold mb-6 flex items-center gap-3">
@@ -352,14 +412,13 @@ const Booking = () => {
                   <div className="text-4xl font-bold w-16 text-center">{guests}</div>
                   <button
                     type="button"
-                    onClick={() => setGuests(Math.min(10, guests + 1))}
+                    onClick={() => setGuests(Math.min(yacht.maxGuests, guests + 1))}
                     className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-2xl font-bold transition-colors"
                   >
                     +
                   </button>
                   <div className="ml-4 text-white/60">
-                    <div className="text-sm">До 6 человек — яхта Bavaria</div>
-                    <div className="text-sm">Больше 6 — просторная яхта</div>
+                    <div className="text-sm">Макс. {yacht.maxGuests} чел. на {yacht.name}</div>
                   </div>
                 </div>
                 
@@ -476,7 +535,7 @@ const Booking = () => {
               <div className="space-y-6">
                 <div className="flex items-center justify-between pb-4 border-b border-white/10">
                   <div>
-                    <div className="text-white/70 text-sm mb-1">Стоимость за человека</div>
+                    <div className="text-white/70 text-sm mb-1">{yacht.name} · {PRICE_PER_PERSON}€/чел</div>
                     <div className="text-2xl font-bold">{PRICE_PER_PERSON}€</div>
                   </div>
                   <div className="text-right">
