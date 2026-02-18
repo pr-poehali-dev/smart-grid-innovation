@@ -1,6 +1,6 @@
 import { Compass, Lock, Sparkles, Mountain, Wallet, Leaf, Plus, Minus, Mail, Menu, X, Check, ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { useState, useRef } from "react"
+import { useState, useRef, useCallback } from "react"
 import { Link } from "react-router-dom"
 
 
@@ -14,6 +14,17 @@ const Index = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [showSuccessModal, setShowSuccessModal] = useState(false)
+  const [lightbox, setLightbox] = useState<{ images: { src: string; alt: string }[]; index: number } | null>(null)
+
+  const openLightbox = useCallback((images: { src: string; alt: string }[], index: number) => {
+    setLightbox({ images, index })
+    document.body.style.overflow = 'hidden'
+  }, [])
+
+  const closeLightbox = useCallback(() => {
+    setLightbox(null)
+    document.body.style.overflow = ''
+  }, [])
   const [formData, setFormData] = useState({ name: '', email: '', message: '', honeypot: '' })
   const [expectationsData, setExpectationsData] = useState({
     expectations: [] as string[],
@@ -781,7 +792,7 @@ const Index = () => {
                 >
                   <style>{`#yacht-slider-${yacht.id}::-webkit-scrollbar { display: none; }`}</style>
                   {yacht.photos.map((photo, i) => (
-                    <div key={i} className={`flex-shrink-0 rounded-2xl overflow-hidden ${yacht.ringClass} ring-1 snap-start ${i === yacht.photos.length - 1 && yacht.id === 'standard' ? 'w-[80vw] md:w-[600px] h-56 md:h-64' : 'w-72 md:w-80 h-56 md:h-64'}`}>
+                    <div key={i} className={`flex-shrink-0 rounded-2xl overflow-hidden ${yacht.ringClass} ring-1 snap-start cursor-pointer ${i === yacht.photos.length - 1 && yacht.id === 'standard' ? 'w-[80vw] md:w-[600px] h-56 md:h-64' : 'w-72 md:w-80 h-56 md:h-64'}`} onClick={() => openLightbox(yacht.photos, i)}>
                       <img src={photo.src} alt={photo.alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
                     </div>
                   ))}
@@ -814,161 +825,88 @@ const Index = () => {
       {/* What's Included Section */}
       <section className="relative z-10 py-12 md:py-24 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="rounded-2xl md:rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6 md:p-12">
-            <div className="text-center mb-12 md:mb-16">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-balance">Что включено в стоимость</h2>
-              <p className="text-lg text-white/80 max-w-3xl mx-auto">
-                Всё для вашего комфортного и незабываемого путешествия уже учтено
-              </p>
-            </div>
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-balance">Что включено в стоимость</h2>
+            <p className="text-lg text-white/80 max-w-3xl mx-auto">
+              Всё для вашего комфортного и незабываемого путешествия уже учтено
+            </p>
+          </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-              {/* Included Items */}
-              <div className="space-y-4 md:space-y-6">
-                <h3 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 flex items-center gap-3">
-                  <span className="text-3xl">✅</span>
-                  Включено
-                </h3>
-
-                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
-                  <h4 className="font-semibold text-lg mb-3">Проживание</h4>
-                  <p className="text-white/80">7 ночей на яхте в комфортных каютах + 1 ночь в отеле с бассейном в Фетхие</p>
-                </div>
-
-                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
-                  <h4 className="font-semibold text-lg mb-3">Питание</h4>
-                  <p className="text-white/80">Готовим вместе на яхте из закупленных свежих продуктов: завтраки, обеды, ужины. Турецкая кухня, вегетарианские опции</p>
-                </div>
-
-                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
-                  <h4 className="font-semibold text-lg mb-3">Трансферы</h4>
-                  <p className="text-white/80">Групповой трансфер из/в аэропорт Даламан, все переезды по программе</p>
-                </div>
-
-                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
-                  <h4 className="font-semibold text-lg mb-3">Яхта на выбор</h4>
-                  <p className="text-white/80">Вариант 1 (Стандарт) или Вариант 2 (Комфорт), размещение в каютах по 2 человека, опытный капитан и команда</p>
-                </div>
-
-                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
-                  <h4 className="font-semibold text-lg mb-3">Творческие мастер-классы</h4>
-                  <p className="text-white/80">3 мастер-класса с Ингой: "Живопись вином", "Mix-media" и "Мозаика из смальты", все материалы предоставляются</p>
-                </div>
-
-                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
-                  <h4 className="font-semibold text-lg mb-3">Экскурсии и активности</h4>
-                  <p className="text-white/80">Треккинг по Ликийской тропе, посещение Долины Бабочек, прогулка к арке тропы, снорклинг. Увидим все самые красивые пляжи на Средиземноморском побережье: Капуташ, Долина Бабочек, Парадайз и бухта Олюдениз</p>
-                </div>
-
-                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
-                  <h4 className="font-semibold text-lg mb-3">Хаммам</h4>
-                  <p className="text-white/80">Турецкая баня в первый день для расслабления после перелёта</p>
-                </div>
-
-                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
-                  <h4 className="font-semibold text-lg mb-3">Сопровождение</h4>
-                  <p className="text-white/80">Инга Савина — ваш гид, художник и вдохновитель на протяжении всего путешествия</p>
-                </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            {[
+              { icon: "🏠", title: "Проживание", desc: "7 ночей на яхте + 1 ночь в отеле с бассейном" },
+              { icon: "🍽", title: "Питание", desc: "Завтраки, обеды, ужины из свежих продуктов" },
+              { icon: "🚐", title: "Трансферы", desc: "Аэропорт Даламан и все переезды" },
+              { icon: "⛵", title: "Яхта на выбор", desc: "Стандарт или Комфорт, капитан и команда" },
+              { icon: "🎨", title: "3 мастер-класса", desc: "Живопись вином, Mix-media, Мозаика из смальты" },
+              { icon: "🏔", title: "Экскурсии", desc: "Ликийская тропа, Долина Бабочек, снорклинг" },
+              { icon: "🧖‍♀️", title: "Хаммам", desc: "Турецкая баня в первый день" },
+              { icon: "💫", title: "Сопровождение", desc: "Инга Савина — гид и художник на всём пути" },
+            ].map((item, i) => (
+              <div key={i} className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-5 hover:bg-white/8 transition-colors">
+                <span className="text-2xl mb-3 block">{item.icon}</span>
+                <h4 className="font-semibold mb-1">{item.title}</h4>
+                <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
               </div>
+            ))}
+          </div>
 
-              {/* Not Included Items */}
-              <div className="space-y-4 md:space-y-6">
-                <h3 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 flex items-center gap-3">
-                  <span className="text-3xl">ℹ️</span>
-                  Оплачивается дополнительно
-                </h3>
-
-                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
-                  <h4 className="font-semibold text-lg mb-3">Авиабилеты</h4>
-                  <p className="text-white/80">Перелёт до/из аэропорта Даламан</p>
-                </div>
-
-                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
-                  <h4 className="font-semibold text-lg mb-3">Медицинская страховка</h4>
-                  <p className="text-white/80">Рекомендуем оформить страховку для путешествий</p>
-                </div>
-
-                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
-                  <h4 className="font-semibold text-lg mb-3">Личные расходы</h4>
-                  <p className="text-white/80">Сувениры, дополнительные напитки, личные покупки</p>
-                </div>
-
-                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
-                  <h4 className="font-semibold text-lg mb-3">Прощальный ужин в ресторане</h4>
-                  <p className="text-white/80">Ужин в последний вечер в Фетхие (по меню, ~20-30€)</p>
-                </div>
-
-                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
-                  <h4 className="font-semibold text-lg mb-3">Входные билеты</h4>
-                  <p className="text-white/80">Входы в заповедные зоны и национальные парки (если потребуется, минимальные суммы)</p>
-                </div>
-
-                {/* Yacht Options */}
-                <div className="space-y-4 mt-8">
-                  <h3 className="text-xl md:text-2xl font-semibold text-center mb-6">Выберите яхту</h3>
-                  
-                  {/* Standard Yacht */}
-                  <div className="rounded-2xl bg-gradient-to-br from-white/10 to-white/5 ring-2 ring-white/20 backdrop-blur p-6">
-                    <div className="flex flex-col sm:flex-row gap-6">
-                      <div className="sm:w-1/3 aspect-[4/3] rounded-xl overflow-hidden flex-shrink-0">
-                        <img 
-                          src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/ef8c1db0-1422-4ce7-a768-8499fb8cc805.jpg"
-                          alt="Яхта Bavaria — стандарт"
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-2">
-                          <span className="px-2 py-0.5 bg-white/10 rounded-full text-xs font-medium">Вариант 1</span>
-                        </div>
-                        <h4 className="text-xl font-bold mb-1">Стандарт</h4>
-                        <p className="text-white/70 text-sm mb-3">До 6 человек, уютные каюты, проверенная классика</p>
-                        <p className="text-3xl font-bold">1 200€ <span className="text-base font-normal text-white/60">/ чел</span></p>
-                        <p className="text-amber-400 text-sm font-semibold mt-1">🎉 Скидка 10% от 4 человек</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Premium Yacht */}
-                  <div className="rounded-2xl bg-gradient-to-br from-amber-500/10 to-white/5 ring-2 ring-amber-500/30 backdrop-blur p-6 relative">
-                    <div className="absolute -top-3 right-4 px-3 py-1 bg-amber-500 text-black text-xs font-bold rounded-full">Комфорт</div>
-                    <div className="flex flex-col sm:flex-row gap-6">
-                      <div className="sm:w-1/3 aspect-[4/3] rounded-xl overflow-hidden flex-shrink-0">
-                        <img 
-                          src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/3f3a8d1c-9ca4-499e-93ab-f18c53ce6f48.jpg"
-                          alt="Яхта — Комфорт"
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-2">
-                          <span className="px-2 py-0.5 bg-amber-500/20 text-amber-400 rounded-full text-xs font-medium">Вариант 2</span>
-                        </div>
-                        <h4 className="text-xl font-bold mb-1">Комфорт</h4>
-                        <p className="text-white/70 text-sm mb-3">До 7 человек, больше пространства, повышенный комфорт, тиковая палуба</p>
-                        <p className="text-3xl font-bold">1 500€ <span className="text-base font-normal text-white/60">/ чел</span></p>
-                        <p className="text-amber-400 text-sm font-semibold mt-1">🎉 Скидка 10% от 4 человек</p>
-                      </div>
-                    </div>
+          <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6 md:p-8 mb-8">
+            <h3 className="text-lg font-semibold mb-4 text-white/70">Оплачивается дополнительно</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+              {[
+                { title: "Авиабилеты", desc: "до/из Даламана" },
+                { title: "Страховка", desc: "медицинская" },
+                { title: "Личные расходы", desc: "сувениры, покупки" },
+                { title: "Прощальный ужин", desc: "~20-30€ в ресторане" },
+                { title: "Входные билеты", desc: "нац. парки, мин. суммы" },
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-3 rounded-xl bg-white/5 p-4">
+                  <span className="text-white/30 text-sm mt-0.5">+</span>
+                  <div>
+                    <p className="font-medium text-sm">{item.title}</p>
+                    <p className="text-white/50 text-xs">{item.desc}</p>
                   </div>
                 </div>
-
-                {/* Payment Info */}
-                <div className="rounded-xl bg-white/10 ring-1 ring-white/20 p-4 mt-6">
-                  <p className="text-white/90 text-sm font-semibold mb-1 text-center">💳 Оплата двумя платежами</p>
-                  <p className="text-white/70 text-sm text-center">40% предоплата, 60% в день старта</p>
-                </div>
-
-                <Link to="/booking" className="block mt-6">
-                  <Button 
-                    size="lg"
-                    className="bg-white text-black hover:bg-white/90 rounded-full px-8 w-full"
-                  >
-                    Забронировать тур
-                  </Button>
-                </Link>
-              </div>
+              ))}
             </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div className="rounded-2xl bg-gradient-to-br from-white/10 to-white/5 ring-1 ring-white/20 backdrop-blur p-6">
+              <div className="flex items-center justify-between mb-3">
+                <span className="px-3 py-1 bg-white/10 rounded-full text-xs font-medium">Вариант 1</span>
+              </div>
+              <h4 className="text-2xl font-bold mb-1">Стандарт</h4>
+              <p className="text-white/60 text-sm mb-4">До 6 человек, уютные каюты</p>
+              <p className="text-3xl font-bold">1 200€ <span className="text-base font-normal text-white/50">/ чел</span></p>
+              <p className="text-amber-400 text-sm font-semibold mt-2">Скидка 10% от 4 человек</p>
+            </div>
+            <div className="rounded-2xl bg-gradient-to-br from-amber-500/10 to-white/5 ring-1 ring-amber-500/30 backdrop-blur p-6 relative">
+              <div className="absolute -top-3 right-4 px-3 py-1 bg-amber-500 text-black text-xs font-bold rounded-full">Комфорт</div>
+              <div className="flex items-center justify-between mb-3">
+                <span className="px-3 py-1 bg-amber-500/20 text-amber-400 rounded-full text-xs font-medium">Вариант 2</span>
+              </div>
+              <h4 className="text-2xl font-bold mb-1">Комфорт</h4>
+              <p className="text-white/60 text-sm mb-4">До 7 человек, тиковая палуба</p>
+              <p className="text-3xl font-bold">1 500€ <span className="text-base font-normal text-white/50">/ чел</span></p>
+              <p className="text-amber-400 text-sm font-semibold mt-2">Скидка 10% от 4 человек</p>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 rounded-xl bg-white/10 ring-1 ring-white/20 p-5">
+            <div className="text-center sm:text-left">
+              <p className="text-white/90 font-semibold">Оплата двумя платежами: 40% предоплата, 60% в день старта</p>
+              <p className="text-amber-400 text-sm mt-1">Цена на майские туры действительна до 1 апреля 2026</p>
+            </div>
+            <Link to="/booking" className="flex-shrink-0">
+              <Button 
+                size="lg"
+                className="bg-white text-black hover:bg-white/90 rounded-full px-8"
+              >
+                Забронировать тур
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -1269,33 +1207,36 @@ const Index = () => {
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
           >
             <style>{`#gallery-slider::-webkit-scrollbar { display: none; }`}</style>
-            {[
-              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/737ad2e8-0ac4-42b7-badf-4de8c8447a39.jpg", alt: "Ликийское побережье" },
-              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/40d0bdd6-a9ac-42a6-a9ac-b4043558d4f6.jpg", alt: "Команда с капитаном" },
-              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/4e545080-d6a0-4c74-bcd3-53ba30551644.jpg", alt: "Мастер-класс на пленэре" },
-              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/6d10ac00-db21-467e-929d-56f26464464a.jpg", alt: "Улочки старого города" },
-              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/ab73aaf4-3000-42a6-a95d-50e4a57cf257.jpg", alt: "Древние руины" },
-              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/b6b3eb7f-c7a9-4d3d-ab3d-46e4c220f10e.jpg", alt: "SUP на бирюзовой воде" },
-              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/30fee0a7-88df-4986-9724-a54c60ba1fd3.jpg", alt: "Творческий процесс" },
-              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/a9d65726-0956-45e1-b2f2-90d0bc03543c.jpg", alt: "Прогулка по пляжу" },
-              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/436f10d2-e536-48bd-8e1a-e2c75425cb6a.jpg", alt: "Отдых на яхте" },
-              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/73ae8179-add6-4521-aa0b-46930bd0344b.jpg", alt: "Античный амфитеатр" },
-              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/85df47c7-9778-4d17-9a1f-852a0555b8a3.jpg", alt: "Вечер в марине" },
-              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/87a30256-2596-4dec-b006-0c1fdbe4c38f.jpg", alt: "Прогулка по старому городу" },
-              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/186becd9-f56a-4a5d-b688-261aad1a3bea.jpg", alt: "Релакс на палубе" },
-              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/fe6714be-61fe-4663-81ec-d0a0f2f71b51.jpg", alt: "Материалы для творчества" },
-              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/files/fdd8a51f-a1e6-4318-ace0-eea7a2717a58.jpg", alt: "Яхта в бухте" },
-              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/8c4559e8-cfe8-4d64-99c1-74f5989a3e4e.jpg", alt: "Селфи на скалах" },
-            ].map((photo, i) => (
-              <div key={i} className="flex-shrink-0 w-72 md:w-80 h-80 md:h-96 rounded-2xl overflow-hidden ring-1 ring-white/10 snap-start">
-                <img
-                  src={photo.src}
-                  alt={photo.alt}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                />
-              </div>
-            ))}
+            {(() => {
+              const galleryPhotos = [
+                { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/737ad2e8-0ac4-42b7-badf-4de8c8447a39.jpg", alt: "Ликийское побережье" },
+                { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/40d0bdd6-a9ac-42a6-a9ac-b4043558d4f6.jpg", alt: "Команда с капитаном" },
+                { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/4e545080-d6a0-4c74-bcd3-53ba30551644.jpg", alt: "Мастер-класс на пленэре" },
+                { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/6d10ac00-db21-467e-929d-56f26464464a.jpg", alt: "Улочки старого города" },
+                { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/ab73aaf4-3000-42a6-a95d-50e4a57cf257.jpg", alt: "Древние руины" },
+                { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/b6b3eb7f-c7a9-4d3d-ab3d-46e4c220f10e.jpg", alt: "SUP на бирюзовой воде" },
+                { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/30fee0a7-88df-4986-9724-a54c60ba1fd3.jpg", alt: "Творческий процесс" },
+                { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/a9d65726-0956-45e1-b2f2-90d0bc03543c.jpg", alt: "Прогулка по пляжу" },
+                { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/436f10d2-e536-48bd-8e1a-e2c75425cb6a.jpg", alt: "Отдых на яхте" },
+                { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/73ae8179-add6-4521-aa0b-46930bd0344b.jpg", alt: "Античный амфитеатр" },
+                { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/85df47c7-9778-4d17-9a1f-852a0555b8a3.jpg", alt: "Вечер в марине" },
+                { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/87a30256-2596-4dec-b006-0c1fdbe4c38f.jpg", alt: "Прогулка по старому городу" },
+                { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/186becd9-f56a-4a5d-b688-261aad1a3bea.jpg", alt: "Релакс на палубе" },
+                { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/fe6714be-61fe-4663-81ec-d0a0f2f71b51.jpg", alt: "Материалы для творчества" },
+                { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/files/fdd8a51f-a1e6-4318-ace0-eea7a2717a58.jpg", alt: "Яхта в бухте" },
+                { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/8c4559e8-cfe8-4d64-99c1-74f5989a3e4e.jpg", alt: "Селфи на скалах" },
+              ];
+              return galleryPhotos.map((photo, i) => (
+                <div key={i} className="flex-shrink-0 w-72 md:w-80 h-80 md:h-96 rounded-2xl overflow-hidden ring-1 ring-white/10 snap-start cursor-pointer" onClick={() => openLightbox(galleryPhotos, i)}>
+                  <img
+                    src={photo.src}
+                    alt={photo.alt}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                </div>
+              ));
+            })()}
           </div>
 
           <button
@@ -1400,7 +1341,10 @@ const Index = () => {
 
           <div className="text-center mt-12">
             <p className="text-white/60 text-sm max-w-2xl mx-auto">
-              Количество мест ограничено — до 6 человек на яхте Bavaria. Рекомендуем бронировать заранее.
+              Количество мест ограничено — до 6-7 человек на яхте. Рекомендуем бронировать заранее.
+            </p>
+            <p className="text-amber-400 text-sm font-medium mt-2">
+              Цена на майские туры действительна до 1 апреля 2026
             </p>
           </div>
         </div>
@@ -1719,6 +1663,42 @@ const Index = () => {
           </div>
         </div>
       </footer>
+
+      {lightbox && (
+        <div className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center" onClick={closeLightbox}>
+          <button onClick={closeLightbox} className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+            <X className="w-6 h-6" />
+          </button>
+          {lightbox.images.length > 1 && (
+            <>
+              <button
+                onClick={(e) => { e.stopPropagation(); setLightbox(prev => prev ? { ...prev, index: (prev.index - 1 + prev.images.length) % prev.images.length } : null) }}
+                className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              <button
+                onClick={(e) => { e.stopPropagation(); setLightbox(prev => prev ? { ...prev, index: (prev.index + 1) % prev.images.length } : null) }}
+                className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            </>
+          )}
+          <div className="max-w-5xl max-h-[85vh] px-4" onClick={(e) => e.stopPropagation()}>
+            <img
+              src={lightbox.images[lightbox.index].src}
+              alt={lightbox.images[lightbox.index].alt}
+              className="max-w-full max-h-[85vh] object-contain rounded-lg"
+            />
+          </div>
+          {lightbox.images.length > 1 && (
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/60 text-sm">
+              {lightbox.index + 1} / {lightbox.images.length}
+            </div>
+          )}
+        </div>
+      )}
     </div>
   )
 }
