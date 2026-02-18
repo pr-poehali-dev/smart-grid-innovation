@@ -11,8 +11,8 @@ interface Tour {
 }
 
 const YACHT_OPTIONS = {
-  standard: { name: 'Вариант 1 — Стандарт', price: 1200, label: 'Стандарт', maxGuests: 6 },
-  premium: { name: 'Вариант 2 — Комфорт', price: 1500, label: 'Комфорт', maxGuests: 7 },
+  standard: { name: 'Вариант 1 — Стандарт', price: 1380, label: 'Стандарт', maxGuests: 6 },
+  premium: { name: 'Вариант 2 — Комфорт', price: 1725, label: 'Комфорт', maxGuests: 7 },
 }
 
 const Booking = () => {
@@ -367,7 +367,7 @@ const Booking = () => {
                   </div>
                   <div className="text-lg font-bold mb-1">Стандарт</div>
                   <div className="text-white/60 text-sm mb-2">До 6 человек, уютные каюты</div>
-                  <div className="text-2xl font-bold">1 200€ <span className="text-sm font-normal text-white/60">/ чел</span></div>
+                  <div className="text-2xl font-bold">1 380€* <span className="text-sm font-normal text-white/60">/ чел</span></div>
                 </button>
 
                 <button
@@ -389,9 +389,10 @@ const Booking = () => {
                   </div>
                   <div className="text-lg font-bold mb-1">Комфорт</div>
                   <div className="text-white/60 text-sm mb-2">До 7 человек, повышенный комфорт, тиковая палуба</div>
-                  <div className="text-2xl font-bold">1 500€ <span className="text-sm font-normal text-white/60">/ чел</span></div>
+                  <div className="text-2xl font-bold">1 725€* <span className="text-sm font-normal text-white/60">/ чел</span></div>
                 </button>
               </div>
+              <p className="text-white/40 text-xs mt-3">* Цена на майские туры действительна до 1 апреля 2026</p>
             </div>
 
             {/* Guests Selection */}

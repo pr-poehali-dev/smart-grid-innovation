@@ -385,7 +385,7 @@ const Index = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 md:gap-8">
             {/* Expert-Led Tours */}
-            <Link to="/booking" className="block">
+            <a href="#route" className="block">
               <div className="rounded-2xl bg-gradient-to-br from-amber-500/20 to-white/5 ring-2 ring-amber-500/30 backdrop-blur p-8 text-center hover:ring-amber-500/50 transition-all cursor-pointer relative">
                 <div className="absolute -top-3 right-4 px-3 py-1 bg-amber-500 text-black text-xs font-bold rounded-full">Уникально</div>
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-amber-500/20 ring-1 ring-amber-500/30 mb-6">
@@ -395,7 +395,7 @@ const Index = () => {
                 <p className="text-white/80 leading-relaxed mb-4">Живопись вином, Mix-media и мозаика из смальты под открытым небом</p>
                 <span className="inline-flex items-center gap-1 text-amber-400 text-sm font-semibold">Подробнее →</span>
               </div>
-            </Link>
+            </a>
 
             {/* Lycian Way Trekking */}
             <div className="rounded-2xl bg-black/20 ring-1 ring-white/15 backdrop-blur p-8 text-center">
@@ -666,7 +666,7 @@ const Index = () => {
             {
               id: 'standard',
               title: 'Вариант 1 — Стандарт',
-              price: '1 200€/чел',
+              price: '1 380€/чел*',
               priceClass: 'bg-white/10 text-white',
               ringClass: 'ring-white/10',
               bgClass: 'bg-white/5 ring-white/10',
@@ -685,7 +685,7 @@ const Index = () => {
             {
               id: 'premium',
               title: 'Вариант 2 — Комфорт',
-              price: '1 500€/чел',
+              price: '1 725€/чел*',
               priceClass: 'bg-amber-500 text-black font-bold',
               ringClass: 'ring-amber-500/20',
               bgClass: 'bg-amber-500/5 ring-amber-500/20',
@@ -811,7 +811,7 @@ const Index = () => {
                 </div>
                 <h4 className="text-2xl font-bold mb-1">Стандарт</h4>
                 <p className="text-white/60 text-sm mb-4">До 6 человек, уютные каюты</p>
-                <p className="text-3xl font-bold">1 200€ <span className="text-base font-normal text-white/50">/ чел</span></p>
+                <p className="text-3xl font-bold">1 380€* <span className="text-base font-normal text-white/50">/ чел</span></p>
                 <p className="text-amber-400 text-sm font-semibold mt-2">Скидка 10% от 4 человек</p>
               </div>
             </Link>
@@ -823,7 +823,7 @@ const Index = () => {
                 </div>
                 <h4 className="text-2xl font-bold mb-1">Комфорт</h4>
                 <p className="text-white/60 text-sm mb-4">До 7 человек, тиковая палуба</p>
-                <p className="text-3xl font-bold">1 500€ <span className="text-base font-normal text-white/50">/ чел</span></p>
+                <p className="text-3xl font-bold">1 725€* <span className="text-base font-normal text-white/50">/ чел</span></p>
                 <p className="text-amber-400 text-sm font-semibold mt-2">Скидка 10% от 4 человек</p>
               </div>
             </Link>
@@ -832,7 +832,7 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 rounded-xl bg-white/10 ring-1 ring-white/20 p-5">
             <div className="text-center sm:text-left">
               <p className="text-white/90 font-semibold">Оплата двумя платежами: 40% предоплата, 60% в день старта</p>
-              <p className="text-amber-400 text-sm mt-1">Цена на майские туры действительна до 1 апреля 2026</p>
+              <p className="text-white/50 text-sm mt-1">* Цена на майские туры действительна до 1 апреля 2026</p>
             </div>
             <Link to="/booking" className="flex-shrink-0">
               <Button 
@@ -1108,8 +1108,8 @@ const Index = () => {
             <p className="text-white/60 text-sm max-w-2xl mx-auto">
               Количество мест ограничено — до 6-7 человек на яхте. Рекомендуем бронировать заранее.
             </p>
-            <p className="text-amber-400 text-sm font-medium mt-2">
-              Цена на майские туры действительна до 1 апреля 2026
+            <p className="text-white/50 text-sm mt-2">
+              * Цена на майские туры действительна до 1 апреля 2026
             </p>
           </div>
         </div>
