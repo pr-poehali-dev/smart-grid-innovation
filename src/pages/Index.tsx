@@ -235,10 +235,10 @@ const Index = () => {
           "@context": "https://schema.org",
           "@type": "ItemList",
           "itemListElement": [
-            {"@type": "ListItem", "position": 1, "item": {"@type": "Event", "name": "Авторский яхт-тур — Майские праздники", "startDate": "2026-05-09", "endDate": "2026-05-16", "location": {"@type": "Place", "name": "Ликийское побережье, Турция"}, "organizer": {"@type": "Person", "name": "Инга Савина"}, "offers": {"@type": "Offer", "price": "1380", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"}}},
-            {"@type": "ListItem", "position": 2, "item": {"@type": "Event", "name": "Авторский яхт-тур — Май", "startDate": "2026-05-16", "endDate": "2026-05-23", "location": {"@type": "Place", "name": "Ликийское побережье, Турция"}, "organizer": {"@type": "Person", "name": "Инга Савина"}, "offers": {"@type": "Offer", "price": "1380", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"}}},
-            {"@type": "ListItem", "position": 3, "item": {"@type": "Event", "name": "Авторский яхт-тур — Бархатный сезон", "startDate": "2026-09-19", "endDate": "2026-09-26", "location": {"@type": "Place", "name": "Ликийское побережье, Турция"}, "organizer": {"@type": "Person", "name": "Инга Савина"}, "offers": {"@type": "Offer", "price": "1380", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"}}},
-            {"@type": "ListItem", "position": 4, "item": {"@type": "Event", "name": "Авторский яхт-тур — Бархатный сезон", "startDate": "2026-09-26", "endDate": "2026-10-03", "location": {"@type": "Place", "name": "Ликийское побережье, Турция"}, "organizer": {"@type": "Person", "name": "Инга Савина"}, "offers": {"@type": "Offer", "price": "1380", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"}}}
+            {"@type": "ListItem", "position": 1, "item": {"@type": "Event", "name": "Авторский яхт-тур — Майские праздники", "startDate": "2026-05-09", "endDate": "2026-05-16", "location": {"@type": "Place", "name": "Ликийское побережье, Турция"}, "organizer": {"@type": "Person", "name": "Инга Савина"}, "offers": {"@type": "Offer", "price": "1200", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"}}},
+            {"@type": "ListItem", "position": 2, "item": {"@type": "Event", "name": "Авторский яхт-тур — Май", "startDate": "2026-05-16", "endDate": "2026-05-23", "location": {"@type": "Place", "name": "Ликийское побережье, Турция"}, "organizer": {"@type": "Person", "name": "Инга Савина"}, "offers": {"@type": "Offer", "price": "1200", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"}}},
+            {"@type": "ListItem", "position": 3, "item": {"@type": "Event", "name": "Авторский яхт-тур — Бархатный сезон", "startDate": "2026-09-19", "endDate": "2026-09-26", "location": {"@type": "Place", "name": "Ликийское побережье, Турция"}, "organizer": {"@type": "Person", "name": "Инга Савина"}, "offers": {"@type": "Offer", "price": "1200", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"}}},
+            {"@type": "ListItem", "position": 4, "item": {"@type": "Event", "name": "Авторский яхт-тур — Бархатный сезон", "startDate": "2026-09-26", "endDate": "2026-10-03", "location": {"@type": "Place", "name": "Ликийское побережье, Турция"}, "organizer": {"@type": "Person", "name": "Инга Савина"}, "offers": {"@type": "Offer", "price": "1200", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"}}}
           ]
         })}</script>
       </Helmet>
@@ -863,7 +863,7 @@ const Index = () => {
                 </div>
                 <h4 className="text-2xl font-bold mb-1">Стандарт</h4>
                 <p className="text-white/60 text-sm mb-4">До 6 человек, уютные каюты</p>
-                <p className="text-3xl font-bold">1 380€* <span className="text-base font-normal text-white/50">/ чел</span></p>
+                <p className="text-3xl font-bold">1 200€* <span className="text-base font-normal text-white/50">/ чел</span></p>
                 <p className="text-amber-400 text-sm font-semibold mt-2">Скидка 10% от 4 человек</p>
               </div>
             </Link>
@@ -875,7 +875,7 @@ const Index = () => {
                 </div>
                 <h4 className="text-2xl font-bold mb-1">Комфорт</h4>
                 <p className="text-white/60 text-sm mb-4">До 7 человек, тиковая палуба</p>
-                <p className="text-3xl font-bold">1 725€* <span className="text-base font-normal text-white/50">/ чел</span></p>
+                <p className="text-3xl font-bold">1 500€* <span className="text-base font-normal text-white/50">/ чел</span></p>
                 <p className="text-amber-400 text-sm font-semibold mt-2">Скидка 10% от 4 человек</p>
               </div>
             </Link>
