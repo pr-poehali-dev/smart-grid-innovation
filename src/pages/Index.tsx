@@ -1312,6 +1312,41 @@ const Index = () => {
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
+            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
+              <img 
+                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/87a30256-2596-4dec-b006-0c1fdbe4c38f.jpg" 
+                alt="Прогулка по старому городу"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
+              <img 
+                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/436f10d2-e536-48bd-8e1a-e2c75425cb6a.jpg" 
+                alt="Отдых на яхте"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
+              <img 
+                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/8c4559e8-cfe8-4d64-99c1-74f5989a3e4e.jpg" 
+                alt="Селфи на скалах"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
+              <img 
+                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/40d0bdd6-a9ac-42a6-a9ac-b4043558d4f6.jpg" 
+                alt="Команда с капитаном"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
+              <img 
+                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/85df47c7-9778-4d17-9a1f-852a0555b8a3.jpg" 
+                alt="Вечер в марине"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
           </div>
         </div>
       </section>
