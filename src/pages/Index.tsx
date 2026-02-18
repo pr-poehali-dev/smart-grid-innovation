@@ -14,6 +14,7 @@ const Index = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [showSuccessModal, setShowSuccessModal] = useState(false)
+  const [activeDay, setActiveDay] = useState(0)
   const [lightbox, setLightbox] = useState<{ images: { src: string; alt: string }[]; index: number } | null>(null)
 
   const openLightbox = useCallback((images: { src: string; alt: string }[], index: number) => {
@@ -117,6 +118,57 @@ const Index = () => {
         : [...prev.expectations, option]
     }))
   }
+
+  const routeDays = [
+    {
+      image: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/e1464d14-13dd-4c2f-ba3e-2d87adeb1a27.jpg",
+      title: "Встреча — Фетхие",
+      desc: "Встреча в аэропорту Даламан, групповой трансфер в Фетхие. Расслабление в турецком хаммаме. Заселение на яхту, прогулка по старому городу. Ужин-знакомство с группой — делимся ожиданиями от путешествия.",
+      tags: ["Даламан", "Хаммам", "Заселение на яхту"]
+    },
+    {
+      image: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/768d9b19-ccc7-46b0-963f-6e902f52e6de.jpg",
+      title: "Олюдениз — арка Ликийской тропы",
+      desc: "Яхтинг вдоль побережья в сторону Олюдениз. Лёгкий треккинг к знаменитой арке — символическому началу Ликийской тропы. Свободное время на легендарном пляже Олюдениз, купание и релакс. Вечерняя якорная стоянка, обсуждение планов.",
+      tags: ["Олюдениз", "Треккинг к арке", "Пляж"]
+    },
+    {
+      image: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/574269b1-6254-4310-b1cc-410d87d2ac5f.jpg",
+      title: "Острова залива Фетхие — пляж Капуташ",
+      desc: "Морская прогулка по живописным бухтам и островам залива. Остановка на легендарном пляже Капуташ — бирюзовая жемчужина между скалами с невероятными видами. Купание, снорклинг, солнечные ванны и полная перезагрузка. Обед и ужин на яхте, уютные посиделки с видом на закат над водой.",
+      tags: ["Острова", "Капуташ", "Снорклинг", "Закат"]
+    },
+    {
+      image: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/e969a36a-cc98-4910-9af7-41a39214392e.jpg",
+      title: "Долина Бабочек — арт-мастер-класс",
+      desc: "Якорная стоянка в заповедной Долине Бабочек. Лёгкий треккинг к водопаду, изучение местной природы. Мастер-класс \"Живопись вином\" — создаём арт-объекты. День для фото, отдыха и неспешных бесед",
+      tags: ["Долина Бабочек", "Треккинг к водопаду", "Живопись вином"]
+    },
+    {
+      image: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/b831f6c9-62bb-4b30-a2fb-95be755fd94a.jpg",
+      title: "Кабак — треккинг — Paradise & Secret Beach",
+      desc: "Утренний переход в Кабак, начало пешего похода по Ликийской тропе. Треккинг с видами на лазурную Турцию: от Кабака до Paradise Beach (~3 км), неспешный маршрут с фотостопами, 3+ часа удовольствия. Купание, пикник на Paradise Beach. Для желающих — проход до Secret Beach (ещё 20–30 минут), уединённый и невероятно красивый пляж. Возвращение по тропе или лодочный трансфер. Ужин и обмен впечатлениями на яхте.",
+      tags: ["Треккинг 3 км", "Paradise Beach", "Secret Beach"]
+    },
+    {
+      image: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/b1ca7bf6-c344-4dc2-a2a5-b28a31358c62.jpg",
+      title: "Прозрачные бухты — Mix-media",
+      desc: "Плывём вдоль живописного скалистого побережья с остановками в кристально чистых бухтах для купания. Творческий мастер-класс \"Mix-media: Карта в искусстве\" на берегу — создаём уникальные арт-объекты, работая с картами и смешанными техниками. Фотосессия на фоне морских пейзажей. Вечер на палубе под звёздами с обменом впечатлениями",
+      tags: ["Прозрачные бухты", "Mix-media", "Звёздная ночь"]
+    },
+    {
+      image: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/5552695c-5429-4148-805e-5e7d1cadf899.jpg",
+      title: "Секретные бухты — мозаика из смальты",
+      desc: "Утро в спокойных секретных бухтах, известных только местным. Мастер-класс по созданию мозаики из смальты и природных материалов, найденных на пляже — ракушки, камни, морское стекло. Создаём уникальные арт-объекты на память о путешествии. Последнее купание и снорклинг. Неспешное возвращение в Фетхие. Заселение в отель с бассейном. Прощальный ужин в ресторане с видом на море",
+      tags: ["Мозаика из смальты", "Природные материалы", "Отель с бассейном", "Прощальный ужин"]
+    },
+    {
+      image: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/59ca5811-a867-4011-9c89-22cf09dfe7c3.jpg",
+      title: "Финал путешествия",
+      desc: "Завтрак в отеле, свободное утро для отдыха или последних покупок. Трансфер в аэропорт Даламан. Вылет домой с чемоданом впечатлений, новыми друзьями и творческими работами. До встречи в следующем путешествии!",
+      tags: ["Завтрак", "Трансфер", "Даламан"]
+    },
+  ]
 
   const faqs: FAQ[] = [
     {
@@ -228,22 +280,21 @@ const Index = () => {
 Ингой Савиной</p>
           
           <div className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl mb-12 space-y-3 px-4">
-            <div className="flex items-center justify-center gap-3">
-              <span className="w-2 h-2 bg-white rounded-full flex-shrink-0"></span>
-              <span className="font-semibold">7 дней на яхте по бирюзовым бухтам Турции</span>
-            </div>
-            <div className="flex items-center justify-center gap-3">
-              <span className="w-2 h-2 bg-white rounded-full flex-shrink-0"></span>
-              <span className="font-semibold">1 день релакса в отеле</span>
-            </div>
-            <div className="flex items-center justify-center gap-3">
-              <span className="w-2 h-2 bg-white rounded-full flex-shrink-0"></span>
-              <span className="font-semibold">Треккинг по Ликийской тропе</span>
-            </div>
-            <div className="flex items-center justify-center gap-3">
-              <span className="w-2 h-2 bg-white rounded-full flex-shrink-0"></span>
-              <span className="font-semibold">Арт-мастер-классы под открытым небом</span>
-            </div>
+            {[
+              { text: "7 дней на яхте по бирюзовым бухтам Турции", delay: "0s" },
+              { text: "1 день релакса в отеле", delay: "0.15s" },
+              { text: "Треккинг по Ликийской тропе", delay: "0.3s" },
+              { text: "Арт-мастер-классы под открытым небом", delay: "0.45s" },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="flex items-center justify-center gap-3 animate-fade-in-up opacity-0"
+                style={{ animationDelay: item.delay, animationFillMode: 'forwards' }}
+              >
+                <span className="w-2 h-2 bg-white rounded-full flex-shrink-0"></span>
+                <span className="font-semibold">{item.text}</span>
+              </div>
+            ))}
           </div>
           
           <p className="sm:text-lg md:text-xl max-w-3xl mb-12 px-4 font-bold text-amber-600 text-center text-xl">
@@ -334,13 +385,17 @@ const Index = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 md:gap-8">
             {/* Expert-Led Tours */}
-            <div className="rounded-2xl bg-black/20 ring-1 ring-white/15 backdrop-blur p-8 text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-black/30 ring-1 ring-white/20 mb-6">
-                <Sparkles className="w-6 h-6" />
+            <Link to="/booking" className="block">
+              <div className="rounded-2xl bg-gradient-to-br from-amber-500/20 to-white/5 ring-2 ring-amber-500/30 backdrop-blur p-8 text-center hover:ring-amber-500/50 transition-all cursor-pointer relative">
+                <div className="absolute -top-3 right-4 px-3 py-1 bg-amber-500 text-black text-xs font-bold rounded-full">Уникально</div>
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-amber-500/20 ring-1 ring-amber-500/30 mb-6">
+                  <Sparkles className="w-6 h-6 text-amber-400" />
+                </div>
+                <h3 className="text-xl font-semibold mb-4">Арт-мастер-классы</h3>
+                <p className="text-white/80 leading-relaxed mb-4">Живопись вином, Mix-media и мозаика из смальты под открытым небом</p>
+                <span className="inline-flex items-center gap-1 text-amber-400 text-sm font-semibold">Подробнее →</span>
               </div>
-              <h3 className="text-xl font-semibold mb-4">Арт-мастер-классы</h3>
-              <p className="text-white/80 leading-relaxed">Живопись вином, Mix-media и мозаика из смальты под открытым небом</p>
-            </div>
+            </Link>
 
             {/* Lycian Way Trekking */}
             <div className="rounded-2xl bg-black/20 ring-1 ring-white/15 backdrop-blur p-8 text-center">
@@ -531,206 +586,42 @@ const Index = () => {
               </p>
             </div>
 
-            {/* Detailed Journey Timeline */}
-            <div className="space-y-4 md:space-y-6 mb-8 md:mb-12">
-              {/* Day 1 */}
-              <div className="rounded-xl md:rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur overflow-hidden">
-                <div className="grid md:grid-cols-[200px_1fr] gap-0 md:gap-6">
-                  <div className="aspect-square md:aspect-auto">
-                    <img
-                      src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/e1464d14-13dd-4c2f-ba3e-2d87adeb1a27.jpg"
-                      alt="Фетхие - старый город и древний амфитеатр"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="p-4 md:p-8">
-                    <div className="text-2xl md:text-4xl font-bold text-white/40 mb-3 md:mb-4">День 1</div>
-                    <h3 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4">Встреча — Фетхие</h3>
-                    <p className="text-white/80 leading-relaxed mb-4">
-                      Встреча в аэропорту Даламан, групповой трансфер в Фетхие. Расслабление в турецком хаммаме. Заселение на яхту, прогулка по старому городу. Ужин-знакомство с группой — делимся ожиданиями от путешествия.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="px-2 md:px-3 py-1 bg-white/10 rounded-full text-xs md:text-sm">Даламан</span>
-                      <span className="px-2 md:px-3 py-1 bg-white/10 rounded-full text-xs md:text-sm">Хаммам</span>
-                      <span className="px-2 md:px-3 py-1 bg-white/10 rounded-full text-xs md:text-sm">Заселение на яхту</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            {/* Day Tabs */}
+            <div className="flex gap-2 mb-6 overflow-x-auto pb-2 day-tabs" style={{ scrollbarWidth: 'none' }}>
+              <style>{`.day-tabs::-webkit-scrollbar { display: none; }`}</style>
+              {routeDays.map((day, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActiveDay(i)}
+                  className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                    activeDay === i
+                      ? 'bg-white text-black'
+                      : 'bg-white/10 text-white/70 hover:bg-white/20'
+                  }`}
+                >
+                  День {i + 1}
+                </button>
+              ))}
+            </div>
 
-              {/* Day 2 */}
-              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur overflow-hidden">
-                <div className="grid md:grid-cols-[200px_1fr] gap-6">
-                  <div className="aspect-square md:aspect-auto">
-                    <img
-                      src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/768d9b19-ccc7-46b0-963f-6e902f52e6de.jpg"
-                      alt="Арка Ликийской тропы - начало пути"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="p-8">
-                    <div className="text-4xl font-bold text-white/40 mb-4">День 2</div>
-                    <h3 className="text-2xl font-semibold mb-4">Олюдениз — арка Ликийской тропы</h3>
-                    <p className="text-white/80 leading-relaxed mb-4">
-                      Яхтинг вдоль побережья в сторону Олюдениз. Лёгкий треккинг к знаменитой арке — символическому началу Ликийской тропы. Свободное время на легендарном пляже Олюдениз, купание и релакс. Вечерняя якорная стоянка, обсуждение планов.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Олюдениз</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Треккинг к арке</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Пляж</span>
-                    </div>
-                  </div>
+            {/* Active Day Card */}
+            <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur overflow-hidden mb-8 md:mb-12">
+              <div className="grid md:grid-cols-[280px_1fr]">
+                <div className="aspect-[4/3] md:aspect-auto">
+                  <img
+                    src={routeDays[activeDay].image}
+                    alt={routeDays[activeDay].title}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-              </div>
-
-              {/* Day 3 */}
-              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur overflow-hidden">
-                <div className="grid md:grid-cols-[200px_1fr] gap-6">
-                  <div className="aspect-square md:aspect-auto">
-                    <img
-                      src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/574269b1-6254-4310-b1cc-410d87d2ac5f.jpg"
-                      alt="Пляж Капуташ - бирюзовая вода между скалами"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="p-8">
-                    <div className="text-4xl font-bold text-white/40 mb-4">День 3</div>
-                    <h3 className="text-2xl font-semibold mb-4">Острова залива Фетхие — пляж Капуташ</h3>
-                    <p className="text-white/80 leading-relaxed mb-4">
-                      Морская прогулка по живописным бухтам и островам залива. Остановка на легендарном пляже Капуташ — бирюзовая жемчужина между скалами с невероятными видами. Купание, снорклинг, солнечные ванны и полная перезагрузка. Обед и ужин на яхте, уютные посиделки с видом на закат над водой.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Острова</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Капуташ</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Снорклинг</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Закат</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Day 4 */}
-              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur overflow-hidden">
-                <div className="grid md:grid-cols-[200px_1fr] gap-6">
-                  <div className="aspect-square md:aspect-auto">
-                    <img
-                      src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/e969a36a-cc98-4910-9af7-41a39214392e.jpg"
-                      alt="Долина Бабочек с высоты - яхты в бирюзовой бухте"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="p-8">
-                    <div className="text-4xl font-bold text-white/40 mb-4">День 4</div>
-                    <h3 className="text-2xl font-semibold mb-4">Долина Бабочек — арт-мастер-класс</h3>
-                    <p className="text-white/80 leading-relaxed mb-4">
-                      Якорная стоянка в заповедной Долине Бабочек. Лёгкий треккинг к водопаду, изучение местной природы. Мастер-класс "Живопись вином" — создаём арт-объекты. День для фото, отдыха и неспешных бесед
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Долина Бабочек</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Треккинг к водопаду</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Живопись вином</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Day 5 */}
-              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur overflow-hidden">
-                <div className="grid md:grid-cols-[200px_1fr] gap-6">
-                  <div className="aspect-square md:aspect-auto">
-                    <img
-                      src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/b831f6c9-62bb-4b30-a2fb-95be755fd94a.jpg"
-                      alt="Кабак - закатная бухта"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="p-8">
-                    <div className="text-4xl font-bold text-white/40 mb-4">День 5</div>
-                    <h3 className="text-2xl font-semibold mb-4">Кабак — треккинг — Paradise & Secret Beach</h3>
-                    <p className="text-white/80 leading-relaxed mb-4">
-                      Утренний переход в Кабак, начало пешего похода по Ликийской тропе. Треккинг с видами на лазурную Турцию: от Кабака до Paradise Beach (~3 км), неспешный маршрут с фотостопами, 3+ часа удовольствия. Купание, пикник на Paradise Beach. Для желающих — проход до Secret Beach (ещё 20–30 минут), уединённый и невероятно красивый пляж. Возвращение по тропе или лодочный трансфер. Ужин и обмен впечатлениями на яхте.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Треккинг 3 км</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Paradise Beach</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Secret Beach</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Day 6 */}
-              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur overflow-hidden">
-                <div className="grid md:grid-cols-[200px_1fr] gap-6">
-                  <div className="aspect-square md:aspect-auto">
-                    <img
-                      src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/b1ca7bf6-c344-4dc2-a2a5-b28a31358c62.jpg"
-                      alt="Бирюзовая лагуна - прозрачные бухты с высоты"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="p-8">
-                    <div className="text-4xl font-bold text-white/40 mb-4">День 6</div>
-                    <h3 className="text-2xl font-semibold mb-4">Прозрачные бухты — Mix-media</h3>
-                    <p className="text-white/80 leading-relaxed mb-4">
-                      Плывём вдоль живописного скалистого побережья с остановками в кристально чистых бухтах для купания. Творческий мастер-класс "Mix-media: Карта в искусстве" на берегу — создаём уникальные арт-объекты, работая с картами и смешанными техниками. Фотосессия на фоне морских пейзажей. Вечер на палубе под звёздами с обменом впечатлениями
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Прозрачные бухты</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Mix-media</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Звёздная ночь</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Day 7 */}
-              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur overflow-hidden">
-                <div className="grid md:grid-cols-[200px_1fr] gap-6">
-                  <div className="aspect-square md:aspect-auto">
-                    <img
-                      src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/5552695c-5429-4148-805e-5e7d1cadf899.jpg"
-                      alt="Мозаика из смальты - морской пейзаж с птицей"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="p-8">
-                    <div className="text-4xl font-bold text-white/40 mb-4">День 7</div>
-                    <h3 className="text-2xl font-semibold mb-4">Секретные бухты — мозаика из смальты</h3>
-                    <p className="text-white/80 leading-relaxed mb-4">
-                      Утро в спокойных секретных бухтах, известных только местным. Мастер-класс по созданию мозаики из смальты и природных материалов, найденных на пляже — ракушки, камни, морское стекло. Создаём уникальные арт-объекты на память о путешествии. Последнее купание и снорклинг. Неспешное возвращение в Фетхие. Заселение в отель с бассейном. Прощальный ужин в ресторане с видом на море
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Мозаика из смальты</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Природные материалы</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Отель с бассейном</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Прощальный ужин</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Day 8 */}
-              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur overflow-hidden">
-                <div className="grid md:grid-cols-[200px_1fr] gap-6">
-                  <div className="aspect-square md:aspect-auto">
-                    <img
-                      src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/59ca5811-a867-4011-9c89-22cf09dfe7c3.jpg"
-                      alt="Панорама Олюдениз - финал путешествия"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="p-8">
-                    <div className="text-4xl font-bold text-white/40 mb-4">День 8</div>
-                    <h3 className="text-2xl font-semibold mb-4">Финал путешествия</h3>
-                    <p className="text-white/80 leading-relaxed mb-4">
-                      Завтрак в отеле, свободное утро для отдыха или последних покупок. Трансфер в аэропорт Даламан. Вылет домой с чемоданом впечатлений, новыми друзьями и творческими работами. До встречи в следующем путешествии!
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Завтрак</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Трансфер</span>
-                      <span className="px-3 py-1 bg-white/10 rounded-full text-sm">Даламан</span>
-                    </div>
+                <div className="p-6 md:p-8">
+                  <div className="text-3xl md:text-4xl font-bold text-white/30 mb-2">День {activeDay + 1}</div>
+                  <h3 className="text-xl md:text-2xl font-semibold mb-4">{routeDays[activeDay].title}</h3>
+                  <p className="text-white/80 leading-relaxed mb-4">{routeDays[activeDay].desc}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {routeDays[activeDay].tags.map((tag, j) => (
+                      <span key={j} className="px-3 py-1 bg-white/10 rounded-full text-sm">{tag}</span>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -913,25 +804,29 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-            <div className="rounded-2xl bg-gradient-to-br from-white/10 to-white/5 ring-1 ring-white/20 backdrop-blur p-6">
-              <div className="flex items-center justify-between mb-3">
-                <span className="px-3 py-1 bg-white/10 rounded-full text-xs font-medium">Вариант 1</span>
+            <Link to="/booking">
+              <div className="rounded-2xl bg-gradient-to-br from-white/10 to-white/5 ring-1 ring-white/20 backdrop-blur p-6 cursor-pointer hover:ring-2 hover:ring-white/40 transition-all">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="px-3 py-1 bg-white/10 rounded-full text-xs font-medium">Вариант 1</span>
+                </div>
+                <h4 className="text-2xl font-bold mb-1">Стандарт</h4>
+                <p className="text-white/60 text-sm mb-4">До 6 человек, уютные каюты</p>
+                <p className="text-3xl font-bold">1 200€ <span className="text-base font-normal text-white/50">/ чел</span></p>
+                <p className="text-amber-400 text-sm font-semibold mt-2">Скидка 10% от 4 человек</p>
               </div>
-              <h4 className="text-2xl font-bold mb-1">Стандарт</h4>
-              <p className="text-white/60 text-sm mb-4">До 6 человек, уютные каюты</p>
-              <p className="text-3xl font-bold">1 200€ <span className="text-base font-normal text-white/50">/ чел</span></p>
-              <p className="text-amber-400 text-sm font-semibold mt-2">Скидка 10% от 4 человек</p>
-            </div>
-            <div className="rounded-2xl bg-gradient-to-br from-amber-500/10 to-white/5 ring-1 ring-amber-500/30 backdrop-blur p-6 relative">
-              <div className="absolute -top-3 right-4 px-3 py-1 bg-amber-500 text-black text-xs font-bold rounded-full">Комфорт</div>
-              <div className="flex items-center justify-between mb-3">
-                <span className="px-3 py-1 bg-amber-500/20 text-amber-400 rounded-full text-xs font-medium">Вариант 2</span>
+            </Link>
+            <Link to="/booking">
+              <div className="rounded-2xl bg-gradient-to-br from-amber-500/10 to-white/5 ring-1 ring-amber-500/30 backdrop-blur p-6 relative cursor-pointer hover:ring-2 hover:ring-white/40 transition-all">
+                <div className="absolute -top-3 right-4 px-3 py-1 bg-amber-500 text-black text-xs font-bold rounded-full">Комфорт</div>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="px-3 py-1 bg-amber-500/20 text-amber-400 rounded-full text-xs font-medium">Вариант 2</span>
+                </div>
+                <h4 className="text-2xl font-bold mb-1">Комфорт</h4>
+                <p className="text-white/60 text-sm mb-4">До 7 человек, тиковая палуба</p>
+                <p className="text-3xl font-bold">1 500€ <span className="text-base font-normal text-white/50">/ чел</span></p>
+                <p className="text-amber-400 text-sm font-semibold mt-2">Скидка 10% от 4 человек</p>
               </div>
-              <h4 className="text-2xl font-bold mb-1">Комфорт</h4>
-              <p className="text-white/60 text-sm mb-4">До 7 человек, тиковая палуба</p>
-              <p className="text-3xl font-bold">1 500€ <span className="text-base font-normal text-white/50">/ чел</span></p>
-              <p className="text-amber-400 text-sm font-semibold mt-2">Скидка 10% от 4 человек</p>
-            </div>
+            </Link>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 rounded-xl bg-white/10 ring-1 ring-white/20 p-5">
