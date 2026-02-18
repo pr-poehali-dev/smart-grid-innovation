@@ -720,112 +720,94 @@ const Index = () => {
             </p>
           </div>
 
-          {/* Yacht Bavaria */}
-          <div className="mb-12">
-            <div className="flex items-center gap-3 mb-6">
-              <h3 className="text-2xl md:text-3xl font-bold">Вариант 1 — Стандарт</h3>
-              <span className="px-3 py-1 bg-white/10 rounded-full text-sm font-medium">1 200€/чел</span>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-              <div className="rounded-2xl overflow-hidden ring-1 ring-white/10">
-                <img
-                  src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/0cf31084-431e-4915-98bb-f6c58a8ae386.jpg"
-                  alt="Яхта Bavaria"
-                  className="w-full h-full object-cover aspect-[4/3]"
-                />
+          {[
+            {
+              id: 'standard',
+              title: 'Вариант 1 — Стандарт',
+              price: '1 200€/чел',
+              priceClass: 'bg-white/10 text-white',
+              ringClass: 'ring-white/10',
+              bgClass: 'bg-white/5 ring-white/10',
+              photos: [
+                { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/0cf31084-431e-4915-98bb-f6c58a8ae386.jpg", alt: "Яхта — вид снаружи" },
+                { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/64e13c47-70f5-4ae8-8b14-6f6db11094e2.jpg", alt: "Яхта под парусом" },
+                { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/c64486f2-634e-49f9-b6db-0ff14dd0c288.jpg", alt: "Каюта" },
+                { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/ebe2cfff-9936-4fca-b08b-cabb53ca3442.jpg", alt: "Салон" },
+                { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/e0899192-d93b-4ca6-89b9-20d24392e5cf.jpg", alt: "Планировка" },
+              ],
+              features: [
+                { title: "Каюты для гостей", desc: "Комфортабельные двухместные каюты с удобными спальными местами, индивидуальным освещением и иллюминаторами с видом на море." },
+                { title: "Общие пространства", desc: "Просторный салон с обеденной зоной, камбуз с полным оборудованием, санузлы с душем, зона отдыха на палубе." },
+              ],
+            },
+            {
+              id: 'premium',
+              title: 'Вариант 2 — Комфорт',
+              price: '1 500€/чел',
+              priceClass: 'bg-amber-500 text-black font-bold',
+              ringClass: 'ring-amber-500/20',
+              bgClass: 'bg-amber-500/5 ring-amber-500/20',
+              photos: [
+                { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/3f3a8d1c-9ca4-499e-93ab-f18c53ce6f48.jpg", alt: "Просторная яхта — вид сбоку" },
+                { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/400cb0d7-d9e8-43f6-9939-f0e2c3ccdd70.jpg", alt: "Тиковая палуба" },
+                { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/495f2808-13b0-432a-934f-2b340a887665.jpg", alt: "Кокпит" },
+                { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/1865df82-6f12-4b73-b083-12c512d4856c.jpg", alt: "Зона отдыха" },
+              ],
+              features: [
+                { title: "Больше пространства", desc: "Увеличенные каюты, широкая тиковая палуба для отдыха и творчества. До 7 человек в полном комфорте." },
+                { title: "Повышенный комфорт", desc: "Просторный кокпит с обеденной зоной, удобные рундуки, современное навигационное оборудование." },
+              ],
+            },
+          ].map((yacht) => (
+            <div key={yacht.id} className={yacht.id === 'standard' ? 'mb-12' : ''}>
+              <div className="flex items-center gap-3 mb-6">
+                <h3 className="text-2xl md:text-3xl font-bold">{yacht.title}</h3>
+                <span className={`px-3 py-1 rounded-full text-sm ${yacht.priceClass}`}>{yacht.price}</span>
               </div>
-              <div className="rounded-2xl overflow-hidden ring-1 ring-white/10">
-                <img
-                  src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/64e13c47-70f5-4ae8-8b14-6f6db11094e2.jpg"
-                  alt="Яхта Bavaria под парусом"
-                  className="w-full h-full object-cover aspect-[4/3]"
-                />
-              </div>
-              <div className="rounded-2xl overflow-hidden ring-1 ring-white/10">
-                <img
-                  src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/c64486f2-634e-49f9-b6db-0ff14dd0c288.jpg"
-                  alt="Каюта яхты Bavaria"
-                  className="w-full h-full object-cover aspect-[4/3]"
-                />
-              </div>
-              <div className="rounded-2xl overflow-hidden ring-1 ring-white/10">
-                <img
-                  src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/ebe2cfff-9936-4fca-b08b-cabb53ca3442.jpg"
-                  alt="Салон яхты Bavaria"
-                  className="w-full h-full object-cover aspect-[4/3]"
-                />
-              </div>
-              <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 md:col-span-2">
-                <img
-                  src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/e0899192-d93b-4ca6-89b9-20d24392e5cf.jpg"
-                  alt="Планировка яхты Bavaria"
-                  className="w-full h-full object-cover aspect-[21/9]"
-                />
-              </div>
-            </div>
-            <div className="mt-6 rounded-xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-white/80">
-                <div>
-                  <h4 className="font-semibold text-white mb-2">Каюты для гостей</h4>
-                  <p className="leading-relaxed">Комфортабельные двухместные каюты с удобными спальными местами, индивидуальным освещением и иллюминаторами с видом на море.</p>
+              <div className="relative group/yacht">
+                <button
+                  onClick={() => {
+                    const el = document.getElementById(`yacht-slider-${yacht.id}`);
+                    if (el) el.scrollBy({ left: -320, behavior: 'smooth' });
+                  }}
+                  className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center ring-1 ring-white/20 opacity-0 group-hover/yacht:opacity-100 transition-opacity hover:bg-black/80"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <div
+                  id={`yacht-slider-${yacht.id}`}
+                  className="flex gap-4 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory"
+                  style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
+                >
+                  <style>{`#yacht-slider-${yacht.id}::-webkit-scrollbar { display: none; }`}</style>
+                  {yacht.photos.map((photo, i) => (
+                    <div key={i} className={`flex-shrink-0 rounded-2xl overflow-hidden ${yacht.ringClass} ring-1 snap-start ${i === yacht.photos.length - 1 && yacht.id === 'standard' ? 'w-[80vw] md:w-[600px] h-56 md:h-64' : 'w-72 md:w-80 h-56 md:h-64'}`}>
+                      <img src={photo.src} alt={photo.alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
+                    </div>
+                  ))}
                 </div>
-                <div>
-                  <h4 className="font-semibold text-white mb-2">Общие пространства</h4>
-                  <p className="leading-relaxed">Просторный салон с обеденной зоной, камбуз с полным оборудованием, санузлы с душем, зона отдыха на палубе.</p>
-                </div>
+                <button
+                  onClick={() => {
+                    const el = document.getElementById(`yacht-slider-${yacht.id}`);
+                    if (el) el.scrollBy({ left: 320, behavior: 'smooth' });
+                  }}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center ring-1 ring-white/20 opacity-0 group-hover/yacht:opacity-100 transition-opacity hover:bg-black/80"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
               </div>
-            </div>
-          </div>
-
-          {/* Premium Yacht */}
-          <div>
-            <div className="flex items-center gap-3 mb-6">
-              <h3 className="text-2xl md:text-3xl font-bold">Вариант 2 — Комфорт</h3>
-              <span className="px-3 py-1 bg-amber-500 text-black rounded-full text-sm font-bold">1 500€/чел</span>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-              <div className="rounded-2xl overflow-hidden ring-1 ring-amber-500/20 col-span-2 md:col-span-1 md:row-span-2">
-                <img
-                  src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/3f3a8d1c-9ca4-499e-93ab-f18c53ce6f48.jpg"
-                  alt="Просторная яхта — вид сбоку"
-                  className="w-full h-full object-cover aspect-[3/4] md:aspect-auto"
-                />
-              </div>
-              <div className="rounded-2xl overflow-hidden ring-1 ring-amber-500/20">
-                <img
-                  src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/400cb0d7-d9e8-43f6-9939-f0e2c3ccdd70.jpg"
-                  alt="Тиковая палуба просторной яхты"
-                  className="w-full h-full object-cover aspect-[4/3]"
-                />
-              </div>
-              <div className="rounded-2xl overflow-hidden ring-1 ring-amber-500/20">
-                <img
-                  src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/495f2808-13b0-432a-934f-2b340a887665.jpg"
-                  alt="Кокпит просторной яхты"
-                  className="w-full h-full object-cover aspect-[4/3]"
-                />
-              </div>
-              <div className="rounded-2xl overflow-hidden ring-1 ring-amber-500/20 col-span-2">
-                <img
-                  src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/1865df82-6f12-4b73-b083-12c512d4856c.jpg"
-                  alt="Зона отдыха просторной яхты"
-                  className="w-full h-full object-cover aspect-[21/9]"
-                />
-              </div>
-            </div>
-            <div className="mt-6 rounded-xl bg-amber-500/5 ring-1 ring-amber-500/20 backdrop-blur p-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-white/80">
-                <div>
-                  <h4 className="font-semibold text-white mb-2">Больше пространства</h4>
-                  <p className="leading-relaxed">Увеличенные каюты, широкая тиковая палуба для отдыха и творчества. До 7 человек в полном комфорте.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-white mb-2">Повышенный комфорт</h4>
-                  <p className="leading-relaxed">Просторный кокпит с обеденной зоной, удобные рундуки, современное навигационное оборудование.</p>
+              <div className={`mt-6 rounded-xl backdrop-blur p-6 ring-1 ${yacht.bgClass}`}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-white/80">
+                  {yacht.features.map((f, i) => (
+                    <div key={i}>
+                      <h4 className="font-semibold text-white mb-2">{f.title}</h4>
+                      <p className="leading-relaxed">{f.desc}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </section>
 
