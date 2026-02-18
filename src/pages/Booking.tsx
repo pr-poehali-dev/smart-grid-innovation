@@ -11,8 +11,8 @@ interface Tour {
 }
 
 const YACHT_OPTIONS = {
-  standard: { name: 'Яхта Bavaria', price: 1200, label: 'Стандарт', maxGuests: 6 },
-  premium: { name: 'Просторная яхта', price: 1500, label: 'Комфорт+', maxGuests: 7 },
+  standard: { name: 'Вариант 1 — Стандарт', price: 1200, label: 'Стандарт', maxGuests: 6 },
+  premium: { name: 'Вариант 2 — Комфорт', price: 1500, label: 'Комфорт', maxGuests: 7 },
 }
 
 const Booking = () => {
@@ -359,13 +359,13 @@ const Booking = () => {
                   }`}
                 >
                   <div className="flex items-start justify-between mb-3">
-                    <span className="px-2 py-0.5 bg-white/10 rounded-full text-xs font-medium">Стандарт</span>
+                    <span className="px-2 py-0.5 bg-white/10 rounded-full text-xs font-medium">Вариант 1</span>
                     {selectedYacht === 'standard' && <Check className="w-5 h-5 text-green-400" />}
                   </div>
                   <div className="aspect-[16/9] rounded-xl overflow-hidden mb-3">
-                    <img src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/ef8c1db0-1422-4ce7-a768-8499fb8cc805.jpg" alt="Яхта Bavaria" className="w-full h-full object-cover" />
+                    <img src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/ef8c1db0-1422-4ce7-a768-8499fb8cc805.jpg" alt="Яхта Стандарт" className="w-full h-full object-cover" />
                   </div>
-                  <div className="text-lg font-bold mb-1">Яхта Bavaria</div>
+                  <div className="text-lg font-bold mb-1">Стандарт</div>
                   <div className="text-white/60 text-sm mb-2">До 6 человек, уютные каюты</div>
                   <div className="text-2xl font-bold">1 200€ <span className="text-sm font-normal text-white/60">/ чел</span></div>
                 </button>
@@ -379,15 +379,15 @@ const Booking = () => {
                       : 'bg-white/5 ring-1 ring-white/10 hover:bg-white/10'
                   }`}
                 >
-                  <div className="absolute -top-3 right-4 px-3 py-1 bg-amber-500 text-black text-xs font-bold rounded-full">Комфорт+</div>
+                  <div className="absolute -top-3 right-4 px-3 py-1 bg-amber-500 text-black text-xs font-bold rounded-full">Комфорт</div>
                   <div className="flex items-start justify-between mb-3">
-                    <span className="px-2 py-0.5 bg-amber-500/20 text-amber-400 rounded-full text-xs font-medium">Просторная</span>
+                    <span className="px-2 py-0.5 bg-amber-500/20 text-amber-400 rounded-full text-xs font-medium">Вариант 2</span>
                     {selectedYacht === 'premium' && <Check className="w-5 h-5 text-green-400" />}
                   </div>
                   <div className="aspect-[16/9] rounded-xl overflow-hidden mb-3">
-                    <img src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/3f3a8d1c-9ca4-499e-93ab-f18c53ce6f48.jpg" alt="Просторная яхта" className="w-full h-full object-cover" />
+                    <img src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/3f3a8d1c-9ca4-499e-93ab-f18c53ce6f48.jpg" alt="Яхта Комфорт" className="w-full h-full object-cover" />
                   </div>
-                  <div className="text-lg font-bold mb-1">Просторная яхта</div>
+                  <div className="text-lg font-bold mb-1">Комфорт</div>
                   <div className="text-white/60 text-sm mb-2">До 7 человек, повышенный комфорт, тиковая палуба</div>
                   <div className="text-2xl font-bold">1 500€ <span className="text-sm font-normal text-white/60">/ чел</span></div>
                 </button>

@@ -125,7 +125,7 @@ const Index = () => {
     },
     {
       question: "Сколько человек в группе?",
-      answer: "До 6 человек на стандартной яхте Bavaria. При большом количестве участников яхта меняется на более просторную, что позволяет сохранить комфорт для всех.",
+      answer: "До 6 человек на яхте. Вы можете выбрать стандартную яхту или более просторный вариант с повышенным комфортом.",
     },
   ]
 
@@ -723,8 +723,8 @@ const Index = () => {
           {/* Yacht Bavaria */}
           <div className="mb-12">
             <div className="flex items-center gap-3 mb-6">
-              <h3 className="text-2xl md:text-3xl font-bold">Яхта Bavaria</h3>
-              <span className="px-3 py-1 bg-white/10 rounded-full text-sm font-medium">Стандарт · 1 200€/чел</span>
+              <h3 className="text-2xl md:text-3xl font-bold">Вариант 1 — Стандарт</h3>
+              <span className="px-3 py-1 bg-white/10 rounded-full text-sm font-medium">1 200€/чел</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <div className="rounded-2xl overflow-hidden ring-1 ring-white/10">
@@ -780,8 +780,8 @@ const Index = () => {
           {/* Premium Yacht */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <h3 className="text-2xl md:text-3xl font-bold">Просторная яхта</h3>
-              <span className="px-3 py-1 bg-amber-500 text-black rounded-full text-sm font-bold">Комфорт+ · 1 500€/чел</span>
+              <h3 className="text-2xl md:text-3xl font-bold">Вариант 2 — Комфорт</h3>
+              <span className="px-3 py-1 bg-amber-500 text-black rounded-full text-sm font-bold">1 500€/чел</span>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
               <div className="rounded-2xl overflow-hidden ring-1 ring-amber-500/20 col-span-2 md:col-span-1 md:row-span-2">
@@ -865,7 +865,7 @@ const Index = () => {
 
                 <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
                   <h4 className="font-semibold text-lg mb-3">Яхта на выбор</h4>
-                  <p className="text-white/80">Стандартная Bavaria или просторная яхта «Комфорт+», размещение в каютах по 2 человека, опытный капитан и команда</p>
+                  <p className="text-white/80">Вариант 1 (Стандарт) или Вариант 2 (Комфорт), размещение в каютах по 2 человека, опытный капитан и команда</p>
                 </div>
 
                 <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
@@ -937,9 +937,9 @@ const Index = () => {
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-2">
-                          <span className="px-2 py-0.5 bg-white/10 rounded-full text-xs font-medium">Стандарт</span>
+                          <span className="px-2 py-0.5 bg-white/10 rounded-full text-xs font-medium">Вариант 1</span>
                         </div>
-                        <h4 className="text-xl font-bold mb-1">Яхта Bavaria</h4>
+                        <h4 className="text-xl font-bold mb-1">Стандарт</h4>
                         <p className="text-white/70 text-sm mb-3">До 6 человек, уютные каюты, проверенная классика</p>
                         <p className="text-3xl font-bold">1 200€ <span className="text-base font-normal text-white/60">/ чел</span></p>
                         <p className="text-amber-400 text-sm font-semibold mt-1">🎉 Скидка 10% от 4 человек</p>
@@ -949,20 +949,20 @@ const Index = () => {
 
                   {/* Premium Yacht */}
                   <div className="rounded-2xl bg-gradient-to-br from-amber-500/10 to-white/5 ring-2 ring-amber-500/30 backdrop-blur p-6 relative">
-                    <div className="absolute -top-3 right-4 px-3 py-1 bg-amber-500 text-black text-xs font-bold rounded-full">Комфорт+</div>
+                    <div className="absolute -top-3 right-4 px-3 py-1 bg-amber-500 text-black text-xs font-bold rounded-full">Комфорт</div>
                     <div className="flex flex-col sm:flex-row gap-6">
                       <div className="sm:w-1/3 aspect-[4/3] rounded-xl overflow-hidden flex-shrink-0">
                         <img 
                           src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/3f3a8d1c-9ca4-499e-93ab-f18c53ce6f48.jpg"
-                          alt="Просторная яхта — Комфорт+"
+                          alt="Яхта — Комфорт"
                           className="w-full h-full object-cover"
                         />
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-2">
-                          <span className="px-2 py-0.5 bg-amber-500/20 text-amber-400 rounded-full text-xs font-medium">Просторная</span>
+                          <span className="px-2 py-0.5 bg-amber-500/20 text-amber-400 rounded-full text-xs font-medium">Вариант 2</span>
                         </div>
-                        <h4 className="text-xl font-bold mb-1">Просторная яхта</h4>
+                        <h4 className="text-xl font-bold mb-1">Комфорт</h4>
                         <p className="text-white/70 text-sm mb-3">До 7 человек, больше пространства, повышенный комфорт, тиковая палуба</p>
                         <p className="text-3xl font-bold">1 500€ <span className="text-base font-normal text-white/60">/ чел</span></p>
                         <p className="text-amber-400 text-sm font-semibold mt-1">🎉 Скидка 10% от 4 человек</p>
