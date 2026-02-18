@@ -714,74 +714,115 @@ const Index = () => {
       <section className="relative z-10 py-12 md:py-24 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-balance">Ваш дом на воде — яхта Bavaria</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-balance">Ваш дом на воде</h2>
             <p className="text-lg text-white/80 max-w-3xl mx-auto">
-              Комфортабельное размещение в каютах <strong>по 2 человека</strong> с удобными спальными местами
+              Две яхты на выбор — от уютной классики до просторного комфорта. Размещение в каютах <strong>по 2 человека</strong>
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-            {/* Yacht exterior */}
-            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10">
-              <img
-                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/0cf31084-431e-4915-98bb-f6c58a8ae386.jpg"
-                alt="Яхта Bavaria"
-                className="w-full h-full object-cover aspect-[4/3]"
-              />
+          {/* Yacht Bavaria */}
+          <div className="mb-12">
+            <div className="flex items-center gap-3 mb-6">
+              <h3 className="text-2xl md:text-3xl font-bold">Яхта Bavaria</h3>
+              <span className="px-3 py-1 bg-white/10 rounded-full text-sm font-medium">Стандарт · 1 200€/чел</span>
             </div>
-
-            {/* Yacht sailing */}
-            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10">
-              <img
-                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/64e13c47-70f5-4ae8-8b14-6f6db11094e2.jpg"
-                alt="Яхта под парусом"
-                className="w-full h-full object-cover aspect-[4/3]"
-              />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+              <div className="rounded-2xl overflow-hidden ring-1 ring-white/10">
+                <img
+                  src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/0cf31084-431e-4915-98bb-f6c58a8ae386.jpg"
+                  alt="Яхта Bavaria"
+                  className="w-full h-full object-cover aspect-[4/3]"
+                />
+              </div>
+              <div className="rounded-2xl overflow-hidden ring-1 ring-white/10">
+                <img
+                  src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/64e13c47-70f5-4ae8-8b14-6f6db11094e2.jpg"
+                  alt="Яхта Bavaria под парусом"
+                  className="w-full h-full object-cover aspect-[4/3]"
+                />
+              </div>
+              <div className="rounded-2xl overflow-hidden ring-1 ring-white/10">
+                <img
+                  src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/c64486f2-634e-49f9-b6db-0ff14dd0c288.jpg"
+                  alt="Каюта яхты Bavaria"
+                  className="w-full h-full object-cover aspect-[4/3]"
+                />
+              </div>
+              <div className="rounded-2xl overflow-hidden ring-1 ring-white/10">
+                <img
+                  src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/ebe2cfff-9936-4fca-b08b-cabb53ca3442.jpg"
+                  alt="Салон яхты Bavaria"
+                  className="w-full h-full object-cover aspect-[4/3]"
+                />
+              </div>
+              <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 md:col-span-2">
+                <img
+                  src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/e0899192-d93b-4ca6-89b9-20d24392e5cf.jpg"
+                  alt="Планировка яхты Bavaria"
+                  className="w-full h-full object-cover aspect-[21/9]"
+                />
+              </div>
             </div>
-
-            {/* Cabin interior */}
-            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10">
-              <img
-                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/c64486f2-634e-49f9-b6db-0ff14dd0c288.jpg"
-                alt="Каюта на яхте"
-                className="w-full h-full object-cover aspect-[4/3]"
-              />
-            </div>
-
-            {/* Salon interior */}
-            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10">
-              <img
-                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/ebe2cfff-9936-4fca-b08b-cabb53ca3442.jpg"
-                alt="Салон яхты"
-                className="w-full h-full object-cover aspect-[4/3]"
-              />
-            </div>
-
-            {/* Yacht layout plan */}
-            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 md:col-span-2">
-              <img
-                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/e0899192-d93b-4ca6-89b9-20d24392e5cf.jpg"
-                alt="Планировка яхты Bavaria - схема палубы и кают"
-                className="w-full h-full object-cover aspect-[21/9]"
-              />
+            <div className="mt-6 rounded-xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-white/80">
+                <div>
+                  <h4 className="font-semibold text-white mb-2">Каюты для гостей</h4>
+                  <p className="leading-relaxed">Комфортабельные двухместные каюты с удобными спальными местами, индивидуальным освещением и иллюминаторами с видом на море.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-white mb-2">Общие пространства</h4>
+                  <p className="leading-relaxed">Просторный салон с обеденной зоной, камбуз с полным оборудованием, санузлы с душем, зона отдыха на палубе.</p>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Yacht Layout Description */}
-          <div className="mt-8 md:mt-12 rounded-xl md:rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6 md:p-8">
-            <h3 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6">Планировка яхты Bavaria</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 text-white/80">
-              <div>
-                <h4 className="font-semibold text-base md:text-lg text-white mb-2 md:mb-3">Каюты для гостей</h4>
-                <p className="leading-relaxed mb-4">
-                  Яхта оборудована комфортабельными двухместными каютами с удобными спальными местами, индивидуальным освещением и вентиляцией. Каждая каюта имеет иллюминаторы с видом на море.
-                </p>
+          {/* Premium Yacht */}
+          <div>
+            <div className="flex items-center gap-3 mb-6">
+              <h3 className="text-2xl md:text-3xl font-bold">Просторная яхта</h3>
+              <span className="px-3 py-1 bg-amber-500 text-black rounded-full text-sm font-bold">Комфорт+ · 1 500€/чел</span>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+              <div className="rounded-2xl overflow-hidden ring-1 ring-amber-500/20 col-span-2 md:col-span-1 md:row-span-2">
+                <img
+                  src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/3f3a8d1c-9ca4-499e-93ab-f18c53ce6f48.jpg"
+                  alt="Просторная яхта — вид сбоку"
+                  className="w-full h-full object-cover aspect-[3/4] md:aspect-auto"
+                />
               </div>
-              <div>
-                <h4 className="font-semibold text-lg text-white mb-3">Общие пространства</h4>
-                <p className="leading-relaxed mb-4">
-                  Просторный салон с обеденной зоной, камбуз (кухня) с полным оборудованием, санузлы с душем. На палубе — зона отдыха с мягкими подушками и обеденный стол под открытым небом.
-                </p>
+              <div className="rounded-2xl overflow-hidden ring-1 ring-amber-500/20">
+                <img
+                  src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/400cb0d7-d9e8-43f6-9939-f0e2c3ccdd70.jpg"
+                  alt="Тиковая палуба просторной яхты"
+                  className="w-full h-full object-cover aspect-[4/3]"
+                />
+              </div>
+              <div className="rounded-2xl overflow-hidden ring-1 ring-amber-500/20">
+                <img
+                  src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/495f2808-13b0-432a-934f-2b340a887665.jpg"
+                  alt="Кокпит просторной яхты"
+                  className="w-full h-full object-cover aspect-[4/3]"
+                />
+              </div>
+              <div className="rounded-2xl overflow-hidden ring-1 ring-amber-500/20 col-span-2">
+                <img
+                  src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/1865df82-6f12-4b73-b083-12c512d4856c.jpg"
+                  alt="Зона отдыха просторной яхты"
+                  className="w-full h-full object-cover aspect-[21/9]"
+                />
+              </div>
+            </div>
+            <div className="mt-6 rounded-xl bg-amber-500/5 ring-1 ring-amber-500/20 backdrop-blur p-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-white/80">
+                <div>
+                  <h4 className="font-semibold text-white mb-2">Больше пространства</h4>
+                  <p className="leading-relaxed">Увеличенные каюты, широкая тиковая палуба для отдыха и творчества. До 7 человек в полном комфорте.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-white mb-2">Повышенный комфорт</h4>
+                  <p className="leading-relaxed">Просторный кокпит с обеденной зоной, удобные рундуки, современное навигационное оборудование.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -889,7 +930,7 @@ const Index = () => {
                     <div className="flex flex-col sm:flex-row gap-6">
                       <div className="sm:w-1/3 aspect-[4/3] rounded-xl overflow-hidden flex-shrink-0">
                         <img 
-                          src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/5ee339f6-b408-4104-9162-673d1ab1be60.jpg"
+                          src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/ef8c1db0-1422-4ce7-a768-8499fb8cc805.jpg"
                           alt="Яхта Bavaria — стандарт"
                           className="w-full h-full object-cover"
                         />

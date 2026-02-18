@@ -363,7 +363,7 @@ const Booking = () => {
                     {selectedYacht === 'standard' && <Check className="w-5 h-5 text-green-400" />}
                   </div>
                   <div className="aspect-[16/9] rounded-xl overflow-hidden mb-3">
-                    <img src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/5ee339f6-b408-4104-9162-673d1ab1be60.jpg" alt="Яхта Bavaria" className="w-full h-full object-cover" />
+                    <img src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/ef8c1db0-1422-4ce7-a768-8499fb8cc805.jpg" alt="Яхта Bavaria" className="w-full h-full object-cover" />
                   </div>
                   <div className="text-lg font-bold mb-1">Яхта Bavaria</div>
                   <div className="text-white/60 text-sm mb-2">До 6 человек, уютные каюты</div>
