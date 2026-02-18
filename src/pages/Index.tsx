@@ -385,7 +385,7 @@ const Index = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 md:gap-8">
             {/* Expert-Led Tours */}
-            <a href="#route" className="block">
+            <Link to="/masterclasses" className="block">
               <div className="rounded-2xl bg-gradient-to-br from-amber-500/20 to-white/5 ring-2 ring-amber-500/30 backdrop-blur p-8 text-center hover:ring-amber-500/50 transition-all cursor-pointer relative">
                 <div className="absolute -top-3 right-4 px-3 py-1 bg-amber-500 text-black text-xs font-bold rounded-full">Уникально</div>
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-amber-500/20 ring-1 ring-amber-500/30 mb-6">
@@ -395,7 +395,7 @@ const Index = () => {
                 <p className="text-white/80 leading-relaxed mb-4">Живопись вином, Mix-media и мозаика из смальты под открытым небом</p>
                 <span className="inline-flex items-center gap-1 text-amber-400 text-sm font-semibold">Подробнее →</span>
               </div>
-            </a>
+            </Link>
 
             {/* Lycian Way Trekking */}
             <div className="rounded-2xl bg-black/20 ring-1 ring-white/15 backdrop-blur p-8 text-center">
