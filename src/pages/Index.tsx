@@ -1,6 +1,6 @@
-import { Compass, Lock, Sparkles, Mountain, Wallet, Leaf, Plus, Minus, Mail, Menu, X, Check } from "lucide-react"
+import { Compass, Lock, Sparkles, Mountain, Wallet, Leaf, Plus, Minus, Mail, Menu, X, Check, ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { Link } from "react-router-dom"
 
 
@@ -1260,94 +1260,71 @@ const Index = () => {
       </section>
 
       {/* Gallery Section */}
-      <section id="gallery" className="relative z-10 py-12 md:py-24 px-4 md:px-6 scroll-mt-24">
-        <div className="max-w-7xl mx-auto">
+      <section id="gallery" className="relative z-10 py-12 md:py-24 scroll-mt-24">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-balance">Галерея моментов</h2>
             <p className="text-lg text-white/80 max-w-3xl mx-auto">
               Взгляд на путешествие глазами художницы — море, древние города и творческий процесс
             </p>
           </div>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
-              <img 
-                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/737ad2e8-0ac4-42b7-badf-4de8c8447a39.jpg" 
-                alt="Ликийское побережье"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
-              <img 
-                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/4e545080-d6a0-4c74-bcd3-53ba30551644.jpg" 
-                alt="Мастер-класс на пленэре"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
-              <img 
-                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/ab73aaf4-3000-42a6-a95d-50e4a57cf257.jpg" 
-                alt="Древние руины"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
-              <img 
-                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/30fee0a7-88df-4986-9724-a54c60ba1fd3.jpg" 
-                alt="Творческий процесс"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
-              <img 
-                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/fe6714be-61fe-4663-81ec-d0a0f2f71b51.jpg" 
-                alt="Материалы для творчества"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
-              <img 
-                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/files/fdd8a51f-a1e6-4318-ace0-eea7a2717a58.jpg" 
-                alt="Яхта в бухте"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
-              <img 
-                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/87a30256-2596-4dec-b006-0c1fdbe4c38f.jpg" 
-                alt="Прогулка по старому городу"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
-              <img 
-                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/436f10d2-e536-48bd-8e1a-e2c75425cb6a.jpg" 
-                alt="Отдых на яхте"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
-              <img 
-                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/8c4559e8-cfe8-4d64-99c1-74f5989a3e4e.jpg" 
-                alt="Селфи на скалах"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
-              <img 
-                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/40d0bdd6-a9ac-42a6-a9ac-b4043558d4f6.jpg" 
-                alt="Команда с капитаном"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 backdrop-blur h-80">
-              <img 
-                src="https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/85df47c7-9778-4d17-9a1f-852a0555b8a3.jpg" 
-                alt="Вечер в марине"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
+        <div className="relative group">
+          <button
+            onClick={() => {
+              const el = document.getElementById('gallery-slider');
+              if (el) el.scrollBy({ left: -400, behavior: 'smooth' });
+            }}
+            className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center ring-1 ring-white/20 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/80"
+          >
+            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+          </button>
+
+          <div
+            id="gallery-slider"
+            className="flex gap-4 overflow-x-auto scroll-smooth px-4 md:px-6 pb-4 snap-x snap-mandatory"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
+          >
+            <style>{`#gallery-slider::-webkit-scrollbar { display: none; }`}</style>
+            {[
+              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/737ad2e8-0ac4-42b7-badf-4de8c8447a39.jpg", alt: "Ликийское побережье" },
+              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/40d0bdd6-a9ac-42a6-a9ac-b4043558d4f6.jpg", alt: "Команда с капитаном" },
+              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/4e545080-d6a0-4c74-bcd3-53ba30551644.jpg", alt: "Мастер-класс на пленэре" },
+              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/6d10ac00-db21-467e-929d-56f26464464a.jpg", alt: "Улочки старого города" },
+              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/ab73aaf4-3000-42a6-a95d-50e4a57cf257.jpg", alt: "Древние руины" },
+              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/b6b3eb7f-c7a9-4d3d-ab3d-46e4c220f10e.jpg", alt: "SUP на бирюзовой воде" },
+              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/30fee0a7-88df-4986-9724-a54c60ba1fd3.jpg", alt: "Творческий процесс" },
+              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/a9d65726-0956-45e1-b2f2-90d0bc03543c.jpg", alt: "Прогулка по пляжу" },
+              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/436f10d2-e536-48bd-8e1a-e2c75425cb6a.jpg", alt: "Отдых на яхте" },
+              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/73ae8179-add6-4521-aa0b-46930bd0344b.jpg", alt: "Античный амфитеатр" },
+              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/85df47c7-9778-4d17-9a1f-852a0555b8a3.jpg", alt: "Вечер в марине" },
+              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/87a30256-2596-4dec-b006-0c1fdbe4c38f.jpg", alt: "Прогулка по старому городу" },
+              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/186becd9-f56a-4a5d-b688-261aad1a3bea.jpg", alt: "Релакс на палубе" },
+              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/fe6714be-61fe-4663-81ec-d0a0f2f71b51.jpg", alt: "Материалы для творчества" },
+              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/files/fdd8a51f-a1e6-4318-ace0-eea7a2717a58.jpg", alt: "Яхта в бухте" },
+              { src: "https://cdn.poehali.dev/projects/4b283937-2c9c-42d8-b425-4d4f953b8cc8/bucket/8c4559e8-cfe8-4d64-99c1-74f5989a3e4e.jpg", alt: "Селфи на скалах" },
+            ].map((photo, i) => (
+              <div key={i} className="flex-shrink-0 w-72 md:w-80 h-80 md:h-96 rounded-2xl overflow-hidden ring-1 ring-white/10 snap-start">
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+            ))}
           </div>
+
+          <button
+            onClick={() => {
+              const el = document.getElementById('gallery-slider');
+              if (el) el.scrollBy({ left: 400, behavior: 'smooth' });
+            }}
+            className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center ring-1 ring-white/20 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/80"
+          >
+            <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
+          </button>
         </div>
       </section>
 
