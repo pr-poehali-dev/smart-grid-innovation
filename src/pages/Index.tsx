@@ -285,13 +285,9 @@ const Index = () => {
       </div>
 
       {/* Video Section */}
-      <section className="relative z-10 py-12 md:py-20 px-4 md:px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Почувствуй атмосферу тура</h2>
-            <p className="text-lg md:text-xl text-white/80">Посмотри, как проходят наши путешествия</p>
-          </div>
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl" style={{ paddingBottom: '56.25%', height: 0 }}>
+      <section className="relative z-10 py-8 md:py-12 px-4 md:px-6">
+        <div className="max-w-3xl mx-auto">
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10" style={{ paddingBottom: '56.25%', height: 0 }}>
             <iframe
               src="https://drive.google.com/file/d/1V0nAs1y0mvTfc4UA_NM0AeCcrt-eTPSj/preview"
               className="absolute top-0 left-0 w-full h-full"
@@ -299,6 +295,7 @@ const Index = () => {
               style={{ border: 0 }}
             />
           </div>
+          <p className="text-center text-white/50 text-sm mt-4">Посмотри, как проходят наши путешествия</p>
         </div>
       </section>
 
@@ -309,22 +306,15 @@ const Index = () => {
             {/* Left - Text */}
             <div className="space-y-6 md:space-y-8">
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance">Кто я и почему со мной?</h2>
-              <div className="space-y-6 text-lg text-white/80 leading-relaxed text-center lg:text-left">
-                <p className="text-white">
-                  Меня зовут <strong>Инга Савина</strong> — я художница, куратор выставок, автор творческих мастер-классов и арт-туров
+              <div className="space-y-4 text-white/80 leading-relaxed text-center lg:text-left">
+                <p className="text-white text-lg">
+                  Меня зовут <strong>Инга Савина</strong> — художница, куратор выставок и автор арт-туров
                 </p>
                 <p>
-                  Уже <strong>3 года</strong> веду арт-мастер-классы и влюблена в море. Эти туры родились из желания соединить три вещи, которые меня вдохновляют: <strong>искусство</strong>, <strong>путешествия</strong> и <strong>Ликийское побережье</strong>
+                  3 года веду мастер-классы и влюблена в море. Мои туры — это микс яхтинга, гор и творчества на Ликийском побережье
                 </p>
                 <p>
-                  <strong className="text-white">Что отличает мои туры</strong><br/>
-                  Это не просто яхтинг и не просто треккинг — это микс моря, гор и творчества. Мы плывём по бирюзным бухтам Турции, поднимаемся по древней Ликийской тропе с видами на Средиземное море, а вечером создаём арт-объекты
-                </p>
-                <p>
-                  Я показываю простые и медитативные техники: <strong>живопись вином</strong>, <strong>mix-media с картами</strong>, <strong>мозаика из смальты</strong> и природных материалов с берега. Даже если вы никогда не занимались творчеством — это ваш шанс попробовать в самой вдохновляющей обстановке
-                </p>
-                <p className="text-white">
-                  Приезжайте за тем, чтобы <strong>перезагрузиться</strong>, найти <strong>вдохновение</strong> и привезти домой не только фото, но и свои работы
+                  Я учу простым медитативным техникам: <strong>живопись вином</strong>, <strong>mix-media</strong>, <strong>мозаика из смальты</strong>. Опыт не нужен — попробуете всё в самой вдохновляющей обстановке
                 </p>
               </div>
             </div>
@@ -475,6 +465,56 @@ const Index = () => {
             <p className="text-white/60 text-sm max-w-2xl mx-auto">
               Количество мест ограничено — до 6 человек на яхте Bavaria. Рекомендуем бронировать заранее.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews Section */}
+      <section className="relative z-10 py-12 md:py-24 px-4 md:px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-balance">Отзывы участников</h2>
+            <p className="text-lg text-white/80 max-w-3xl mx-auto">
+              Что говорят те, кто уже путешествовал с нами по Ликийскому побережью
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Review 1 */}
+            <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
+              <div className="mb-6">
+                <h4 className="font-semibold text-lg">Евгения Миронова</h4>
+                <p className="text-white/60 text-sm">Дизайнер, Тула</p>
+                <p className="text-white/50 text-xs">Сентябрь 2025</p>
+              </div>
+              <p className="text-white/80 leading-relaxed">
+                "Ездили на девичник с подругами. Всё было организовано хорошо: красивые места, вкусная еда, интересные мастер-классы. Получилось отдохнуть и попробовать что-то новое. Привезли домой свои картины."
+              </p>
+            </div>
+
+            {/* Review 2 */}
+            <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
+              <div className="mb-6">
+                <h4 className="font-semibold text-lg">Альбина Смирнова</h4>
+                <p className="text-white/60 text-sm">Бухгалтер, Тула</p>
+                <p className="text-white/50 text-xs">Сентябрь 2025</p>
+              </div>
+              <p className="text-white/80 leading-relaxed">
+                "Первый опыт на яхте оказался приятнее, чем ожидала. Каждый день что-то новое: купались, гуляли по горам, рисовали. Компания подобралась хорошая. Вернулись отдохнувшими."
+              </p>
+            </div>
+
+            {/* Review 3 */}
+            <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
+              <div className="mb-6">
+                <h4 className="font-semibold text-lg">Евгения Миллер</h4>
+                <p className="text-white/60 text-sm">Предприниматель, Тула</p>
+                <p className="text-white/50 text-xs">Сентябрь 2025</p>
+              </div>
+              <p className="text-white/80 leading-relaxed">
+                "Отмечала день рождения на яхте. Хотели необычный формат — получилось. Яхта, красивые места, мастер-классы. Мне понравился Mix-media — не думала, что смогу так рисовать. Хороший отдых."
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -912,75 +952,53 @@ const Index = () => {
       </section>
 
       {/* Expectations Survey Section */}
-      <section className="relative z-10 py-12 md:py-24 px-4 md:px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="rounded-2xl md:rounded-3xl bg-gradient-to-br from-white/10 to-white/5 ring-1 ring-white/10 backdrop-blur p-6 md:p-12">
-            <div className="text-center mb-8 md:mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 md:mb-6 text-balance">Расскажите о своих ожиданиях</h2>
-              <p className="text-lg text-white/80 max-w-2xl mx-auto">
-                Чтобы сделать ваше путешествие идеальным, мы хотим узнать что для вас важно
-              </p>
-            </div>
+      <section className="relative z-10 py-12 md:py-16 px-4 md:px-6">
+        <div className="max-w-3xl mx-auto">
+          <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6 md:p-8">
+            <h3 className="text-xl md:text-2xl font-bold mb-2">Расскажите о своих ожиданиях</h3>
+            <p className="text-white/60 text-sm mb-6">Чтобы сделать путешествие идеальным</p>
 
-            <form onSubmit={handleExpectationsSubmit} className="space-y-6 md:space-y-8">
-              <div>
-                <label className="block text-lg font-semibold mb-4">Что вы ждёте от этого путешествия?</label>
-                <div className="space-y-3">
-                  {[
-                    'Творческое вдохновение и мастер-классы',
-                    'Знакомство с новыми людьми',
-                    'Активный отдых и треккинг',
-                    'Релакс и перезагрузка',
-                    'Красивые фото и впечатления'
-                  ].map((option) => (
-                    <label key={option} className="flex items-center gap-3 p-4 rounded-xl bg-white/5 hover:bg-white/10 cursor-pointer transition-colors">
-                      <input 
-                        type="checkbox" 
-                        className="w-5 h-5 rounded"
-                        checked={expectationsData.expectations.includes(option)}
-                        onChange={() => toggleExpectation(option)}
-                      />
-                      <span className="text-white/90">{option}</span>
-                    </label>
-                  ))}
-                </div>
+            <form onSubmit={handleExpectationsSubmit} className="space-y-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {[
+                  'Творческое вдохновение',
+                  'Знакомство с людьми',
+                  'Активный отдых',
+                  'Релакс и перезагрузка',
+                  'Красивые фото'
+                ].map((option) => (
+                  <label key={option} className="flex items-center gap-2 p-3 rounded-lg bg-white/5 hover:bg-white/10 cursor-pointer transition-colors text-sm">
+                    <input 
+                      type="checkbox" 
+                      className="w-4 h-4 rounded"
+                      checked={expectationsData.expectations.includes(option)}
+                      onChange={() => toggleExpectation(option)}
+                    />
+                    <span className="text-white/80">{option}</span>
+                  </label>
+                ))}
               </div>
 
-              <div>
-                <label htmlFor="experience" className="block text-lg font-semibold mb-4">Есть ли у вас опыт яхтинга или треккинга?</label>
-                <textarea
-                  id="experience"
-                  rows={3}
-                  value={expectationsData.experience}
-                  onChange={(e) => setExpectationsData({...expectationsData, experience: e.target.value})}
-                  className="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/20 border-0 text-white placeholder:text-white/50 focus:ring-2 focus:ring-white/30 focus:outline-none"
-                  placeholder="Расскажите немного о себе..."
-                />
-              </div>
+              <textarea
+                rows={2}
+                value={expectationsData.questions}
+                onChange={(e) => setExpectationsData({...expectationsData, questions: e.target.value})}
+                className="w-full px-4 py-3 rounded-lg bg-white/5 ring-1 ring-white/20 border-0 text-white text-sm placeholder:text-white/40 focus:ring-2 focus:ring-white/30 focus:outline-none"
+                placeholder="Вопросы или пожелания..."
+              />
 
-              <div>
-                <label htmlFor="questions" className="block text-lg font-semibold mb-4">Есть ли вопросы или пожелания?</label>
-                <textarea
-                  id="questions"
-                  rows={3}
-                  value={expectationsData.questions}
-                  onChange={(e) => setExpectationsData({...expectationsData, questions: e.target.value})}
-                  className="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/20 border-0 text-white placeholder:text-white/50 focus:ring-2 focus:ring-white/30 focus:outline-none"
-                  placeholder="Мы учтём все ваши пожелания..."
-                />
-              </div>
-
-              <div>
-                <label htmlFor="contact" className="block text-lg font-semibold mb-4">Телефон или Telegram для связи *</label>
+              <div className="flex flex-col sm:flex-row gap-3">
                 <input
                   type="text"
-                  id="contact"
                   required
                   value={expectationsData.contact}
                   onChange={(e) => setExpectationsData({...expectationsData, contact: e.target.value})}
-                  className="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/20 border-0 text-white placeholder:text-white/50 focus:ring-2 focus:ring-white/30 focus:outline-none"
-                  placeholder="+7 (900) 123-45-67 или @username"
+                  className="flex-1 px-4 py-3 rounded-lg bg-white/5 ring-1 ring-white/20 border-0 text-white text-sm placeholder:text-white/40 focus:ring-2 focus:ring-white/30 focus:outline-none"
+                  placeholder="Телефон или Telegram *"
                 />
+                <Button type="submit" className="bg-white text-black hover:bg-white/90 rounded-lg px-6">
+                  Отправить
+                </Button>
               </div>
 
               <input
@@ -992,67 +1010,7 @@ const Index = () => {
                 tabIndex={-1}
                 autoComplete="off"
               />
-
-              <div className="text-center pt-4">
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="bg-white text-black hover:bg-white/90 rounded-full px-12 py-4 text-lg font-semibold"
-                >
-                  Отправить и забронировать
-                </Button>
-              </div>
             </form>
-          </div>
-        </div>
-      </section>
-
-      {/* Reviews Section */}
-      <section className="relative z-10 py-12 md:py-24 px-4 md:px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-balance">Отзывы участников</h2>
-            <p className="text-lg text-white/80 max-w-3xl mx-auto">
-              Что говорят те, кто уже путешествовал с нами по Ликийскому побережью
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Review 1 */}
-            <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
-              <div className="mb-6">
-                <h4 className="font-semibold text-lg">Евгения Миронова</h4>
-                <p className="text-white/60 text-sm">Дизайнер, Тула</p>
-                <p className="text-white/50 text-xs">Сентябрь 2025</p>
-              </div>
-              <p className="text-white/80 leading-relaxed">
-                "Ездили на девичник с подругами. Всё было организовано хорошо: красивые места, вкусная еда, интересные мастер-классы. Получилось отдохнуть и попробовать что-то новое. Привезли домой свои картины."
-              </p>
-            </div>
-
-            {/* Review 2 */}
-            <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
-              <div className="mb-6">
-                <h4 className="font-semibold text-lg">Альбина Смирнова</h4>
-                <p className="text-white/60 text-sm">Бухгалтер, Тула</p>
-                <p className="text-white/50 text-xs">Сентябрь 2025</p>
-              </div>
-              <p className="text-white/80 leading-relaxed">
-                "Первый опыт на яхте оказался приятнее, чем ожидала. Каждый день что-то новое: купались, гуляли по горам, рисовали. Компания подобралась хорошая. Вернулись отдохнувшими."
-              </p>
-            </div>
-
-            {/* Review 3 */}
-            <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
-              <div className="mb-6">
-                <h4 className="font-semibold text-lg">Евгения Миллер</h4>
-                <p className="text-white/60 text-sm">Предприниматель, Тула</p>
-                <p className="text-white/50 text-xs">Сентябрь 2025</p>
-              </div>
-              <p className="text-white/80 leading-relaxed">
-                "Отмечала день рождения на яхте. Хотели необычный формат — получилось. Яхта, красивые места, мастер-классы. Мне понравился Mix-media — не думала, что смогу так рисовать. Хороший отдых."
-              </p>
-            </div>
           </div>
         </div>
       </section>
@@ -1060,121 +1018,33 @@ const Index = () => {
       {/* Packing Tips Section */}
       <section className="relative z-10 py-12 md:py-24 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="rounded-2xl md:rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6 md:p-12">
-            <div className="text-center mb-12 md:mb-16">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-balance">Что взять с собой</h2>
-              <p className="text-lg text-white/80 max-w-3xl mx-auto">
-                Для вашего комфорта и безопасности рекомендуем подготовить следующие вещи
-              </p>
-            </div>
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 text-balance">Что взять с собой</h2>
+            <p className="text-lg text-white/80 max-w-3xl mx-auto">
+              Краткий список — берите мягкий чемодан, всё для творчества выдаём на месте
+            </p>
+          </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Column 1 */}
-              <div className="space-y-8">
-                {/* Одежда и обувь */}
-                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
-                  <h3 className="text-2xl font-semibold mb-4 flex items-center gap-3">
-                    <span className="text-3xl">👕</span>
-                    Одежда и обувь
-                  </h3>
-                  <ul className="space-y-2 text-white/80">
-                    <li>• Лёгкая одежда (шорты, футболки, сарафаны)</li>
-                    <li>• Удобные кроссовки или треккинговые сандалии (обязательно для тропы)</li>
-                    <li>• Лёгкие сланцы для яхты и пляжа</li>
-                    <li>• Ветровка или кофта на вечер</li>
-                    <li>• Купальники/плавки (2 комплекта)</li>
-                    <li>• Панамка, кепка или бандана</li>
-                    <li>• Носки (трекинговые + обычные)</li>
-                    <li>• Плащ-дождевик</li>
-                  </ul>
-                </div>
-
-                {/* Оборудование и аксессуары */}
-                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
-                  <h3 className="text-2xl font-semibold mb-4 flex items-center gap-3">
-                    <span className="text-3xl">🎒</span>
-                    Оборудование и аксессуары
-                  </h3>
-                  <ul className="space-y-2 text-white/80">
-                    <li>• Маленькая сумка или мешочек для прогулок</li>
-                    <li>• Бутылка для воды</li>
-                    <li>• Солнцезащитные очки и крем (SPF от 30)</li>
-                    <li>• Полотенце для пляжа + для душа</li>
-                    <li>• Мини-аптечка (личные лекарства, пластыри)</li>
-                    <li>• Средство от комаров</li>
-                    <li>• Зарядные устройства, Power Bank</li>
-                    <li>• Водонепроницаемый чехол для техники</li>
-                  </ul>
-                </div>
-
-                {/* Для плавания */}
-                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
-                  <h3 className="text-2xl font-semibold mb-4 flex items-center gap-3">
-                    <span className="text-3xl">🤿</span>
-                    Для плавания
-                  </h3>
-                  <ul className="space-y-2 text-white/80">
-                    <li>• Ласты, маска и трубка для снорклинга (по желанию)</li>
-                    <li>• Часть снаряжения можно взять на яхте</li>
-                    <li>• Пляжная сумка</li>
-                  </ul>
-                </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { icon: "👕", title: "Одежда", items: "Лёгкая одежда, купальники, ветровка на вечер, панамка, дождевик" },
+              { icon: "👟", title: "Обувь", items: "Кроссовки или треккинговые сандалии, сланцы для яхты" },
+              { icon: "🎒", title: "Аксессуары", items: "Солнцезащитный крем SPF30+, очки, бутылка для воды, Power Bank" },
+              { icon: "🤿", title: "Для моря", items: "Полотенце, маска и трубка по желанию — часть снаряжения есть на яхте" },
+              { icon: "📄", title: "Документы", items: "Паспорт + копия, страховка, наличные евро/доллары или карта" },
+              { icon: "💡", title: "Полезности", items: "Фотоаппарат, беруши, маска для сна, любимая книга, наушники" },
+            ].map((item, i) => (
+              <div key={i} className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-5 hover:bg-white/8 transition-colors">
+                <span className="text-2xl mb-3 block">{item.icon}</span>
+                <h4 className="font-semibold mb-2">{item.title}</h4>
+                <p className="text-white/60 text-sm leading-relaxed">{item.items}</p>
               </div>
+            ))}
+          </div>
 
-              {/* Column 2 */}
-              <div className="space-y-8">
-                {/* Для творчества */}
-                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
-                  <h3 className="text-2xl font-semibold mb-4 flex items-center gap-3">
-                    <span className="text-3xl">🎨</span>
-                    Для творчества (по желанию)
-                  </h3>
-                  <ul className="space-y-2 text-white/80">
-                    <li>• Любимые альбомы, скетчбуки, акварель, маркеры</li>
-                    <li>• Всё необходимое для мастер-классов выдаём на месте!</li>
-                  </ul>
-                </div>
-
-                {/* Документы и финансы */}
-                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
-                  <h3 className="text-2xl font-semibold mb-4 flex items-center gap-3">
-                    <span className="text-3xl">📄</span>
-                    Документы и финансы
-                  </h3>
-                  <ul className="space-y-2 text-white/80">
-                    <li>• Паспорт (+ копия на телефоне)</li>
-                    <li>• Медицинская страховка</li>
-                    <li>• Наличные в евро/долларах, банковская карта</li>
-                    <li>• Возможность обмена есть на месте</li>
-                  </ul>
-                </div>
-
-                {/* Другие полезности */}
-                <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8">
-                  <h3 className="text-2xl font-semibold mb-4 flex items-center gap-3">
-                    <span className="text-3xl">💡</span>
-                    Другие полезности
-                  </h3>
-                  <ul className="space-y-2 text-white/80">
-                    <li>• Фотоаппарат/GoPro</li>
-                    <li>• Ушные беруши, маска для сна</li>
-                    <li>• Личная косметика (шампунь, мыло, зубная паста)</li>
-                    <li>• Любимая книга, наушники, плейлист</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Important Note */}
-            <div className="mt-12 rounded-2xl bg-white/10 ring-1 ring-white/20 backdrop-blur p-8">
-              <h3 className="text-xl font-semibold mb-4 flex items-center gap-3">
-                <span className="text-2xl">⚠️</span>
-                Важно
-              </h3>
-              <p className="text-white/80 leading-relaxed">
-                У нас лёгкий треккинг, поэтому туристические рюкзаки не нужны! Берите небольшой мягкий чемодан или сумку — так удобнее разместить вещи в каюте. Всё для творчества мы предоставим, но если есть любимые материалы — захватите!
-              </p>
-            </div>
+          <div className="mt-6 rounded-xl bg-white/10 ring-1 ring-white/20 p-5 flex items-start gap-3">
+            <span className="text-xl flex-shrink-0">💡</span>
+            <p className="text-white/70 text-sm">Туристические рюкзаки не нужны — берите мягкий чемодан или сумку. Всё для мастер-классов предоставим, но любимые материалы можно захватить.</p>
           </div>
         </div>
       </section>
