@@ -512,7 +512,7 @@ const Booking = () => {
                       </div>
                     )}
                     <div className="text-white/60 text-sm">
-                      Оставшиеся {calculateTotal() - calculateDeposit()}€ (60%) оплачиваются капитану по прибытии
+                      Оставшиеся {calculateTotal() - calculateDeposit()}€ (60%) оплачиваются в день старта тура
                     </div>
                   </div>
                 </div>

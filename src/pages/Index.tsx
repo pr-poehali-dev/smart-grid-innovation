@@ -894,7 +894,7 @@ const Index = () => {
                     </div>
                     <div className="rounded-xl bg-white/10 ring-1 ring-white/20 p-4 mb-6">
                       <p className="text-white/90 text-sm font-semibold mb-1">💳 Оплата двумя платежами</p>
-                      <p className="text-white/70 text-sm">Возможна рассрочка</p>
+                      <p className="text-white/70 text-sm">40% предоплата, 60% в день старта</p>
                     </div>
                     <Link to="/booking">
                       <Button 
