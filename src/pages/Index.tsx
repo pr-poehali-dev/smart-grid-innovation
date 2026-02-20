@@ -735,7 +735,7 @@ const Index = () => {
             {
               id: 'premium',
               title: 'Вариант 2 — Комфорт',
-              price: '1 725€/чел*',
+              price: '1 500€/чел*',
               priceClass: 'bg-amber-500 text-black font-bold',
               ringClass: 'ring-amber-500/20',
               bgClass: 'bg-amber-500/5 ring-amber-500/20',
