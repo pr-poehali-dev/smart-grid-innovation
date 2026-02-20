@@ -716,7 +716,7 @@ const Index = () => {
             {
               id: 'standard',
               title: 'Вариант 1 — Стандарт',
-              price: '1 380€/чел*',
+              price: '1 200€/чел*',
               priceClass: 'bg-white/10 text-white',
               ringClass: 'ring-white/10',
               bgClass: 'bg-white/5 ring-white/10',
